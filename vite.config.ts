@@ -1,20 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import { tanstackRouter } from '@tanstack/router-plugin/vite'
-import path from "path"
+import { tanstackRouter } from '@tanstack/router-plugin/vite' // <--- Add this
 
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [// Please make sure that '@tanstack/router-plugin' is passed before '@vitejs/plugin-react'
-    tanstackRouter({
-      target: 'react',
-      autoCodeSplitting: true,
-    }), react(), tailwindcss(),],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
+  plugins: [react(),
+  tanstackRouter()
+  ],
+  // Add a temporary base for GitHub Pages, we'll refine this later
+  // Replace 'YOUR_REPO_NAME' with the actual name of your GitHub repository
+  // base: '/polish/',
 })
