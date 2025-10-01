@@ -1,14 +1,11 @@
 import { PageTitle } from "@/components/app-ui/page-title";
+import { Table } from "@/components/app-ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: () => <Content />,
 });
-// Helper function equivalent to cn/clsx for combining Tailwind classes
-const cn = (...classes: (string | boolean | undefined | null)[]): string => {
-  return classes.filter(Boolean).join(" ");
-};
 
 // --- DATA STRUCTURES ---
 
@@ -124,52 +121,6 @@ const PAST_TENSE_DATA = [
 
 // --- REUSABLE COMPONENTS ---
 
-interface TableProps {
-  headers: string[];
-  rows: (string | React.ReactNode)[][];
-  className?: string;
-}
-
-const Table: React.FC<TableProps> = ({ headers, rows, className }) => (
-  <div className={cn("w-full overflow-x-auto rounded-lg shadow-md", className)}>
-    <table className="min-w-max divide-y divide-gray-200 dark:divide-gray-700 w-full">
-      <thead className="bg-red-600 text-white dark:bg-red-800">
-        <tr>
-          {headers.map((header, index) => (
-            <th
-              key={index}
-              className="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider"
-            >
-              {header}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gray-200 bg-white text-gray-900 dark:divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
-        {rows.map((row, rowIndex) => (
-          <tr
-            key={rowIndex}
-            className={
-              rowIndex % 2 === 0
-                ? "bg-white dark:bg-gray-800"
-                : "bg-red-50 dark:bg-gray-900"
-            }
-          >
-            {row.map((cell, cellIndex) => (
-              <td
-                key={cellIndex}
-                className="whitespace-nowrap px-4 py-3 text-sm"
-              >
-                {cell}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-);
-
 // --- MAIN APPLICATION COMPONENT ---
 
 function Content() {
@@ -178,7 +129,7 @@ function Content() {
       <PageTitle>Cheat Sheet</PageTitle>
 
       {/* I. Aspect Section */}
-      <Card className="w-full">
+      <Card>
         <CardHeader>
           <CardTitle>Verb Aspect: Perfective vs. Imperfective</CardTitle>
         </CardHeader>
