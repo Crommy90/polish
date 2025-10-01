@@ -1,20 +1,17 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { Sidebar } from "@/components/app-ui/sidebar";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 
 export const Route = createRootRoute({
   component: () => (
     <>
-      <SidebarProvider>
-        <AppSidebar className="noprint" />
-        <SidebarInset>
-          <div className="flex justify-center p-4 sm:p-8 min-h-screen w-full">
-            <div className="flex-1 space-y-12">
-              <Outlet />
-            </div>
+      <div className="flex h-screen w-screen bg-gray-50 dark:bg-gray-950 font-inter overflow-hidden">
+        <Sidebar />
+        <main className="flex-1 min-w-0 overflow-y-auto p-4 sm:p-8">
+          <div className="w-full max-w-4xl mx-auto space-y-12">
+            <Outlet />
           </div>
-        </SidebarInset>
-      </SidebarProvider>
+        </main>
+      </div>
     </>
   ),
 });

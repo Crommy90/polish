@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
-  component: () => <App />,
+  component: () => <Content />,
 });
 // Helper function equivalent to cn/clsx for combining Tailwind classes
 const cn = (...classes: (string | boolean | undefined | null)[]): string => {
@@ -132,7 +132,7 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ headers, rows, className }) => (
   <div className={cn("w-full overflow-x-auto rounded-lg shadow-md", className)}>
-    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+    <table className="min-w-max divide-y divide-gray-200 dark:divide-gray-700 w-full">
       <thead className="bg-red-600 text-white dark:bg-red-800">
         <tr>
           {headers.map((header, index) => (
@@ -172,7 +172,7 @@ const Table: React.FC<TableProps> = ({ headers, rows, className }) => (
 
 // --- MAIN APPLICATION COMPONENT ---
 
-function App() {
+function Content() {
   return (
     <>
       <PageTitle>Cheat Sheet</PageTitle>
