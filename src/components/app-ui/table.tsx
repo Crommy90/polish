@@ -11,10 +11,10 @@ const cn = (...classes: (string | boolean | undefined | null)[]): string => {
 
 export function Table({ headers, rows, className }: TableProps) {
   return (
-    <div
-      className={cn("w-full overflow-x-auto rounded-lg shadow-md", className)}
-    >
-      <table className="min-w-max divide-y divide-gray-200 dark:divide-gray-700 w-full">
+    // FIX: Removed overflow-x-auto from the wrapper.
+    <div className={cn("w-full rounded-lg shadow-md", className)}>
+      {/* FIX: Removed min-w-max so the table respects the parent's width */}
+      <table className="divide-y divide-gray-200 dark:divide-gray-700 w-full">
         <thead className="bg-red-600 text-white dark:bg-red-800">
           <tr>
             {headers.map((header, index) => (
@@ -40,7 +40,8 @@ export function Table({ headers, rows, className }: TableProps) {
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="whitespace-nowrap px-4 py-3 text-sm"
+                  // FIX: Removed whitespace-nowrap to allow content to wrap
+                  className="px-4 py-3 text-sm"
                 >
                   {cell}
                 </td>
