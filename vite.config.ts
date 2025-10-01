@@ -19,5 +19,5 @@ export default defineConfig({
   },
   // Add a temporary base for GitHub Pages, we'll refine this later
   // Replace 'YOUR_REPO_NAME' with the actual name of your GitHub repository
-  // base: '/polish/',
+  base: '/polish/',
 })

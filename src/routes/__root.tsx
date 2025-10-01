@@ -6,7 +6,7 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <SidebarProvider>
-        <AppSidebar />
+        <AppSidebar className='noprint' />
         <SidebarInset>
             <Outlet />
         </SidebarInset>

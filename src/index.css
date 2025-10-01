@@ -185,7 +185,32 @@ button:focus-visible {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media print {
+
+  /* Hide elements like the header, navigation, and footer */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Optional: Reset margins and padding for content */
+  body,
+  #root,
+  .page-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  /* Optional: Force black text for better printing */
+  * {
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 }
