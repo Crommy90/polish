@@ -4,7 +4,7 @@ const SIDEBAR_LINKS = [{ name: "Cheat Sheet", href: "#" }];
 export function Sidebar() {
   return (
     // Sidebar styling: Fixed width on md screens and up, hidden on mobile.
-    <div className="hidden md:block w-64 flex-shrink-0 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 h-full overflow-y-auto p-4 shadow-xl">
+    <div className="hidden md:block w-64 flex-shrink-0 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 h-full overflow-y-auto p-4 shadow-xl print:hidden">
       <h3 className="text-xl font-bold mb-6 pt-2 text-red-600 dark:text-red-400 border-b pb-2">
         Po Polsku!
       </h3>

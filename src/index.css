@@ -50,7 +50,6 @@
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
-
 body {
   margin: 0;
   display: flex;
@@ -58,7 +57,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -148,12 +146,11 @@ body {
     @apply border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
   }
   h3 {
-    @apply text-2xl font-semibold tracking-tight
+    @apply font-semibold tracking-tight;
   }
 }
 
 @media print {
-
   /* Hide elements like the header, navigation, and footer */
   .no-print {
     display: none !important;
