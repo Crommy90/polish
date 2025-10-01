@@ -7,7 +7,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => {
+  return {
   plugins: [react(),
   tanstackRouter(),
   tailwindcss()
@@ -19,5 +20,7 @@ export default defineConfig({
   },
   // Add a temporary base for GitHub Pages, we'll refine this later
   // Replace 'YOUR_REPO_NAME' with the actual name of your GitHub repository
-  base: '/polish/',
+  // Set base to the repository name ONLY if we are building for production
+  base: command === 'build' ? `/polish/` : '/',
+}
 })
