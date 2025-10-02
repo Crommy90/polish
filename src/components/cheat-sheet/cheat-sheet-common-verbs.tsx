@@ -1,6 +1,8 @@
 import React from 'react';
 // Import the JSON data
 import verbs from '../../data/verbs.json';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Table } from '../app-ui/table';
 
 // Define the type for the verb structure
 interface Verb {
@@ -17,24 +19,28 @@ const VerbList: React.FC = () => {
   const verbList: Verb[] = verbs;
 
   return (
-    <div>
-      <h1>Common Polish Verbs</h1>
-      <ul>
-        {verbList.map((verb, index) => (
-          <li key={index}>
-            <h3>{verb.english}</h3>
-            <p>Infinitive: {verb.infinitive}</p>
-            <p>Aspect: {verb.aspect.join(' / ')}</p>
-            <p>Present tense (I): {verb.present_tense.ja}</p>
-            <p>Present tense (You, singular): {verb.present_tense.ty}</p>
-            <p>Present tense (He/She/It): {verb.present_tense['on/ona/ono']}</p>
-            <p>Present tense (We): {verb.present_tense.my}</p>
-            <p>Present tense (You, plural): {verb.present_tense.wy}</p>
-            <p>Present tense (They): {verb.present_tense['oni/one']}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Card>
+        <CardHeader>
+          <CardTitle>Common Verbs</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Table
+            headers={["Polish", "English", "Aspect", "Ja (I)", "Ty (You)", "On/Ona/Ono (He/She/It)", "My (We)", "Wy (You pl.)", "Oni/One (They)"]}
+            rows={verbList.map((d) => [
+              d.infinitive,
+              d.english,
+              d.aspect.join(' / '),
+              d.present_tense.ja,
+              d.present_tense.ty,
+              d.present_tense['on/ona/ono'],
+              d.present_tense.my,
+              d.present_tense.wy,
+              d.present_tense['oni/one'],
+            ])}
+            className="mt-6"
+          />
+        </CardContent>
+      </Card>
   );
 };
 
