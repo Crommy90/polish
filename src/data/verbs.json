@@ -258,6 +258,266 @@
         "wy": "pracujecie",
         "oni/one": "pracują"
       }
+    },
+    {
+      "english": "to help",
+      "aspect": ["pomagać", "pomóc"],
+      "infinitive": "pomagać",
+      "present_tense": {
+        "ja": "pomagam",
+        "ty": "pomagasz",
+        "on/ona/ono": "pomaga",
+        "my": "pomagamy",
+        "wy": "pomagacie",
+        "oni/one": "pomagają"
+      }
+    },
+    {
+      "english": "to call",
+      "aspect": ["dzwonić", "zadzwonić"],
+      "infinitive": "dzwonić",
+      "present_tense": {
+        "ja": "dzwonię",
+        "ty": "dzwonisz",
+        "on/ona/ono": "dzwoni",
+        "my": "dzwonimy",
+        "wy": "dzwonicie",
+        "oni/one": "dzwonią"
+      }
+    },
+    {
+      "english": "to understand",
+      "aspect": ["rozumieć", "zrozumieć"],
+      "infinitive": "rozumieć",
+      "present_tense": {
+        "ja": "rozumiem",
+        "ty": "rozumiesz",
+        "on/ona/ono": "rozumie",
+        "my": "rozumiemy",
+        "wy": "rozumiecie",
+        "oni/one": "rozumieją"
+      }
+    },
+    {
+      "english": "to play",
+      "aspect": ["grać", "zagrać"],
+      "infinitive": "grać",
+      "present_tense": {
+        "ja": "gram",
+        "ty": "grasz",
+        "on/ona/ono": "gra",
+        "my": "gramy",
+        "wy": "gracie",
+        "oni/one": "grają"
+      }
+    },
+    {
+      "english": "to live",
+      "aspect": ["żyć", "—"],
+      "infinitive": "żyć",
+      "present_tense": {
+        "ja": "żyję",
+        "ty": "żyjesz",
+        "on/ona/ono": "żyje",
+        "my": "żyjemy",
+        "wy": "żyjecie",
+        "oni/one": "żyją"
+      }
+    },
+    {
+      "english": "to come",
+      "aspect": ["przyjść", "przyjść"],
+      "infinitive": "przyjść",
+      "present_tense": {
+        "ja": "przychodzę",
+        "ty": "przychodzisz",
+        "on/ona/ono": "przychodzi",
+        "my": "przychodzimy",
+        "wy": "przychodzicie",
+        "oni/one": "przychodzą"
+      }
+    },
+    {
+      "english": "to think",
+      "aspect": ["myśleć", "pomyśleć"],
+      "infinitive": "myśleć",
+      "present_tense": {
+        "ja": "myślę",
+        "ty": "myślisz",
+        "on/ona/ono": "myśli",
+        "my": "myślimy",
+        "wy": "myślicie",
+        "oni/one": "myślą"
+      }
+    },
+    {
+      "english": "to walk",
+      "aspect": ["chodzić", "pójść"],
+      "infinitive": "chodzić",
+      "present_tense": {
+        "ja": "chodzę",
+        "ty": "chodzisz",
+        "on/ona/ono": "chodzi",
+        "my": "chodzimy",
+        "wy": "chodzicie",
+        "oni/one": "chodzą"
+      }
+    },
+    {
+      "english": "to ask",
+      "aspect": ["pytać", "zapytać"],
+      "infinitive": "pytać",
+      "present_tense": {
+        "ja": "pytam",
+        "ty": "pytasz",
+        "on/ona/ono": "pyta",
+        "my": "pytamy",
+        "wy": "pytacie",
+        "oni/one": "pytają"
+      }
+    },
+    {
+      "english": "to send",
+      "aspect": ["wysyłać", "wysłać"],
+      "infinitive": "wysyłać",
+      "present_tense": {
+        "ja": "wysyłam",
+        "ty": "wysyłasz",
+        "on/ona/ono": "wysyła",
+        "my": "wysyłamy",
+        "wy": "wysyłacie",
+        "oni/one": "wysyłają"
+      }
+    },
+    {
+      "english": "to open",
+      "aspect": ["otwierać", "otworzyć"],
+      "infinitive": "otwierać",
+      "present_tense": {
+        "ja": "otwieram",
+        "ty": "otwierasz",
+        "on/ona/ono": "otwiera",
+        "my": "otwieramy",
+        "wy": "otwieracie",
+        "oni/one": "otwierają"
+      }
+    },
+    {
+      "english": "to close",
+      "aspect": ["zamykać", "zamknąć"],
+      "infinitive": "zamykać",
+      "present_tense": {
+        "ja": "zamykam",
+        "ty": "zamykasz",
+        "on/ona/ono": "zamyka",
+        "my": "zamykamy",
+        "wy": "zamykacie",
+        "oni/one": "zamykają"
+      }
+    },
+    {
+      "english": "to cook",
+      "aspect": ["gotować", "ugotować"],
+      "infinitive": "gotować",
+      "present_tense": {
+        "ja": "gotuję",
+        "ty": "gotujesz",
+        "on/ona/ono": "gotuje",
+        "my": "gotujemy",
+        "wy": "gotujecie",
+        "oni/one": "gotują"
+      }
+    },
+    {
+      "english": "to buy",
+      "aspect": ["kupować", "kupić"],
+      "infinitive": "kupować",
+      "present_tense": {
+        "ja": "kupuję",
+        "ty": "kupujesz",
+        "on/ona/ono": "kupuje",
+        "my": "kupujemy",
+        "wy": "kupujecie",
+        "oni/one": "kupują"
+      }
+    },
+    {
+      "english": "to sell",
+      "aspect": ["sprzedawać", "sprzedać"],
+      "infinitive": "sprzedawać",
+      "present_tense": {
+        "ja": "sprzedaję",
+        "ty": "sprzedajesz",
+        "on/ona/ono": "sprzedaje",
+        "my": "sprzedajemy",
+        "wy": "sprzedajecie",
+        "oni/one": "sprzedają"
+      }
+    },
+    {
+      "english": "to work",
+      "aspect": ["pracować", "—"],
+      "infinitive": "pracować",
+      "present_tense": {
+        "ja": "pracuję",
+        "ty": "pracujesz",
+        "on/ona/ono": "pracuje",
+        "my": "pracujemy",
+        "wy": "pracujecie",
+        "oni/one": "pracują"
+      }
+    },
+    {
+      "english": "to sing",
+      "aspect": ["śpiewać", "zaśpiewać"],
+      "infinitive": "śpiewać",
+      "present_tense": {
+        "ja": "śpiewam",
+        "ty": "śpiewasz",
+        "on/ona/ono": "śpiewa",
+        "my": "śpiewamy",
+        "wy": "śpiewacie",
+        "oni/one": "śpiewają"
+      }
+    },
+    {
+      "english": "to dance",
+      "aspect": ["tańczyć", "—"],
+      "infinitive": "tańczyć",
+      "present_tense": {
+        "ja": "tańczę",
+        "ty": "tańczysz",
+        "on/ona/ono": "tańczy",
+        "my": "tańczymy",
+        "wy": "tańczycie",
+        "oni/one": "tańczą"
+      }
+    },
+    {
+      "english": "to sleep",
+      "aspect": ["spać", "—"],
+      "infinitive": "spać",
+      "present_tense": {
+        "ja": "śpię",
+        "ty": "śpisz",
+        "on/ona/ono": "śpi",
+        "my": "śpimy",
+        "wy": "śpicie",
+        "oni/one": "śpią"
+      }
+    },
+    {
+      "english": "to write",
+      "aspect": ["pisać", "napisać"],
+      "infinitive": "pisać",
+      "present_tense": {
+        "ja": "piszę",
+        "ty": "piszesz",
+        "on/ona/ono": "pisze",
+        "my": "piszemy",
+        "wy": "piszecie",
+        "oni/one": "piszą"
+      }
     }
   ]
   
