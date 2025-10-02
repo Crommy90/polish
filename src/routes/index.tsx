@@ -1,6 +1,7 @@
 import { PageTitle } from "@/components/app-ui/page-title";
 import { SectionTitle } from "@/components/app-ui/section-title";
 import { CheatSheetCases } from "@/components/cheat-sheet/cheat-sheet-cases";
+import VerbList from "@/components/cheat-sheet/cheat-sheet-common-verbs";
 import { CheatSheetVerbs } from "@/components/cheat-sheet/cheat-sheet-verbs";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createFileRoute } from "@tanstack/react-router";
@@ -32,6 +33,14 @@ function Content() {
         </CardHeader>
         <CardContent className="space-y-6">
           <CheatSheetCases />
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <SectionTitle>Verb List</SectionTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <VerbList />
         </CardContent>
       </Card>
     </>

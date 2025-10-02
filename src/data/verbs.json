@@ -1,0 +1,263 @@
+[
+    {
+      "english": "to be",
+      "aspect": ["być", "—"],
+      "infinitive": "być",
+      "present_tense": {
+        "ja": "jestem",
+        "ty": "jesteś",
+        "on/ona/ono": "jest",
+        "my": "jesteśmy",
+        "wy": "jesteście",
+        "oni/one": "są"
+      }
+    },
+    {
+      "english": "to have",
+      "aspect": ["mieć", "—"],
+      "infinitive": "mieć",
+      "present_tense": {
+        "ja": "mam",
+        "ty": "masz",
+        "on/ona/ono": "ma",
+        "my": "mamy",
+        "wy": "macie",
+        "oni/one": "mają"
+      }
+    },
+    {
+      "english": "to go (on foot, repeatedly)",
+      "aspect": ["chodzić", "pójść"],
+      "infinitive": "chodzić",
+      "present_tense": {
+        "ja": "chodzę",
+        "ty": "chodzisz",
+        "on/ona/ono": "chodzi",
+        "my": "chodzimy",
+        "wy": "chodzicie",
+        "oni/one": "chodzą"
+      }
+    },
+    {
+      "english": "to go (by vehicle, repeatedly)",
+      "aspect": ["jeździć", "pojechać"],
+      "infinitive": "jeździć",
+      "present_tense": {
+        "ja": "jeżdżę",
+        "ty": "jeździsz",
+        "on/ona/ono": "jeździ",
+        "my": "jeździmy",
+        "wy": "jeździcie",
+        "oni/one": "jeżdżą"
+      }
+    },
+    {
+      "english": "to go (on foot, now)",
+      "aspect": ["iść", "pójść"],
+      "infinitive": "iść",
+      "present_tense": {
+        "ja": "idę",
+        "ty": "idziesz",
+        "on/ona/ono": "idzie",
+        "my": "idziemy",
+        "wy": "idziecie",
+        "oni/one": "idą"
+      }
+    },
+    {
+      "english": "to do",
+      "aspect": ["robić", "zrobić"],
+      "infinitive": "robić",
+      "present_tense": {
+        "ja": "robię",
+        "ty": "robisz",
+        "on/ona/ono": "robi",
+        "my": "robimy",
+        "wy": "robicie",
+        "oni/one": "robią"
+      }
+    },
+    {
+      "english": "to speak",
+      "aspect": ["mówić", "powiedzieć"],
+      "infinitive": "mówić",
+      "present_tense": {
+        "ja": "mówię",
+        "ty": "mówisz",
+        "on/ona/ono": "mówi",
+        "my": "mówimy",
+        "wy": "mówicie",
+        "oni/one": "mówią"
+      }
+    },
+    {
+      "english": "to know (a fact)",
+      "aspect": ["wiedzieć", "—"],
+      "infinitive": "wiedzieć",
+      "present_tense": {
+        "ja": "wiem",
+        "ty": "wiesz",
+        "on/ona/ono": "wie",
+        "my": "wiemy",
+        "wy": "wiecie",
+        "oni/one": "wiedzą"
+      }
+    },
+    {
+      "english": "to eat",
+      "aspect": ["jeść", "zjeść"],
+      "infinitive": "jeść",
+      "present_tense": {
+        "ja": "jem",
+        "ty": "jesz",
+        "on/ona/ono": "je",
+        "my": "jemy",
+        "wy": "jecie",
+        "oni/one": "jedzą"
+      }
+    },
+    {
+      "english": "to drink",
+      "aspect": ["pić", "wypić"],
+      "infinitive": "pić",
+      "present_tense": {
+        "ja": "piję",
+        "ty": "pijesz",
+        "on/ona/ono": "pije",
+        "my": "pijemy",
+        "wy": "pijecie",
+        "oni/one": "piją"
+      }
+    },
+    {
+      "english": "to write",
+      "aspect": ["pisać", "napisać"],
+      "infinitive": "pisać",
+      "present_tense": {
+        "ja": "piszę",
+        "ty": "piszesz",
+        "on/ona/ono": "pisze",
+        "my": "piszemy",
+        "wy": "piszecie",
+        "oni/one": "piszą"
+      }
+    },
+    {
+      "english": "to read",
+      "aspect": ["czytać", "przeczytać"],
+      "infinitive": "czytać",
+      "present_tense": {
+        "ja": "czytam",
+        "ty": "czytasz",
+        "on/ona/ono": "czyta",
+        "my": "czytamy",
+        "wy": "czytacie",
+        "oni/one": "czytają"
+      }
+    },
+    {
+      "english": "to see",
+      "aspect": ["widzieć", "zobaczyć"],
+      "infinitive": "widzieć",
+      "present_tense": {
+        "ja": "widzę",
+        "ty": "widzisz",
+        "on/ona/ono": "widzi",
+        "my": "widzimy",
+        "wy": "widzicie",
+        "oni/one": "widzą"
+      }
+    },
+    {
+      "english": "to hear",
+      "aspect": ["słyszeć", "usłyszeć"],
+      "infinitive": "słyszeć",
+      "present_tense": {
+        "ja": "słyszę",
+        "ty": "słyszysz",
+        "on/ona/ono": "słyszy",
+        "my": "słyszymy",
+        "wy": "słyszycie",
+        "oni/one": "słyszą"
+      }
+    },
+    {
+      "english": "to give",
+      "aspect": ["dawać", "dać"],
+      "infinitive": "dawać",
+      "present_tense": {
+        "ja": "daję",
+        "ty": "dajesz",
+        "on/ona/ono": "daje",
+        "my": "dajemy",
+        "wy": "dajecie",
+        "oni/one": "dają"
+      }
+    },
+    {
+      "english": "to take",
+      "aspect": ["brać", "wziąć"],
+      "infinitive": "brać",
+      "present_tense": {
+        "ja": "biorę",
+        "ty": "bierzesz",
+        "on/ona/ono": "bierze",
+        "my": "bierzemy",
+        "wy": "bierzecie",
+        "oni/one": "biorą"
+      }
+    },
+    {
+      "english": "to think",
+      "aspect": ["myśleć", "pomyśleć"],
+      "infinitive": "myśleć",
+      "present_tense": {
+        "ja": "myślę",
+        "ty": "myślisz",
+        "on/ona/ono": "myśli",
+        "my": "myślimy",
+        "wy": "myślicie",
+        "oni/one": "myślą"
+      }
+    },
+    {
+      "english": "to understand",
+      "aspect": ["rozumieć", "zrozumieć"],
+      "infinitive": "rozumieć",
+      "present_tense": {
+        "ja": "rozumiem",
+        "ty": "rozumiesz",
+        "on/ona/ono": "rozumie",
+        "my": "rozumiemy",
+        "wy": "rozumiecie",
+        "oni/one": "rozumieją"
+      }
+    },
+    {
+      "english": "to sleep",
+      "aspect": ["spać", "—"],
+      "infinitive": "spać",
+      "present_tense": {
+        "ja": "śpię",
+        "ty": "śpisz",
+        "on/ona/ono": "śpi",
+        "my": "śpimy",
+        "wy": "śpicie",
+        "oni/one": "śpią"
+      }
+    },
+    {
+      "english": "to work",
+      "aspect": ["pracować", "—"],
+      "infinitive": "pracować",
+      "present_tense": {
+        "ja": "pracuję",
+        "ty": "pracujesz",
+        "on/ona/ono": "pracuje",
+        "my": "pracujemy",
+        "wy": "pracujecie",
+        "oni/one": "pracują"
+      }
+    }
+  ]
+  
