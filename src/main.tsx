@@ -1,26 +1,25 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider, createHashHistory, createRouter } from '@tanstack/react-router'
-import { routeTree } from './routeTree.gen' // Generated file
-import './index.css' // Import CSS later
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { routeTree } from './routeTree.gen';
 
-const hashHistory = createHashHistory()
+// Set up a Router instance
+const router = createRouter({
+  routeTree,
+  defaultPreload: 'intent',
+  scrollRestoration: true,
+});
 
-const router = createRouter({ routeTree, history: hashHistory  })
-
-// Register router for type-safety
+// Register things for typesafety
 declare module '@tanstack/react-router' {
   interface Register {
-    router: typeof router
+    router: typeof router;
   }
 }
 
-const rootElement = document.getElementById('root')!
+const rootElement = document.getElementById('root')!;
+
 if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
-  root.render(
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>,
-  )
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(<RouterProvider router={router} />);
 }

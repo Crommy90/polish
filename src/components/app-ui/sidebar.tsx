@@ -1,5 +1,13 @@
+import { Link } from "@tanstack/react-router";
+
 // --- SIDEBAR DATA AND COMPONENT ---
-const SIDEBAR_LINKS = [{ name: "Cheat Sheet", href: "#" }];
+const SIDEBAR_LINKS = [
+  { 
+    name: "Cheat Sheet",
+    href: "/"
+
+   },
+  { name: "Colour Game", href: "/games/colours" },];
 
 export function Sidebar() {
   return (
@@ -10,13 +18,13 @@ export function Sidebar() {
       </h3>
       <nav className="space-y-2">
         {SIDEBAR_LINKS.map((link) => (
-          <a
+          <Link
             key={link.href}
-            href={link.href}
+            to={link.href}
             className="flex items-center p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/50 hover:text-red-700 dark:hover:text-red-300 transition-colors duration-150 font-medium"
           >
             {link.name}
-          </a>
+          </Link>
         ))}
       </nav>
     </div>
