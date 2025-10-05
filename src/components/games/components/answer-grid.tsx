@@ -5,7 +5,7 @@ import type { AnswerResult } from "./game";
 
 interface AnswerGridProps {
   options: string[];
-  result: AnswerResult;
+  result?: AnswerResult;
   handleGuess: (option: string) => void;
 }
 

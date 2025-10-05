@@ -26,7 +26,6 @@ type GameMode = typeof GameMode[keyof typeof GameMode];
 export const FeedbackStatus = {
   Correct: 'Correct',
   Incorrect: 'Incorrect',
-  None: 'None',
 } as const;
 export type FeedbackStatus = (typeof FeedbackStatus)[keyof typeof FeedbackStatus];
 
@@ -91,15 +90,6 @@ interface Question<T extends Translation> {
   options: string[];
 }
 
-function getBlankResult(): AnswerResult {
-  return {
-    feedback: FeedbackStatus.None,
-    option: "",
-    correctOption: "",
-    isLocked: false
-  };
-}
-
 interface GameProps<T extends Translation> {
   allColours: T[];
   questionColour: (option: T) => string; // Function to get hex colour from option
@@ -110,7 +100,7 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
   
   const [gameMode, setGameMode] = useState<GameMode>(GameMode.EnToPl);
   const [currentQuestion, setCurrentQuestion] = useState<Question<T> | null>(null); 
-  const [result, setResult] = useState<AnswerResult>(getBlankResult());
+  const [result, setResult] = useState<AnswerResult>();
   const [score, setScore] = useState(0);
   const [recents, setRecents] = useState<string[]>([]); // To track recently used questions
 
@@ -141,7 +131,7 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
       question: newAnswer,
       options: generateOptions(allColours, newAnswer, gameMode, maxOptions),
     });
-    setResult(getBlankResult);
+    setResult(undefined);
   }, [allColours, currentQuestion, recents, gameMode, maxOptions]);
 
   // Effect to load the first question or regenerate when mode changes
@@ -151,12 +141,12 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
 
   // Handles the user's guess
   const handleGuess = (guess: string) => {
-    if (result.isLocked){
+    if (result && result.isLocked){
        return;
     }
 
     const newResult : AnswerResult ={
-      feedback: FeedbackStatus.None,
+      feedback: FeedbackStatus.Incorrect,
       option: guess,
       correctOption: correctOption,
       isLocked: true
@@ -166,8 +156,6 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
     if (isCorrect) {
       newResult.feedback = FeedbackStatus.Correct;
       setScore((s) => s + 1);
-    } else {
-      newResult.feedback = FeedbackStatus.Incorrect;
     }
 
     setResult(newResult);
@@ -212,7 +200,7 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
         </CardHeader>
         <CardContent>
           <QuestionBox sourceText={sourceText} bgColour={gameMode != GameMode.PlToEn ? questionColour(currentQuestion.question) : undefined  } useWhite={useWhite} />
-          <Answer feedback={result.feedback} correctOption={correctOption} />
+          <Answer result={result} correctOption={correctOption} />
 
           {/* OPTIONS GRID */}
           <AnswerGrid options={currentQuestion.options} result={result} handleGuess={handleGuess} />
