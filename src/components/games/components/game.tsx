@@ -52,7 +52,8 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 const generateOptions = <T extends Translation> (
   allOptions: T[],
   answer: T,
-  mode: GameMode
+  mode: GameMode,
+  maxOptions?: number
 ): string[] => {
   const { targetKey } = getKeys(mode);
   const correctAnswer = answer[targetKey];
@@ -65,28 +66,49 @@ const generateOptions = <T extends Translation> (
   const randomIncorrect = shuffleArray(incorrectCandidates as T[]).map(
     (c) => c[targetKey]
   );
+  // Limit to maxOptions - 1 incorrect answers
+  if( maxOptions ) {
+    randomIncorrect.splice(maxOptions - 1);
+  }
 
   // Combine and shuffle the options
   const options = shuffleArray([...randomIncorrect, correctAnswer]);
 
+  // Then sort alphabetially
+  options.sort((a, b) =>  a.localeCompare(b));
+
   return options;
 };
 
-// --- 3. MAIN COMPONENT ---
+export interface AnswerResult {
+  feedback: FeedbackStatus;
+  option: string;
+  correctOption: string;
+  isLocked: boolean;
+}
+
+function getBlankResult(): AnswerResult {
+  return {
+    feedback: FeedbackStatus.None,
+    option: "",
+    correctOption: "",
+    isLocked: false
+  };
+}
 
 interface GameProps<T extends Translation> {
   allColours: T[];
   questionColour: (option: T) => string; // Function to get hex colour from option
+  maxOptions?: number
 }
 
-const Game= <T extends Translation> ( {allColours, questionColour} : GameProps<T> ) => {
+const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} : GameProps<T> ) => {
   
   const [gameMode, setGameMode] = useState<GameMode>(GameMode.EnToPl);
   const [currentQuestion, setCurrentQuestion] = useState< T | null>(null); 
   const [options, setOptions] = useState<string[]>([]);
-  const [feedback, setFeedback] = useState<FeedbackStatus>(FeedbackStatus.None);
+  const [result, setResult] = useState<AnswerResult>(getBlankResult());
   const [score, setScore] = useState(0);
-  const [isLocked, setIsLocked] = useState(false); // To prevent multiple clicks
 
   // Memoized keys and derived values based on game mode
   const { sourceKey, targetKey } = useMemo(() => getKeys(gameMode), [gameMode]);
@@ -103,10 +125,9 @@ const Game= <T extends Translation> ( {allColours, questionColour} : GameProps<T
     const randomIndex = Math.floor(Math.random() * allColours.length); 
     const newColour = allColours[randomIndex] as T; 
     setCurrentQuestion(newColour);
-    setOptions(generateOptions(allColours, newColour, gameMode));
-    setFeedback(FeedbackStatus.None);
-    setIsLocked(false);
-  }, [gameMode, allColours]);
+    setOptions(generateOptions(allColours, newColour, gameMode, maxOptions));
+    setResult(getBlankResult);
+  }, [gameMode, allColours, maxOptions]);
 
   // Effect to load the first question or regenerate when mode changes
   useEffect(() => {
@@ -115,17 +136,26 @@ const Game= <T extends Translation> ( {allColours, questionColour} : GameProps<T
 
   // Handles the user's guess
   const handleGuess = (guess: string) => {
-    if (isLocked) return;
+    if (result.isLocked){
+       return;
+    }
 
-    setIsLocked(true);
+    const newResult : AnswerResult ={
+      feedback: FeedbackStatus.None,
+      option: guess,
+      correctOption: correctOption,
+      isLocked: true
+    }
     const isCorrect = guess === correctOption;
 
     if (isCorrect) {
-      setFeedback(FeedbackStatus.Correct);
+      newResult.feedback = FeedbackStatus.Correct;
       setScore((s) => s + 1);
     } else {
-      setFeedback(FeedbackStatus.Incorrect);
+      newResult.feedback = FeedbackStatus.Incorrect;
     }
+
+    setResult(newResult);
 
     // Move to the next question after a brief delay
     setTimeout(() => {
@@ -141,19 +171,12 @@ const Game= <T extends Translation> ( {allColours, questionColour} : GameProps<T
     // generateQuestion runs automatically due to the change in 'gameMode' dependency
   };
 
-  // Dynamically determine the border colour for the feedback box
-  const feedbackStyle = useMemo(() => {
-    if (feedback === FeedbackStatus.Correct) {
-      return 'border-green-500 bg-green-100 dark:bg-green-900 shadow-green-400';
-    }
-    if (feedback === FeedbackStatus.Incorrect) {
-      return 'border-red-500 bg-red-100 dark:bg-red-900 shadow-red-400';
-    }
-    return 'border-gray-300 dark:border-gray-700 shadow-lg';
-  }, [feedback]);
 
   if (!currentQuestion)
     return <div className="p-4 text-center">Loading game...</div>;
+
+  const bgColour = gameMode != GameMode.PlToEn ? questionColour(currentQuestion) : undefined;
+  const useWhite = bgColour === '#000000' || bgColour === 'black';
 
   return (
     <div className="flex flex-col items-center">
@@ -165,7 +188,7 @@ const Game= <T extends Translation> ( {allColours, questionColour} : GameProps<T
 
       {/* QUESTION BOX */}
       <Card
-        className={`w-full max-w-lg transition-all duration-300 ${feedbackStyle}`}
+        className={`w-full max-w-lg transition-all duration-300`}
       >
         <CardHeader>
           <Heading as="h3" align="center">
@@ -173,11 +196,11 @@ const Game= <T extends Translation> ( {allColours, questionColour} : GameProps<T
           </Heading>
         </CardHeader>
         <CardContent>
-            <QuestionBox sourceText={sourceText} bgColour={gameMode != GameMode.PlToEn ? questionColour(currentQuestion) : undefined  } useWhite={currentQuestion.en == "black"} />
-          <Answer feedback={feedback} correctOption={correctOption} />
+          <QuestionBox sourceText={sourceText} bgColour={gameMode != GameMode.PlToEn ? questionColour(currentQuestion) : undefined  } useWhite={useWhite} />
+          <Answer feedback={result.feedback} correctOption={correctOption} />
 
           {/* OPTIONS GRID */}
-          <AnswerGrid options={options} correctOption={correctOption} isLocked={isLocked} handleGuess={handleGuess} />
+          <AnswerGrid options={options} result={result} handleGuess={handleGuess} />
         </CardContent>
       </Card>
     </div>
