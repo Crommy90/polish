@@ -61,7 +61,6 @@ const generateOptions = (allColours : Colour[], correctColour: Colour, mode: Gam
 
   // Get up to 3 random incorrect answers
   const randomIncorrect = shuffleArray(incorrectCandidates as Colour[]) 
-    .slice(0, 3)
     .map((c) => c[targetKey]);
 
   // Combine and shuffle the options
