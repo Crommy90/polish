@@ -8,7 +8,7 @@ export interface Translation {
 }
 
 interface TranslationTableProps {
-  header: string;
+  title: string;
   translations: Translation[];
 }
 
@@ -16,7 +16,7 @@ export function TranslationTable(props: TranslationTableProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{props.header}</CardTitle>
+        <CardTitle>{props.title}</CardTitle>
       </CardHeader>
       <CardContent>
         <Table
