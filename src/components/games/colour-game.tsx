@@ -1,8 +1,11 @@
-import { Card, Heading, Switch } from '@radix-ui/themes';
+import { Card, Heading } from '@radix-ui/themes';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import colours from "../../data/colours.json";
 import { CardContent, CardHeader } from '../ui/card';
+import { Answer } from './components/answer';
 import { AnswerGrid } from './components/answer-grid';
+import { GameHeader } from './components/game-header';
+import { QuestionBox } from './components/question-box';
 
 
 // The import of './colours.json' has been removed to fix the compilation error.
@@ -24,12 +27,12 @@ const GameMode = {
 type GameMode = typeof GameMode[keyof typeof GameMode];
 
 // Define feedback status
-const FeedbackStatus = {
+export const FeedbackStatus = {
   Correct: 'Correct',
   Incorrect: 'Incorrect',
   None: 'None',
 } as const;
-type FeedbackStatus = (typeof FeedbackStatus)[keyof typeof FeedbackStatus];
+export type FeedbackStatus = (typeof FeedbackStatus)[keyof typeof FeedbackStatus];
 
 // Utility to get the correct keys based on the current mode
 const getKeys = (mode: GameMode) => {
@@ -153,17 +156,7 @@ const ColourGame: React.FC = () => {
     <div className="flex flex-col items-center">
         <Card className="w-full max-w-lg mb-8">
           <CardContent>
-            <div className="flex justify-between items-center">
-              <p className="text-lg font-semibold">
-                Score: <span className="text-purple-500">{score}</span>
-              </p>
-
-              {/* Mode Switcher Button (Radix-style) */}
-              <div className="gap-x-10">
-                <span>{isE2P ? '🇬🇧 → 🇵🇱' : '🇵🇱 → 🇬🇧'}</span>
-                <Switch checked={isE2P} onCheckedChange={toggleMode} />
-              </div>
-            </div>
+            <GameHeader score={score} isE2P={isE2P} toggleMode={toggleMode} />
           </CardContent>
         </Card>
 
@@ -177,32 +170,8 @@ const ColourGame: React.FC = () => {
           </Heading>
         </CardHeader>
         <CardContent>
-          {/* The Coloured Display Box */}
-          <div
-            className="w-full h-40 flex items-center justify-center rounded-lg shadow-inner transition-colors duration-500"
-            style={{
-              backgroundColor: currentQuestion.hex,
-              color: textColor,
-              border: `3px solid ${textColor}`,
-            }}
-          >
-            <span className="text-3xl sm:text-4xl font-black uppercase tracking-wider p-2 rounded-md backdrop-filter backdrop-blur-sm bg-opacity-30">
-              {sourceText}
-            </span>
-          </div>
-          {/* Feedback Message */}
-          <div className="h-6 mt-3 text-center">
-            {feedback === FeedbackStatus.Correct && (
-              <span className="text-green-600 dark:text-green-400 font-bold animate-pulse">
-                ✅ Correct! Great job.
-              </span>
-            )}
-            {feedback === FeedbackStatus.Incorrect && (
-              <span className="text-red-600 dark:text-red-400 font-bold">
-                ❌ Incorrect. The answer was "{correctOption}".
-              </span>
-            )}
-          </div>
+            <QuestionBox sourceText={sourceText} currentQuestion={currentQuestion} textColor={textColor} />
+          <Answer feedback={feedback} correctOption={correctOption} />
 
           {/* OPTIONS GRID */}
           <AnswerGrid options={options} correctOption={correctOption} isLocked={isLocked} handleGuess={handleGuess} />
