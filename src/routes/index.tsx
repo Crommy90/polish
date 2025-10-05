@@ -1,7 +1,8 @@
 import { PageTitle } from "@/components/app-ui/page-title";
 import { SectionTitle } from "@/components/app-ui/section-title";
 import { CheatSheetCases } from "@/components/cheat-sheet/cheat-sheet-cases";
-import VerbList from "@/components/cheat-sheet/cheat-sheet-common-verbs";
+import { CheatSheetColours } from "@/components/cheat-sheet/cheat-sheet-colours";
+import { CheatSheetCommonVerbs } from "@/components/cheat-sheet/cheat-sheet-common-verbs";
 import { CheatSheetVerbs } from "@/components/cheat-sheet/cheat-sheet-verbs";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createFileRoute } from "@tanstack/react-router";
@@ -40,7 +41,15 @@ function Content() {
           <SectionTitle>Verb List</SectionTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <VerbList />
+          <CheatSheetCommonVerbs />
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <SectionTitle>Colours</SectionTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <CheatSheetColours />
         </CardContent>
       </Card>
     </>
