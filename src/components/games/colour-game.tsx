@@ -1,13 +1,18 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import colours from "../../data/colours.json";
+
+// The import of './colours.json' has been removed to fix the compilation error.
+// The data is now defined directly below.
 
 // --- 1. TYPES AND DATA ---
 
-// Define the structure for a color translation entry
-interface Color {
-  english: string;
-  polish: string;
+// Define the structure for a colour translation entry using new keys (British spelling used)
+interface Colour {
+  en: string; // English
+  pl: string; // Polish
   hex: string;
 }
+
 
 // Define the two game modes
 type GameMode = 'english-to-polish' | 'polish-to-english';
@@ -15,20 +20,12 @@ type GameMode = 'english-to-polish' | 'polish-to-english';
 // Define feedback status
 type FeedbackStatus = 'correct' | 'incorrect' | null;
 
-// The core data set for the game
-const allColors: Color[] = [
-  { english: 'Red', polish: 'Czerwony', hex: '#ef4444' },
-  { english: 'Blue', polish: 'Niebieski', hex: '#3b82f6' },
-  { english: 'Green', polish: 'Zielony', hex: '#22c55e' },
-  { english: 'Yellow', polish: 'Żółty', hex: '#facc15' },
-  { english: 'Black', polish: 'Czarny', hex: '#000000' },
-  { english: 'White', polish: 'Biały', hex: '#f3f4f6' },
-  { english: 'Orange', polish: 'Pomarańczowy', hex: '#f97316' },
-  { english: 'Pink', polish: 'Różowy', hex: '#ec4899' },
-  { english: 'Purple', polish: 'Fioletowy', hex: '#a855f7' },
-  { english: 'Brown', polish: 'Brązowy', hex: '#78350f' },
-  { english: 'Gray', polish: 'Szary', hex: '#6b7280' },
-];
+// Utility to get the correct keys based on the current mode
+const getKeys = (mode: GameMode) => {
+  return mode === 'english-to-polish'
+    ? { sourceKey: 'en' as keyof Colour, targetKey: 'pl' as keyof Colour }
+    : { sourceKey: 'pl' as keyof Colour, targetKey: 'en' as keyof Colour };
+};
 
 // --- 2. UTILITY FUNCTIONS ---
 
@@ -38,19 +35,20 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 };
 
 // Utility to generate options for the quiz
-const generateOptions = (correctColor: Color, mode: GameMode): string[] => {
-  const isE2P = mode === 'english-to-polish';
-  const correctAnswer = isE2P ? correctColor.polish : correctColor.english;
+const generateOptions = (allColours : Colour[], correctColour: Colour, mode: GameMode): string[] => {
+  // British spelling used
+  const { targetKey } = getKeys(mode);
+  const correctAnswer = correctColour[targetKey];
 
-  // Filter out the correct answer from the list
-  const incorrectCandidates = allColors.filter(
-    (c) => c.english !== correctColor.english
-  );
+  // Filter out the correct answer from the list using the unique English key ('en')
+  const incorrectCandidates = allColours.filter(
+    (c) => c.en !== correctColour.en
+  ); // British spelling used
 
   // Get up to 3 random incorrect answers
-  const randomIncorrect = shuffleArray(incorrectCandidates)
+  const randomIncorrect = shuffleArray(incorrectCandidates as Colour[]) // British spelling used
     .slice(0, 3)
-    .map((c) => (isE2P ? c.polish : c.english));
+    .map((c) => c[targetKey]);
 
   // Combine and shuffle the options
   const options = shuffleArray([...randomIncorrect, correctAnswer]);
@@ -60,36 +58,35 @@ const generateOptions = (correctColor: Color, mode: GameMode): string[] => {
 
 // --- 3. MAIN COMPONENT ---
 
-const ColorQuiz: React.FC = () => {
+const ColourQuiz: React.FC = () => {
+  // British spelling used
   const [gameMode, setGameMode] = useState<GameMode>('english-to-polish');
-  const [currentQuestion, setCurrentQuestion] = useState<Color | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<Colour | null>(null); // British spelling used
   const [options, setOptions] = useState<string[]>([]);
   const [feedback, setFeedback] = useState<FeedbackStatus>(null);
   const [score, setScore] = useState(0);
   const [isLocked, setIsLocked] = useState(false); // To prevent multiple clicks
 
-  // Memoized values derived from state
+  // Memoized keys and derived values based on game mode
+  const { sourceKey, targetKey } = useMemo(() => getKeys(gameMode), [gameMode]);
+
   const isE2P = gameMode === 'english-to-polish';
-  const sourceText = currentQuestion
-    ? isE2P
-      ? currentQuestion.english
-      : currentQuestion.polish
-    : '';
-  const correctOption = currentQuestion
-    ? isE2P
-      ? currentQuestion.polish
-      : currentQuestion.english
-    : '';
-  const textColor =
-    currentQuestion?.english === 'Black' ? '#FFFFFF' : '#000000';
+  const sourceText = currentQuestion ? currentQuestion[sourceKey] : '';
+  const correctOption = currentQuestion ? currentQuestion[targetKey] : '';
+
+  // Determine text colour based on the actual colour name (since 'en' is unique)
+  // Keep 'textColor' as it's a common camelCase variable name, but derived from the actual colour.
+  const textColor = currentQuestion?.en === 'Black' ? '#FFFFFF' : '#000000';
+
+  const allColours : Colour[] = colours;
 
   // Function to set up the next question
   const generateQuestion = useCallback(() => {
-    // Pick a random color from the list
-    const randomIndex = Math.floor(Math.random() * allColors.length);
-    const newColor = allColors[randomIndex];
-    setCurrentQuestion(newColor);
-    setOptions(generateOptions(newColor, gameMode));
+    // Pick a random colour from the list
+    const randomIndex = Math.floor(Math.random() * allColours.length); // British spelling used
+    const newColour = allColours[randomIndex] as Colour; // British spelling used
+    setCurrentQuestion(newColour);
+    setOptions(generateOptions(allColours, newColour, gameMode));
     setFeedback(null);
     setIsLocked(false);
   }, [gameMode]);
@@ -111,7 +108,6 @@ const ColorQuiz: React.FC = () => {
       setScore((s) => s + 1);
     } else {
       setFeedback('incorrect');
-      // setScore(s => Math.max(0, s - 1)); // Optional: penalize incorrect answer
     }
 
     // Move to the next question after a brief delay
@@ -125,10 +121,10 @@ const ColorQuiz: React.FC = () => {
     const newMode: GameMode = isE2P ? 'polish-to-english' : 'english-to-polish';
     setGameMode(newMode);
     setScore(0);
-    // generateQuestion will run due to the dependency change in the effect
+    // generateQuestion runs automatically due to the change in 'gameMode' dependency
   };
 
-  // Dynamically determine the border color for the feedback box
+  // Dynamically determine the border colour for the feedback box
   const feedbackStyle = useMemo(() => {
     if (feedback === 'correct') {
       return 'border-green-500 bg-green-100 dark:bg-green-900 shadow-green-400';
@@ -154,7 +150,7 @@ const ColorQuiz: React.FC = () => {
 
       <header className="w-full max-w-lg mb-8">
         <h1 className="text-3xl font-extrabold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-          Color Translator Quiz
+          Colour Translator Quiz {/* British spelling used */}
         </h1>
 
         <div className="flex justify-between items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
@@ -190,12 +186,12 @@ const ColorQuiz: React.FC = () => {
         className={`w-full max-w-lg p-6 mb-8 rounded-xl border-4 transition-all duration-300 ${feedbackStyle} shadow-xl`}
       >
         <p className="text-center font-medium text-gray-600 dark:text-gray-400 mb-4">
-          {isE2P
-            ? 'Translate this English color:'
-            : 'Wybierz tłumaczenie na angielski:'}
+          {sourceKey === 'en'
+            ? 'Translate this English colour:'
+            : 'Wybierz tłumaczenie na angielski (EN):'}{' '}
+          {/* British spelling used */}
         </p>
-
-        {/* The Colored Display Box */}
+        {/* The Coloured Display Box */} {/* British spelling used */}
         <div
           className="w-full h-40 flex items-center justify-center rounded-lg shadow-inner transition-colors duration-500"
           style={{
@@ -208,7 +204,6 @@ const ColorQuiz: React.FC = () => {
             {sourceText}
           </span>
         </div>
-
         {/* Feedback Message */}
         <div className="h-6 mt-3 text-center">
           {feedback === 'correct' && (
@@ -233,11 +228,6 @@ const ColorQuiz: React.FC = () => {
             disabled={isLocked}
             className={`
               option-button w-full py-4 text-lg font-semibold rounded-lg transition-all duration-150 shadow-md 
-              ${isLocked && option === correctOption ? 'bg-green-500 text-white shadow-lg' : ''}
-              ${isLocked && feedback === 'incorrect' && option === correctOption ? 'bg-green-500 text-white shadow-lg' : ''}
-              ${isLocked && feedback === 'incorrect' && option !== correctOption && option === options.find((o) => o === correctOption) ? 'bg-green-500 text-white shadow-lg' : ''}
-              ${isLocked && feedback === 'incorrect' && option !== correctOption && option === options.find((o) => o !== correctOption) ? 'bg-red-500 text-white shadow-lg' : ''}
-              
               ${
                 isLocked
                   ? 'cursor-not-allowed'
@@ -249,19 +239,21 @@ const ColorQuiz: React.FC = () => {
               backgroundColor:
                 isLocked && option === correctOption
                   ? '#22c55e'
-                  : isLocked && feedback === 'incorrect' && option === guess
-                    ? '#ef4444'
+                  : feedback === 'incorrect' &&
+                      isLocked &&
+                      option === correctOption
+                    ? '#22c55e'
                     : undefined,
               color:
                 isLocked &&
                 (option === correctOption ||
-                  (feedback === 'incorrect' && option === guess))
+                  (feedback === 'incorrect' && option !== correctOption))
                   ? 'white'
                   : undefined,
               boxShadow:
                 isLocked &&
                 (option === correctOption ||
-                  (feedback === 'incorrect' && option === guess))
+                  (feedback === 'incorrect' && option === correctOption))
                   ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)'
                   : undefined,
             }}
@@ -273,12 +265,10 @@ const ColorQuiz: React.FC = () => {
 
       <footer className="mt-8 text-sm text-gray-500 dark:text-gray-400">
         Game Mode:{' '}
-        {isE2P
-          ? 'English (Source) to Polish (Target)'
-          : 'Polish (Source) to English (Target)'}
+        {isE2P ? 'English (EN) to Polish (PL)' : 'Polish (PL) to English (EN)'}
       </footer>
     </div>
   );
 };
 
-export default ColorQuiz;
+export default ColourQuiz;

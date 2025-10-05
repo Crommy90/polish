@@ -1,46 +1,13 @@
 [
-  {
-    "en": "Red",
-    "pl": "Czerwony"
-  },
-  {
-    "en": "Blue",
-    "pl": "Niebieski"
-  },
-  {
-    "en": "Green",
-    "pl": "Zielony"
-  },
-  {
-    "en": "Yellow",
-    "pl": "Żółty"
-  },
-  {
-    "en": "Black",
-    "pl": "Czarny"
-  },
-  {
-    "en": "White",
-    "pl": "Biały"
-  },
-  {
-    "en": "Orange",
-    "pl": "Pomarańczowy"
-  },
-  {
-    "en": "Pink",
-    "pl": "Różowy"
-  },
-  {
-    "en": "Purple",
-    "pl": "Fioletowy"
-  },
-  {
-    "en": "Brown",
-    "pl": "Brązowy"
-  },
-  {
-    "en": "Gray",
-    "pl": "Szary"
-  }
+  { "en": "Red", "pl": "Czerwony", "hex": "#ef4444" },
+  { "en": "Blue", "pl": "Niebieski", "hex": "#3b82f6" },
+  { "en": "Green", "pl": "Zielony", "hex": "#22c55e" },
+  { "en": "Yellow", "pl": "Żółty", "hex": "#facc15" },
+  { "en": "Black", "pl": "Czarny", "hex": "#000000" },
+  { "en": "White", "pl": "Biały", "hex": "#f3f4f6" },
+  { "en": "Orange", "pl": "Pomarańczowy", "hex": "#f97316" },
+  { "en": "Pink", "pl": "Różowy", "hex": "#ec4899" },
+  { "en": "Purple", "pl": "Fioletowy", "hex": "#a855f7" },
+  { "en": "Brown", "pl": "Brązowy", "hex": "#78350f" },
+  { "en": "Gray", "pl": "Szary", "hex": "#6b7280" }
 ]
