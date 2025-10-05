@@ -1,6 +1,6 @@
 import type { Translation } from '@/components/common/translation-table';
 import { Card, Heading } from '@radix-ui/themes';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { CardContent, CardHeader } from '../../ui/card';
 import { Answer } from './answer';
 import { AnswerGrid } from './answer-grid';
@@ -86,6 +86,10 @@ export interface AnswerResult {
   correctOption: string;
   isLocked: boolean;
 }
+interface Question<T extends Translation> {
+  question: T;
+  options: string[];
+}
 
 function getBlankResult(): AnswerResult {
   return {
@@ -105,46 +109,45 @@ interface GameProps<T extends Translation> {
 const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} : GameProps<T> ) => {
   
   const [gameMode, setGameMode] = useState<GameMode>(GameMode.EnToPl);
-  const [currentQuestion, setCurrentQuestion] = useState< T | null>(null); 
-  const [options, setOptions] = useState<string[]>([]);
+  const [currentQuestion, setCurrentQuestion] = useState<Question<T> | null>(null); 
   const [result, setResult] = useState<AnswerResult>(getBlankResult());
   const [score, setScore] = useState(0);
   const [recents, setRecents] = useState<string[]>([]); // To track recently used questions
-  const [questionCount, setQuestionCount] = useState(0); // To track the number of questions asked
 
   // Memoized keys and derived values based on game mode
   const { sourceKey, targetKey } = useMemo(() => getKeys(gameMode), [gameMode]);
 
   const isE2P = gameMode === GameMode.EnToPl;
-  const sourceText = currentQuestion ? currentQuestion[sourceKey] : '';
-  const correctOption = currentQuestion ? currentQuestion[targetKey] : '';
+  const sourceText = currentQuestion ? currentQuestion.question[sourceKey] : '';
+  const correctOption = currentQuestion ? currentQuestion.question[targetKey] : '';
 
 
 
   // Function to set up the next question
-  const generateQuestion = () => {
+  const generateQuestion = useCallback(() => {
     // Add the last question to recents, limit to last 5
-    if (currentQuestion && !recents.includes(currentQuestion.en)) {
+    if (currentQuestion && !recents.includes(currentQuestion.question.en)) {
       setRecents((r) => {
-        const updated = [currentQuestion.en, ...r];
+        const updated = [currentQuestion.question.en, ...r];
         return updated.slice(0, 5); // Keep only the last 5
       });
     }
 
     // Generate a new array with the recent questions removed
-    const availableColours = allColours.filter(c => !recents.includes(c.en));
-    const randomIndex = Math.floor(Math.random() * availableColours.length); 
-    const newColour = availableColours[randomIndex] as T; 
-    setCurrentQuestion(newColour);
-    setOptions(generateOptions(allColours, newColour, gameMode, maxOptions));
+    const availableAnswers = allColours.filter(c => !recents.includes(c.en));
+    const randomIndex = Math.floor(Math.random() * availableAnswers.length); 
+    const newAnswer = availableAnswers[randomIndex] as T; 
+    setCurrentQuestion({
+      question: newAnswer,
+      options: generateOptions(allColours, newAnswer, gameMode, maxOptions),
+    });
     setResult(getBlankResult);
-  };
+  }, [allColours, currentQuestion, recents, gameMode, maxOptions]);
 
   // Effect to load the first question or regenerate when mode changes
-  useEffect(() => {
+  if( currentQuestion === null ) {
     generateQuestion();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }
 
   // Handles the user's guess
   const handleGuess = (guess: string) => {
@@ -171,7 +174,7 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
 
     // Move to the next question after a brief delay
     setTimeout(() => {
-      setQuestionCount(questionCount + 1);
+      generateQuestion();
     }, isCorrect ? 1200 : 3000);
   };
 
@@ -187,7 +190,7 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
   if (!currentQuestion)
     return <div className="p-4 text-center">Loading game...</div>;
 
-  const bgColour = gameMode != GameMode.PlToEn ? questionColour(currentQuestion) : undefined;
+  const bgColour = gameMode != GameMode.PlToEn ? questionColour(currentQuestion.question) : undefined;
   const useWhite = bgColour === '#000000' || bgColour === 'black';
 
   return (
@@ -208,11 +211,11 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
           </Heading>
         </CardHeader>
         <CardContent>
-          <QuestionBox sourceText={sourceText} bgColour={gameMode != GameMode.PlToEn ? questionColour(currentQuestion) : undefined  } useWhite={useWhite} />
+          <QuestionBox sourceText={sourceText} bgColour={gameMode != GameMode.PlToEn ? questionColour(currentQuestion.question) : undefined  } useWhite={useWhite} />
           <Answer feedback={result.feedback} correctOption={correctOption} />
 
           {/* OPTIONS GRID */}
-          <AnswerGrid options={options} result={result} handleGuess={handleGuess} />
+          <AnswerGrid options={currentQuestion.options} result={result} handleGuess={handleGuess} />
         </CardContent>
       </Card>
     </div>
