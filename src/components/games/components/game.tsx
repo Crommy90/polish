@@ -91,12 +91,13 @@ interface Question<T extends Translation> {
 }
 
 interface GameProps<T extends Translation> {
-  allColours: T[];
+  allOptions: T[];
   questionColour: (option: T) => string; // Function to get hex colour from option
   maxOptions?: number
+  questionText: string
 }
 
-const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} : GameProps<T> ) => {
+const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, questionText} : GameProps<T> ) => {
   
   const [gameMode, setGameMode] = useState<GameMode>(GameMode.EnToPl);
   const [currentQuestion, setCurrentQuestion] = useState<Question<T> | null>(null); 
@@ -124,15 +125,15 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
     }
 
     // Generate a new array with the recent questions removed
-    const availableAnswers = allColours.filter(c => !recents.includes(c.en));
+    const availableAnswers = allOptions.filter(c => !recents.includes(c.en));
     const randomIndex = Math.floor(Math.random() * availableAnswers.length); 
     const newAnswer = availableAnswers[randomIndex] as T; 
     setCurrentQuestion({
       question: newAnswer,
-      options: generateOptions(allColours, newAnswer, gameMode, maxOptions),
+      options: generateOptions(allOptions, newAnswer, gameMode, maxOptions),
     });
     setResult(undefined);
-  }, [allColours, currentQuestion, recents, gameMode, maxOptions]);
+  }, [allOptions, currentQuestion, recents, gameMode, maxOptions]);
 
   // Effect to load the first question or regenerate when mode changes
   if( currentQuestion === null ) {
@@ -195,7 +196,7 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
       >
         <CardHeader>
           <Heading as="h3" align="center">
-            Translate this colour
+            {questionText}
           </Heading>
         </CardHeader>
         <CardContent>

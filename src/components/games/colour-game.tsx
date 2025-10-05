@@ -1,10 +1,9 @@
 import React from 'react';
 import colours from "../../data/colours.json";
+import type { Translation } from '../common/translation-table';
 import Game from './components/game';
 
-interface Colour {
-  en: string; // English
-  pl: string; // Polish
+interface Colour extends Translation {
   hex: string;
 }
 
@@ -12,7 +11,7 @@ interface Colour {
 const ColourGame: React.FC = () => {
   const allColours : Colour[] = colours;
   return (
-    <Game allColours={allColours} questionColour={(option) => option.hex} />
+    <Game allOptions={allColours} questionColour={(option) => option.hex} questionText='Translate this colour' />
 
   );
 };

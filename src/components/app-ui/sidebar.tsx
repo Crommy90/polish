@@ -7,7 +7,8 @@ const SIDEBAR_LINKS = [
     href: "/"
 
    },
-  { name: "Colour Game", href: "/games/colours" },];
+  { name: "Colour Game", href: "/games/colours" },
+  { name: "Number Game", href: "/games/numbers" },];
 
 export function Sidebar() {
   return (
