@@ -26,6 +26,8 @@ const GameMode = {
 } as const;
 type GameMode = typeof GameMode[keyof typeof GameMode];
 
+
+
 // Define feedback status
 export const FeedbackStatus = {
   Correct: 'Correct',
@@ -40,8 +42,6 @@ const getKeys = (mode: GameMode) => {
     ? { sourceKey: 'en' as keyof Colour, targetKey: 'pl' as keyof Colour }
     : { sourceKey: 'pl' as keyof Colour, targetKey: 'en' as keyof Colour };
 };
-
-// --- 2. UTILITY FUNCTIONS ---
 
 // Simple utility to shuffle an array
 const shuffleArray = <T,>(array: T[]): T[] => {
@@ -59,7 +59,6 @@ const generateOptions = (allColours : Colour[], correctColour: Colour, mode: Gam
     (c) => c.en !== correctColour.en
   ); 
 
-  // Get up to 3 random incorrect answers
   const randomIncorrect = shuffleArray(incorrectCandidates as Colour[]) 
     .map((c) => c[targetKey]);
 
