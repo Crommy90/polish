@@ -168,7 +168,7 @@ const ColourGame: React.FC = () => {
           </Heading>
         </CardHeader>
         <CardContent>
-            <QuestionBox sourceText={sourceText} bgColour={currentQuestion.hex} textColour={currentQuestion.hex} useWhite={currentQuestion.en == "black"} />
+            <QuestionBox sourceText={sourceText} bgColour={gameMode != GameMode.PlToEn ? currentQuestion.hex : undefined  } useWhite={currentQuestion.en == "black"} />
           <Answer feedback={feedback} correctOption={correctOption} />
 
           {/* OPTIONS GRID */}
