@@ -1,3 +1,4 @@
+import '@radix-ui/themes/styles.css';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
 import ReactDOM from 'react-dom/client';
 import './index.css';
