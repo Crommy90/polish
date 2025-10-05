@@ -1,4 +1,3 @@
-import { Button, Text } from '@radix-ui/themes';
 
 interface AnswerGridButtonProps {
   option: string;
@@ -15,14 +14,25 @@ export const AnswerGridButton = (props: AnswerGridButtonProps) => {
        ? 'red'
        : undefined;
         return (
-          <Button
+          <button
             key={props.option}
             onClick={() => props.handleGuess(props.option)}
             disabled={props.isLocked}
-            color={colour}
-            className="w-full"
+            className={`
+              option-button w-full py-4 text-lg font-semibold rounded-lg transition-all duration-150 shadow-md 
+              ${
+                props.isLocked
+                  ? 'cursor-not-allowed'
+                  : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-600 active:bg-gray-200 dark:active:bg-gray-500 shadow-md ring-indigo-500'
+              }
+            `}
+            style={{
+              // Highlight the correct answer briefly when locked, and the incorrect guess red
+              backgroundColor: colour,
+
+            }}
           >
-            <Text size="6">{props.option}</Text>
-          </Button>
+            {props.option}
+          </button>
         );
 };

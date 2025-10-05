@@ -88,9 +88,7 @@ const ColourGame: React.FC = () => {
   const sourceText = currentQuestion ? currentQuestion[sourceKey] : '';
   const correctOption = currentQuestion ? currentQuestion[targetKey] : '';
 
-  // Determine text colour based on the actual colour name (since 'en' is unique)
-  // Keep 'textColor' as it's a common camelCase variable name, but derived from the actual colour.
-  const textColor = currentQuestion?.en === 'Black' ? '#FFFFFF' : '#000000';
+
 
   const allColours : Colour[] = colours;
 
@@ -170,7 +168,7 @@ const ColourGame: React.FC = () => {
           </Heading>
         </CardHeader>
         <CardContent>
-            <QuestionBox sourceText={sourceText} currentQuestion={currentQuestion} textColor={textColor} />
+            <QuestionBox sourceText={sourceText} bgColour={currentQuestion.hex} textColour={currentQuestion.hex} useWhite={currentQuestion.en == "black"} />
           <Answer feedback={feedback} correctOption={correctOption} />
 
           {/* OPTIONS GRID */}
