@@ -1,0 +1,25 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    // Standard recommended rules for ESLint and TypeScript
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+
+    // ⚠️ IMPORTANT: Must be the last extension
+    // This turns off conflicting ESLint formatting rules
+    "prettier"
+  ],
+  "plugins": [
+    // Runs Prettier as a linter rule
+    "prettier"
+  ],
+  "rules": {
+    // ⚙️ Custom/Recommended rules:
+    "prettier/prettier": "error", // Report Prettier mismatches as ESLint errors
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Recommended for React
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ]
+  }
+}

@@ -1,8 +1,7 @@
-import React from "react";
 // Import the JSON data
 import verbs from "../../data/verbs.json";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Table } from "../app-ui/table";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 // Define the type for the verb structure
 interface Verb {
