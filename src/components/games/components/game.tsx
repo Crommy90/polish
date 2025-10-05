@@ -1,6 +1,6 @@
 import type { Translation } from '@/components/common/translation-table';
 import { Card, Heading } from '@radix-ui/themes';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { CardContent, CardHeader } from '../../ui/card';
 import { Answer } from './answer';
 import { AnswerGrid } from './answer-grid';
@@ -109,6 +109,8 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
   const [options, setOptions] = useState<string[]>([]);
   const [result, setResult] = useState<AnswerResult>(getBlankResult());
   const [score, setScore] = useState(0);
+  const [recents, setRecents] = useState<string[]>([]); // To track recently used questions
+  const [questionCount, setQuestionCount] = useState(0); // To track the number of questions asked
 
   // Memoized keys and derived values based on game mode
   const { sourceKey, targetKey } = useMemo(() => getKeys(gameMode), [gameMode]);
@@ -120,19 +122,29 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
 
 
   // Function to set up the next question
-  const generateQuestion = useCallback(() => {
-    // Pick a random colour from the list
-    const randomIndex = Math.floor(Math.random() * allColours.length); 
-    const newColour = allColours[randomIndex] as T; 
+  const generateQuestion = () => {
+    // Add the last question to recents, limit to last 5
+    if (currentQuestion && !recents.includes(currentQuestion.en)) {
+      setRecents((r) => {
+        const updated = [currentQuestion.en, ...r];
+        return updated.slice(0, 5); // Keep only the last 5
+      });
+    }
+
+    // Generate a new array with the recent questions removed
+    const availableColours = allColours.filter(c => !recents.includes(c.en));
+    const randomIndex = Math.floor(Math.random() * availableColours.length); 
+    const newColour = availableColours[randomIndex] as T; 
     setCurrentQuestion(newColour);
     setOptions(generateOptions(allColours, newColour, gameMode, maxOptions));
     setResult(getBlankResult);
-  }, [gameMode, allColours, maxOptions]);
+  };
 
   // Effect to load the first question or regenerate when mode changes
   useEffect(() => {
     generateQuestion();
-  }, [generateQuestion]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Handles the user's guess
   const handleGuess = (guess: string) => {
@@ -159,8 +171,8 @@ const Game= <T extends Translation> ( {allColours, questionColour, maxOptions} :
 
     // Move to the next question after a brief delay
     setTimeout(() => {
-      generateQuestion();
-    }, 1200);
+      setQuestionCount(questionCount + 1);
+    }, isCorrect ? 1200 : 3000);
   };
 
   // Toggle the game mode
