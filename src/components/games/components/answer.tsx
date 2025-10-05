@@ -1,4 +1,4 @@
-import { FeedbackStatus } from "../colour-game";
+import { FeedbackStatus } from "./game";
 
 interface AnswerProps {
   feedback: FeedbackStatus
