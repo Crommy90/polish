@@ -12,7 +12,7 @@ const cn = (...classes: (string | boolean | undefined | null)[]): string => {
 export function Table({ headers, rows, className }: TableProps) {
   return (
     // FIX: Removed overflow-x-auto from the wrapper.
-    <div className={cn("w-max rounded-lg shadow-md", className)}>
+    <div className={cn('w-max print:w-full rounded-lg shadow-md', className)}>
       {/* FIX: Removed min-w-max so the table respects the parent's width */}
       <table className="divide-y divide-gray-200 dark:divide-gray-700 w-full">
         <thead className="bg-red-600 text-white dark:bg-red-800">
@@ -33,8 +33,8 @@ export function Table({ headers, rows, className }: TableProps) {
               key={rowIndex}
               className={
                 rowIndex % 2 === 0
-                  ? "bg-white dark:bg-gray-800"
-                  : "bg-red-50 dark:bg-gray-900"
+                  ? 'bg-white dark:bg-gray-800'
+                  : 'bg-red-50 dark:bg-gray-900'
               }
             >
               {row.map((cell, cellIndex) => (
