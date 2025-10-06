@@ -1,8 +1,8 @@
 [
   {
     "en": "to be",
-    "asp": ["być", "—"],
-    "inf": "być",
+    "per": "—",
+    "imp": "być",
     "pt": {
       "ja": "jestem",
       "ty": "jesteś",
@@ -14,8 +14,8 @@
   },
   {
     "en": "to have",
-    "asp": ["mieć", "—"],
-    "inf": "mieć",
+    "per": "—",
+    "imp": "mieć",
     "pt": {
       "ja": "mam",
       "ty": "masz",
@@ -27,8 +27,8 @@
   },
   {
     "en": "to go (on foot, repeatedly)",
-    "asp": ["chodzić", "pójść"],
-    "inf": "chodzić",
+    "per": "pójść",
+    "imp": "chodzić",
     "pt": {
       "ja": "chodzę",
       "ty": "chodzisz",
@@ -40,8 +40,8 @@
   },
   {
     "en": "to go (by vehicle, repeatedly)",
-    "asp": ["jeździć", "pojechać"],
-    "inf": "jeździć",
+    "per": "pojechać",
+    "imp": "jeździć",
     "pt": {
       "ja": "jeżdżę",
       "ty": "jeździsz",
@@ -53,8 +53,8 @@
   },
   {
     "en": "to go (on foot, now)",
-    "asp": ["iść", "pójść"],
-    "inf": "iść",
+    "per": "pójść",
+    "imp": "iść",
     "pt": {
       "ja": "idę",
       "ty": "idziesz",
@@ -66,8 +66,8 @@
   },
   {
     "en": "to do",
-    "asp": ["robić", "zrobić"],
-    "inf": "robić",
+    "per": "zrobić",
+    "imp": "robić",
     "pt": {
       "ja": "robię",
       "ty": "robisz",
@@ -79,8 +79,8 @@
   },
   {
     "en": "to speak",
-    "asp": ["mówić", "powiedzieć"],
-    "inf": "mówić",
+    "per": "powiedzieć",
+    "imp": "mówić",
     "pt": {
       "ja": "mówię",
       "ty": "mówisz",
@@ -92,8 +92,8 @@
   },
   {
     "en": "to know (a fact)",
-    "asp": ["wiedzieć", "—"],
-    "inf": "wiedzieć",
+    "per": "—",
+    "imp": "wiedzieć",
     "pt": {
       "ja": "wiem",
       "ty": "wiesz",
@@ -105,8 +105,8 @@
   },
   {
     "en": "to eat",
-    "asp": ["jeść", "zjeść"],
-    "inf": "jeść",
+    "per": "zjeść",
+    "imp": "jeść",
     "pt": {
       "ja": "jem",
       "ty": "jesz",
@@ -118,8 +118,8 @@
   },
   {
     "en": "to drink",
-    "asp": ["pić", "wypić"],
-    "inf": "pić",
+    "per": "wypić",
+    "imp": "pić",
     "pt": {
       "ja": "piję",
       "ty": "pijesz",
@@ -131,8 +131,8 @@
   },
   {
     "en": "to write",
-    "asp": ["pisać", "napisać"],
-    "inf": "pisać",
+    "per": "napisać",
+    "imp": "pisać",
     "pt": {
       "ja": "piszę",
       "ty": "piszesz",
@@ -144,8 +144,8 @@
   },
   {
     "en": "to read",
-    "asp": ["czytać", "przeczytać"],
-    "inf": "czytać",
+    "per": "przeczytać",
+    "imp": "czytać",
     "pt": {
       "ja": "czytam",
       "ty": "czytasz",
@@ -157,8 +157,8 @@
   },
   {
     "en": "to see",
-    "asp": ["widzieć", "zobaczyć"],
-    "inf": "widzieć",
+    "per": "zobaczyć",
+    "imp": "widzieć",
     "pt": {
       "ja": "widzę",
       "ty": "widzisz",
@@ -170,8 +170,8 @@
   },
   {
     "en": "to hear",
-    "asp": ["słyszeć", "usłyszeć"],
-    "inf": "słyszeć",
+    "per": "usłyszeć",
+    "imp": "słyszeć",
     "pt": {
       "ja": "słyszę",
       "ty": "słyszysz",
@@ -183,8 +183,8 @@
   },
   {
     "en": "to give",
-    "asp": ["dawać", "dać"],
-    "inf": "dawać",
+    "per": "dać",
+    "imp": "dawać",
     "pt": {
       "ja": "daję",
       "ty": "dajesz",
@@ -196,8 +196,8 @@
   },
   {
     "en": "to take",
-    "asp": ["brać", "wziąć"],
-    "inf": "brać",
+    "per": "wziąć",
+    "imp": "brać",
     "pt": {
       "ja": "biorę",
       "ty": "bierzesz",
@@ -209,8 +209,8 @@
   },
   {
     "en": "to think",
-    "asp": ["myśleć", "pomyśleć"],
-    "inf": "myśleć",
+    "per": "pomyśleć",
+    "imp": "myśleć",
     "pt": {
       "ja": "myślę",
       "ty": "myślisz",
@@ -222,8 +222,8 @@
   },
   {
     "en": "to understand",
-    "asp": ["rozumieć", "zrozumieć"],
-    "inf": "rozumieć",
+    "per": "zrozumieć",
+    "imp": "rozumieć",
     "pt": {
       "ja": "rozumiem",
       "ty": "rozumiesz",
@@ -235,8 +235,8 @@
   },
   {
     "en": "to sleep",
-    "asp": ["spać", "—"],
-    "inf": "spać",
+    "per": "—",
+    "imp": "spać",
     "pt": {
       "ja": "śpię",
       "ty": "śpisz",
@@ -248,8 +248,8 @@
   },
   {
     "en": "to work",
-    "asp": ["pracować", "—"],
-    "inf": "pracować",
+    "per": "—",
+    "imp": "pracować",
     "pt": {
       "ja": "pracuję",
       "ty": "pracujesz",
@@ -261,8 +261,8 @@
   },
   {
     "en": "to help",
-    "asp": ["pomagać", "pomóc"],
-    "inf": "pomagać",
+    "per": "pomóc",
+    "imp": "pomagać",
     "pt": {
       "ja": "pomagam",
       "ty": "pomagasz",
@@ -274,8 +274,8 @@
   },
   {
     "en": "to call",
-    "asp": ["dzwonić", "zadzwonić"],
-    "inf": "dzwonić",
+    "per": "zadzwonić",
+    "imp": "dzwonić",
     "pt": {
       "ja": "dzwonię",
       "ty": "dzwonisz",
@@ -287,8 +287,8 @@
   },
   {
     "en": "to understand",
-    "asp": ["rozumieć", "zrozumieć"],
-    "inf": "rozumieć",
+    "per": "zrozumieć",
+    "imp": "rozumieć",
     "pt": {
       "ja": "rozumiem",
       "ty": "rozumiesz",
@@ -300,8 +300,8 @@
   },
   {
     "en": "to play",
-    "asp": ["grać", "zagrać"],
-    "inf": "grać",
+    "per": "zagrać",
+    "imp": "grać",
     "pt": {
       "ja": "gram",
       "ty": "grasz",
@@ -313,8 +313,8 @@
   },
   {
     "en": "to live",
-    "asp": ["żyć", "—"],
-    "inf": "żyć",
+    "per": "—",
+    "imp": "żyć",
     "pt": {
       "ja": "żyję",
       "ty": "żyjesz",
@@ -326,8 +326,8 @@
   },
   {
     "en": "to come",
-    "asp": ["przyjść", "przyjść"],
-    "inf": "przyjść",
+    "per": "przyjść",
+    "imp": "przyjść",
     "pt": {
       "ja": "przychodzę",
       "ty": "przychodzisz",
@@ -339,8 +339,8 @@
   },
   {
     "en": "to think",
-    "asp": ["myśleć", "pomyśleć"],
-    "inf": "myśleć",
+    "per": "pomyśleć",
+    "imp": "myśleć",
     "pt": {
       "ja": "myślę",
       "ty": "myślisz",
@@ -352,8 +352,8 @@
   },
   {
     "en": "to walk",
-    "asp": ["chodzić", "pójść"],
-    "inf": "chodzić",
+    "per": "pójść",
+    "imp": "chodzić",
     "pt": {
       "ja": "chodzę",
       "ty": "chodzisz",
@@ -365,8 +365,8 @@
   },
   {
     "en": "to ask",
-    "asp": ["pytać", "zapytać"],
-    "inf": "pytać",
+    "per": "zapytać",
+    "imp": "pytać",
     "pt": {
       "ja": "pytam",
       "ty": "pytasz",
@@ -378,8 +378,8 @@
   },
   {
     "en": "to send",
-    "asp": ["wysyłać", "wysłać"],
-    "inf": "wysyłać",
+    "per": "wysłać",
+    "imp": "wysyłać",
     "pt": {
       "ja": "wysyłam",
       "ty": "wysyłasz",
@@ -391,8 +391,8 @@
   },
   {
     "en": "to open",
-    "asp": ["otwierać", "otworzyć"],
-    "inf": "otwierać",
+    "per": "otworzyć",
+    "imp": "otwierać",
     "pt": {
       "ja": "otwieram",
       "ty": "otwierasz",
@@ -404,8 +404,8 @@
   },
   {
     "en": "to close",
-    "asp": ["zamykać", "zamknąć"],
-    "inf": "zamykać",
+    "per": "zamknąć",
+    "imp": "zamykać",
     "pt": {
       "ja": "zamykam",
       "ty": "zamykasz",
@@ -417,8 +417,8 @@
   },
   {
     "en": "to cook",
-    "asp": ["gotować", "ugotować"],
-    "inf": "gotować",
+    "per": "ugotować",
+    "imp": "gotować",
     "pt": {
       "ja": "gotuję",
       "ty": "gotujesz",
@@ -430,8 +430,8 @@
   },
   {
     "en": "to buy",
-    "asp": ["kupować", "kupić"],
-    "inf": "kupować",
+    "per": "kupić",
+    "imp": "kupować",
     "pt": {
       "ja": "kupuję",
       "ty": "kupujesz",
@@ -443,8 +443,8 @@
   },
   {
     "en": "to sell",
-    "asp": ["sprzedawać", "sprzedać"],
-    "inf": "sprzedawać",
+    "per": "sprzedać",
+    "imp": "sprzedawać",
     "pt": {
       "ja": "sprzedaję",
       "ty": "sprzedajesz",
@@ -456,8 +456,8 @@
   },
   {
     "en": "to work",
-    "asp": ["pracować", "—"],
-    "inf": "pracować",
+    "per": "—",
+    "imp": "pracować",
     "pt": {
       "ja": "pracuję",
       "ty": "pracujesz",
@@ -469,8 +469,8 @@
   },
   {
     "en": "to sing",
-    "asp": ["śpiewać", "zaśpiewać"],
-    "inf": "śpiewać",
+    "per": "zaśpiewać",
+    "imp": "śpiewać",
     "pt": {
       "ja": "śpiewam",
       "ty": "śpiewasz",
@@ -482,8 +482,8 @@
   },
   {
     "en": "to dance",
-    "asp": ["tańczyć", "—"],
-    "inf": "tańczyć",
+    "per": "—",
+    "imp": "tańczyć",
     "pt": {
       "ja": "tańczę",
       "ty": "tańczysz",
@@ -495,8 +495,8 @@
   },
   {
     "en": "to sleep",
-    "asp": ["spać", "—"],
-    "inf": "spać",
+    "per": "—",
+    "imp": "spać",
     "pt": {
       "ja": "śpię",
       "ty": "śpisz",
@@ -508,8 +508,8 @@
   },
   {
     "en": "to write",
-    "asp": ["pisać", "napisać"],
-    "inf": "pisać",
+    "per": "napisać",
+    "imp": "pisać",
     "pt": {
       "ja": "piszę",
       "ty": "piszesz",

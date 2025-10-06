@@ -1,4 +1,5 @@
 // Import the JSON data
+import { Flex } from "@radix-ui/themes";
 import verbs from "../../data/verbs.json";
 import { Table } from "../app-ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
@@ -6,8 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 // Define the type for the verb structure
 interface Verb {
   en: string;
-  asp: string[];
-  inf: string;
+  per: string;
+  imp: string;
   pt: {
     [key: string]: string;
   };
@@ -25,26 +26,27 @@ export function CheatSheetCommonVerbs() {
       <CardContent>
         <Table
           headers={[
-            "Polish",
-            "English",
-            "Aspect",
-            "Ja (I)",
-            "Ty (You)",
-            "On/Ona/Ono (He/She/It)",
-            "My (We)",
-            "Wy (You pl.)",
-            "Oni/One (They)",
+            'English',
+            'Polish',
+            'First Person',
+            'Third Person',
           ]}
           rows={verbList.map((d) => [
-            d.inf,
             d.en,
-            d.asp.join(" / "),
-            d.pt.ja,
-            d.pt.ty,
-            d.pt["on/ona/ono"],
-            d.pt.my,
-            d.pt.wy,
-            d.pt["oni/one"],
+            <Flex direction={'column'} gap="2">
+              <span>Imp: {d.imp}</span>
+              <span>Per: {d.per}</span>
+            </Flex>,
+            <Flex direction={'column'} gap="2">
+              <span>Ja {d.pt.ja}</span>
+              <span>Ty {d.pt.ty}</span>
+              <span>On/Ona/Ono {d.pt['on/ona/ono']}</span>
+            </Flex>,
+            <Flex direction={'column'} gap="2">
+              <span>My {d.pt.my}</span>
+              <span>Wy {d.pt.wy}</span>
+              <span>Oni/One {d.pt['oni/one']}</span>
+            </Flex>,
           ])}
           className="mt-6"
         />
