@@ -12,7 +12,7 @@ function RouteComponent() {
     <>
       <PageTitle>Colours Game</PageTitle>
 
-      <Card>
+      <Card className='w-full'>
         <CardContent className="space-y-6">
           <ColourGame />
         </CardContent>
