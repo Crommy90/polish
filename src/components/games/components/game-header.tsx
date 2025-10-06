@@ -1,4 +1,7 @@
 import { Switch } from '@radix-ui/themes';
+import PolishFlag from '../../../assets/polish_flag.svg';
+import UKFlag from '../../../assets/uk_flag.svg';
+
 
 interface GameHeaderProps {
     score: number;
@@ -7,6 +10,8 @@ interface GameHeaderProps {
 }
 
 export const GameHeader = (props: GameHeaderProps) => {
+  const flagOne = props.isE2P ? UKFlag : PolishFlag;
+  const flagTwo = props.isE2P ? PolishFlag : UKFlag;
   return (
     <div className="flex justify-between items-center">
       <p className="text-lg font-semibold">
@@ -14,8 +19,12 @@ export const GameHeader = (props: GameHeaderProps) => {
       </p>
 
       {/* Mode Switcher Button (Radix-style) */}
-      <div className="gap-x-10">
-        <span>{props.isE2P ? '🇬🇧 → 🇵🇱' : '🇵🇱 → 🇬🇧'}</span>
+      <div className="flex gap-x-2 items-center">
+        <div className='flex gap-x-1 items-center'>
+          <img src={flagOne} alt="Flag One" className="inline-block w-6 h-4" />
+          <span>→</span>
+          <img src={flagTwo} alt="Flag Two" className="inline-block w-6 h-4" />
+        </div>
         <Switch checked={props.isE2P} onCheckedChange={props.toggleMode} />
       </div>
     </div>

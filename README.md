@@ -1,3 +1,7 @@
+# Po Polsku!
+
+This is an app to try and help me learn/revise Polish. It contains a lot of AI assisted coding and AI code generation (then cleaned up), 
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

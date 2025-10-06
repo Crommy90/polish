@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import PolishFlag from "../../assets/polish_flag.svg";
+
 
 // --- SIDEBAR DATA AND COMPONENT ---
 const SIDEBAR_LINKS = [
@@ -15,7 +17,22 @@ export function Sidebar() {
     // Sidebar styling: Fixed width on md screens and up, hidden on mobile.
     <div className="hidden md:block w-64 flex-shrink-0 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 h-full overflow-y-auto p-4 shadow-xl print:hidden">
       <h3 className="text-xl font-bold mb-6 pt-2 text-red-600 dark:text-red-400 border-b pb-2">
-        Po Polsku!
+        Po Polsku{' '}
+        <img
+          src={PolishFlag}
+          alt="Polish Flag"
+          className="inline-block w-6 h-4 ml-2 -mt-1"
+        />
+        <img
+          src={PolishFlag}
+          alt="Polish Flag"
+          className="inline-block w-6 h-4 ml-2 -mt-1"
+        />
+        <img
+          src={PolishFlag}
+          alt="Polish Flag"
+          className="inline-block w-6 h-4 ml-2 -mt-1"
+        />
       </h3>
       <nav className="space-y-2">
         {SIDEBAR_LINKS.map((link) => (
