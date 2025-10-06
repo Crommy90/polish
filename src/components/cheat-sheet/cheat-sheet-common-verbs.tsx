@@ -17,6 +17,7 @@ interface Verb {
 export function CheatSheetCommonVerbs() {
   // Type the imported data
   const verbList: Verb[] = verbs;
+  verbList.sort((a, b) => a.en.localeCompare(b.en));
 
   return (
     <Card className="w-max max-w-full">

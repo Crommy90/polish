@@ -2,6 +2,7 @@ import { PageTitle } from "@/components/app-ui/page-title";
 import { SectionTitle } from "@/components/app-ui/section-title";
 import { CheatSheetCases } from "@/components/cheat-sheet/cheat-sheet-cases";
 import { CheatSheetColours } from "@/components/cheat-sheet/cheat-sheet-colours";
+import { CheatSheetCommonAdjectives } from "@/components/cheat-sheet/cheat-sheet-common-adjectives";
 import { CheatSheetCommonVerbs } from "@/components/cheat-sheet/cheat-sheet-common-verbs";
 import { CheatSheetVerbs } from "@/components/cheat-sheet/cheat-sheet-verbs";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -11,9 +12,6 @@ export const Route = createFileRoute("/")({
   component: () => <Content />,
 });
 
-// --- REUSABLE COMPONENTS ---
-
-// --- MAIN APPLICATION COMPONENT ---
 
 function Content() {
   return (
@@ -42,6 +40,14 @@ function Content() {
         </CardHeader>
         <CardContent className="w-max max-w-full">
           <CheatSheetCommonVerbs />
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <SectionTitle>Adjective List</SectionTitle>
+        </CardHeader>
+        <CardContent className="w-max max-w-full">
+          <CheatSheetCommonAdjectives />
         </CardContent>
       </Card>
       <Card>

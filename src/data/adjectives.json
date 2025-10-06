@@ -1,0 +1,296 @@
+[
+  {
+    "en": "good",
+    "en_a": "bad",
+    "pl": "dobry",
+    "pl_a": "zły"
+  },
+  {
+    "en": "big",
+    "en_a": "small",
+    "pl": "duży",
+    "pl_a": "mały"
+  },
+  {
+    "en": "new",
+    "en_a": "old",
+    "pl": "nowy",
+    "pl_a": "stary"
+  },
+  {
+    "en": "young",
+    "en_a": "old",
+    "pl": "młody",
+    "pl_a": "stary"
+  },
+  {
+    "en": "long",
+    "en_a": "short",
+    "pl": "długi",
+    "pl_a": "krótki"
+  },
+  {
+    "en": "tall",
+    "en_a": "short",
+    "pl": "wysoki",
+    "pl_a": "niski"
+  },
+  {
+    "en": "wide",
+    "en_a": "narrow",
+    "pl": "szeroki",
+    "pl_a": "wąski"
+  },
+  {
+    "en": "fat",
+    "en_a": "thin",
+    "pl": "gruby",
+    "pl_a": "chudy"
+  },
+  {
+    "en": "heavy",
+    "en_a": "light",
+    "pl": "ciężki",
+    "pl_a": "lekki"
+  },
+  {
+    "en": "warm",
+    "en_a": "cold",
+    "pl": "ciepły",
+    "pl_a": "zimny"
+  },
+  {
+    "en": "hot",
+    "en_a": "cold",
+    "pl": "gorący",
+    "pl_a": "zimny"
+  },
+  {
+    "en": "easy",
+    "en_a": "difficult",
+    "pl": "łatwy",
+    "pl_a": "trudny"
+  },
+  {
+    "en": "fast",
+    "en_a": "slow",
+    "pl": "szybki",
+    "pl_a": "wolny"
+  },
+  {
+    "en": "strong",
+    "en_a": "weak",
+    "pl": "silny",
+    "pl_a": "słaby"
+  },
+  {
+    "en": "clean",
+    "en_a": "dirty",
+    "pl": "czysty",
+    "pl_a": "brudny"
+  },
+  {
+    "en": "beautiful",
+    "en_a": "ugly",
+    "pl": "piękny",
+    "pl_a": "brzydki"
+  },
+  {
+    "en": "happy",
+    "en_a": "sad",
+    "pl": "szczęśliwy",
+    "pl_a": "smutny"
+  },
+  {
+    "en": "rich",
+    "en_a": "poor",
+    "pl": "bogaty",
+    "pl_a": "biedny"
+  },
+  {
+    "en": "healthy",
+    "en_a": "sick",
+    "pl": "zdrowy",
+    "pl_a": "chory"
+  },
+  {
+    "en": "bright",
+    "en_a": "dark",
+    "pl": "jasny",
+    "pl_a": "ciemny"
+  },
+  {
+    "en": "quiet",
+    "en_a": "loud",
+    "pl": "cichy",
+    "pl_a": "głośny"
+  },
+  {
+    "en": "cheap",
+    "en_a": "expensive",
+    "pl": "tani",
+    "pl_a": "drogi"
+  },
+  {
+    "en": "full",
+    "en_a": "empty",
+    "pl": "pełny",
+    "pl_a": "pusty"
+  },
+  {
+    "en": "near",
+    "en_a": "far",
+    "pl": "bliski",
+    "pl_a": "daleki"
+  },
+  {
+    "en": "true",
+    "en_a": "false",
+    "pl": "prawdziwy",
+    "pl_a": "fałszywy"
+  },
+  {
+    "en": "open",
+    "en_a": "closed",
+    "pl": "otwarty",
+    "pl_a": "zamknięty"
+  },
+  {
+    "en": "ready",
+    "en_a": "unready",
+    "pl": "gotowy",
+    "pl_a": "niegotowy"
+  },
+  {
+    "en": "tasty",
+    "en_a": "tasteless",
+    "pl": "smaczny",
+    "pl_a": "niesmaczny"
+  },
+  {
+    "en": "safe",
+    "en_a": "dangerous",
+    "pl": "bezpieczny",
+    "pl_a": "niebezpieczny"
+  },
+  {
+    "en": "simple",
+    "en_a": "complicated",
+    "pl": "prosty",
+    "pl_a": "skomplikowany"
+  },
+  {
+    "en": "hard",
+    "en_a": "soft",
+    "pl": "twardy",
+    "pl_a": "miękki"
+  },
+  {
+    "en": "left",
+    "en_a": "right",
+    "pl": "lewy",
+    "pl_a": "prawy"
+  },
+  {
+    "en": "upper",
+    "en_a": "lower",
+    "pl": "górny",
+    "pl_a": "dolny"
+  },
+  {
+    "en": "dry",
+    "en_a": "wet",
+    "pl": "suchy",
+    "pl_a": "mokry"
+  },
+  {
+    "en": "late",
+    "en_a": "early",
+    "pl": "późny",
+    "pl_a": "wcześniejszy"
+  },
+  {
+    "en": "important",
+    "en_a": "unimportant",
+    "pl": "ważny",
+    "pl_a": "nieważny"
+  },
+  {
+    "en": "suitable",
+    "en_a": "unsuitable",
+    "pl": "odpowiedni",
+    "pl_a": "niewłaściwy"
+  },
+  {
+    "en": "pure",
+    "en_a": "polluted",
+    "pl": "czysty",
+    "pl_a": "zanieczyszczony"
+  },
+  {
+    "en": "deep",
+    "en_a": "shallow",
+    "pl": "głęboki",
+    "pl_a": "płytki"
+  },
+  {
+    "en": "satisfied",
+    "en_a": "unsatisfied",
+    "pl": "zadowolony",
+    "pl_a": "niezadowolony"
+  },
+  {
+    "en": "possible",
+    "en_a": "impossible",
+    "pl": "możliwy",
+    "pl_a": "niemożliwy"
+  },
+  {
+    "en": "careful",
+    "en_a": "careless",
+    "pl": "ostrożny",
+    "pl_a": "nieostrożny"
+  },
+  {
+    "en": "fresh",
+    "en_a": "stale",
+    "pl": "świeży",
+    "pl_a": "czerstwy"
+  },
+  {
+    "en": "clever",
+    "en_a": "stupid",
+    "pl": "bystry",
+    "pl_a": "głupi"
+  },
+  {
+    "en": "honest",
+    "en_a": "dishonest",
+    "pl": "uczciwy",
+    "pl_a": "nieuczciwy"
+  },
+  {
+    "en": "brave",
+    "en_a": "cowardly",
+    "pl": "dzielny",
+    "pl_a": "tchórzliwy"
+  },
+  {
+    "en": "polite",
+    "en_a": "rude",
+    "pl": "uprzejmy",
+    "pl_a": "nieuprzejmy"
+  },
+  {
+    "en": "calm",
+    "en_a": "nervous",
+    "pl": "spokojny",
+    "pl_a": "nerwowy"
+  },
+  {
+    "en": "busy",
+    "en_a": "free",
+    "pl": "zajęty",
+    "pl_a": "wolny"
+  }
+]
