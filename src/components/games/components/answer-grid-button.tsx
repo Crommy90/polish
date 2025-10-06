@@ -19,7 +19,7 @@ export const AnswerGridButton = (props: AnswerGridButtonProps) => {
             onClick={() => props.handleGuess(props.option)}
             disabled={props.result && props.result.isLocked}
             className={`
-              option-button w-full py-4 text-lg font-semibold rounded-lg transition-all duration-150 shadow-md 
+              option-button w-full p-4 text-lg font-semibold rounded-lg transition-all duration-150 shadow-md h-24 capitalize flex items-center justify-center
               ${
                 props.result && props.result.isLocked
                   ? 'cursor-not-allowed'
@@ -31,7 +31,7 @@ export const AnswerGridButton = (props: AnswerGridButtonProps) => {
               backgroundColor: colour,
             }}
           >
-            {props.option}
+            <span>{props.option}</span>
           </button>
         );
 };
