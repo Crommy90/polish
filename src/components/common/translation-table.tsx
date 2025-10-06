@@ -22,7 +22,6 @@ export function TranslationTable(props: TranslationTableProps) {
         <Table
           headers={["Polish", "English"]}
           rows={props.translations.map((d) => [d.pl, d.en])}
-          className="mt-6"
         />
       </CardContent>
     </Card>

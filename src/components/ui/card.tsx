@@ -1,13 +1,14 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { Flex, Heading, type FlexProps, type HeadingProps } from "@radix-ui/themes"
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "bg-card text-card-foreground flex flex-col gap-4 rounded-xl border py-6 shadow-sm",
         className
       )}
       {...props}
@@ -28,14 +29,14 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+function CardTitle({ className, ...props }: HeadingProps) {
   return (
-    <div
-      data-slot="card-title"
-      className={cn("leading-none font-semibold", className)}
+    <Heading
+      as="h3"
       {...props}
+      className={cn('leading-none font-semibold', className)}
     />
-  )
+  );
 }
 
 function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
@@ -61,14 +62,16 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function CardContent({ className, ...props }: React.ComponentProps<"div">) {
+function CardContent({ className, ...props }: FlexProps) {
   return (
-    <div
+    <Flex
       data-slot="card-content"
-      className={cn("px-6", className)}
+      className={cn('px-6', className)}
       {...props}
+      direction={'column'}
+      gap={'gap' in props ? props['gap'] : '4'}
     />
-  )
+  );
 }
 
 function CardFooter({ className, ...props }: React.ComponentProps<"div">) {

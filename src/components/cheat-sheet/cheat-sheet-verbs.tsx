@@ -139,7 +139,6 @@ export function CheatSheetVerbs() {
                 {d.example}
               </code>,
             ])}
-            className="mt-6"
           />
         </CardContent>
       </Card>
@@ -201,7 +200,6 @@ export function CheatSheetVerbs() {
               d.robić.split(" / ")[0],
               d.robić.split(" / ")[0].replace("robi", "zrobi"), // Simple replacement for demonstration
             ])}
-            className="mt-6"
           />
         </CardContent>
       </Card>

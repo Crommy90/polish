@@ -207,13 +207,13 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
         <CardTitle>{name}</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 p-3 bg-red-50 dark:bg-gray-900 rounded-lg">
-          <p className="text-md text-red-700 dark:text-red-300 font-medium sm:pr-4">
+        <div>
+          <p className="text-red-700 dark:text-red-300">
             Question: {question}
           </p>
         </div>
 
-        <p className="text-gray-700 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+        <p>
           Usage: {usage}
         </p>
 
@@ -221,7 +221,7 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
         <Table
           headers={['Number', 'Masculine', 'Feminine', 'Neuter']}
           rows={[singularRow, pluralRow]}
-          className="my-8 w-max"
+          className="w-max"
         />
 
         <Heading as="h4">Example (Adjective + Noun)</Heading>
@@ -232,7 +232,7 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
             ['Nominative', example.nom_sg, example.nom_pl],
             [name, example.case_sg, example.case_pl],
           ]}
-          className="my-8 w-max"
+          className="w-max"
         />
 
         {special_rules && special_rules.length > 0 && (
@@ -272,7 +272,7 @@ export function CheatSheetCases() {
           Special Rules for consonant changes!
         </p>
 
-        <div className="mt-8 space-y-6">
+        <div className="space-y-6">
           {ALL_CASE_DATA.map((caseData) => (
             <CaseSection key={caseData.id} data={caseData} />
           ))}
