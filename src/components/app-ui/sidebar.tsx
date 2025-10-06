@@ -11,7 +11,8 @@ const SIDEBAR_LINKS = [
 
    },
   { name: "Colour Game", href: "/games/colours" },
-  { name: "Number Game", href: "/games/numbers" },];
+  { name: "Number Game", href: "/games/numbers" },
+  { name: "Adjective Game", href: "/games/adjectives" },];
 
 export function Sidebar() {
   // State to manage the open/closed status of the sidebar

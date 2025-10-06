@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GamesNumbersRouteImport } from './routes/games/numbers'
 import { Route as GamesColoursRouteImport } from './routes/games/colours'
+import { Route as GamesAdjectivesRouteImport } from './routes/games/adjectives'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,33 +29,47 @@ const GamesColoursRoute = GamesColoursRouteImport.update({
   path: '/games/colours',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GamesAdjectivesRoute = GamesAdjectivesRouteImport.update({
+  id: '/games/adjectives',
+  path: '/games/adjectives',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/games/colours' | '/games/numbers'
+  fullPaths: '/' | '/games/adjectives' | '/games/colours' | '/games/numbers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/games/colours' | '/games/numbers'
-  id: '__root__' | '/' | '/games/colours' | '/games/numbers'
+  to: '/' | '/games/adjectives' | '/games/colours' | '/games/numbers'
+  id:
+    | '__root__'
+    | '/'
+    | '/games/adjectives'
+    | '/games/colours'
+    | '/games/numbers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GamesAdjectivesRoute: typeof GamesAdjectivesRoute
   GamesColoursRoute: typeof GamesColoursRoute
   GamesNumbersRoute: typeof GamesNumbersRoute
 }
@@ -82,11 +97,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GamesColoursRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/games/adjectives': {
+      id: '/games/adjectives'
+      path: '/games/adjectives'
+      fullPath: '/games/adjectives'
+      preLoaderRoute: typeof GamesAdjectivesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GamesAdjectivesRoute: GamesAdjectivesRoute,
   GamesColoursRoute: GamesColoursRoute,
   GamesNumbersRoute: GamesNumbersRoute,
 }
