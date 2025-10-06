@@ -41,8 +41,6 @@ jobs:
       # IMPORTANT: Pass the repository name to Vite using an environment variable
       - name: Build project
         run: npm run build
-        env:
-          VITE_APP_BASE_URL: '/polish/' # ⚠️ REPLACE with your repo name!
 
       # Uploads the build artifact (the 'dist' folder)
       - name: Upload artifact
