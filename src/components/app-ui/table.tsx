@@ -39,7 +39,6 @@ export function Table({ headers, rows, className }: TableProps) {
                 {row.map((cell, cellIndex) => (
                   <td
                     key={cellIndex}
-                    // FIX: Removed whitespace-nowrap to allow content to wrap
                     className="px-4 py-3 text-sm"
                   >
                     {cell}

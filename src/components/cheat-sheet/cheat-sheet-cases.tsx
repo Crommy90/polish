@@ -1,4 +1,6 @@
+import { Card, Heading } from "@radix-ui/themes";
 import { Table } from "../app-ui/table";
+import { CardContent, CardHeader, CardTitle } from "../ui/card";
 
 // V. Noun Declension Data (Individual Case Sections)
 const ALL_CASE_DATA = [
@@ -8,7 +10,7 @@ const ALL_CASE_DATA = [
     name: "Nominative (Mianownik)",
     question: "Kto? Co? (Who? What?)",
     usage:
-      "The default form. Used for the **subject** of a sentence and for naming things. The form you find in a dictionary.",
+      "The default form. Used for the subject of a sentence and for naming things. The form you find in a dictionary.",
     singular: {
       masc: "∅ (Zero ending) / -a",
       fem: "-a / -i",
@@ -31,7 +33,7 @@ const ALL_CASE_DATA = [
     name: "Genitive (Dopełniacz)",
     question: "Kogo? Czego? (Whom? Of what?)",
     usage:
-      "Used for **negation** (*nie ma...* - there is no...), **possession**, **quantity** (numbers, measures), and after prepositions like *do, bez, od* (to, without, from).",
+      "Used for negation (*nie ma...* - there is no...), possession, quantity (numbers, measures), and after prepositions like *do, bez, od* (to, without, from).",
     singular: { masc: "-a (Anim.) / -u (Inanim.)", fem: "-y / -i", neut: "-a" },
     plural: {
       masc_pers: "-ów",
@@ -44,8 +46,8 @@ const ALL_CASE_DATA = [
       case_pl: "tych nowych kobiet",
     },
     special_rules: [
-      "Masculine inanimate nouns: Shorter nouns often take **-u** (*domu*), while longer nouns take **-a** (*samochodu*).",
-      "Feminine/Neuter Plural: Often uses a **Zero Ending (∅)**. A vowel (e.g., *a* or *e*) is sometimes inserted into the stem to break up a difficult consonant cluster (*okno* → *okien*, *kobieta* → *kobiet*).",
+      "Masculine inanimate nouns: Shorter nouns often take -u (*domu*), while longer nouns take -a (*samochodu*).",
+      "Feminine/Neuter Plural: Often uses a Zero Ending (∅). A vowel (e.g., *a* or *e*) is sometimes inserted into the stem to break up a difficult consonant cluster (*okno* → *okien*, *kobieta* → *kobiet*).",
     ],
   },
   // DATIVE (Celownik)
@@ -54,7 +56,7 @@ const ALL_CASE_DATA = [
     name: "Dative (Celownik)",
     question: "Komu? Czemu? (To whom? To what?)",
     usage:
-      "Used for the **indirect object**, showing the recipient of an action or the benefiting party (giving, sending, helping).",
+      "Used for the indirect object, showing the recipient of an action or the benefiting party (giving, sending, helping).",
     singular: { masc: "-owi / -u", fem: "-ie / -y", neut: "-u" },
     plural: { masc_pers: "-om", non_masc_pers: "-om" },
     example: {
@@ -64,8 +66,8 @@ const ALL_CASE_DATA = [
       case_pl: "tym nowym panom",
     },
     special_rules: [
-      "Masculine/Neuter Singular: **-u** is common for shorter words, **-owi** for longer. Nouns ending in **-k, -g, -ch** take **-owi** (e.g., *człowiek* → *człowiekowi*).",
-      "Feminine Singular: Nouns ending in hard consonants often change to **-ie** (e.g., *kobieta* → *kobiecie*), which usually forces palatalization (consonant softening) of the stem.",
+      "Masculine/Neuter Singular: -u is common for shorter words, -owi for longer. Nouns ending in -k, -g, -ch take -owi (e.g., *człowiek* → *człowiekowi*).",
+      "Feminine Singular: Nouns ending in hard consonants often change to -ie (e.g., *kobieta* → *kobiecie*), which usually forces palatalization (consonant softening) of the stem.",
     ],
   },
   // ACCUSATIVE (Biernik)
@@ -74,7 +76,7 @@ const ALL_CASE_DATA = [
     name: "Accusative (Biernik)",
     question: "Kogo? Co? (Whom? What?)",
     usage:
-      "Used for the **direct object** of a transitive verb (what is being seen, eaten, etc.), and after prepositions like *przez, na, o* (through, on, about/at).",
+      "Used for the direct object of a transitive verb (what is being seen, eaten, etc.), and after prepositions like *przez, na, o* (through, on, about/at).",
     singular: {
       masc: "Nom. (Inanim.) / Gen. (Anim.)",
       fem: "-ę / -ą",
@@ -91,8 +93,8 @@ const ALL_CASE_DATA = [
       case_pl: "te nowe domy",
     }, // M. Inanim. Sg is Nom.
     special_rules: [
-      "**Masculine Animate Singular (People/Animals)**: The form is identical to the **Genitive** (e.g., *widzę tego nowego pana*).",
-      "**Masculine Personal Plural (Groups of Men)**: The form is identical to the **Genitive Plural** (e.g., *widzę tych nowych panów*).",
+      "Masculine Animate Singular (People/Animals): The form is identical to the Genitive (e.g., *widzę tego nowego pana*).",
+      "Masculine Personal Plural (Groups of Men): The form is identical to the Genitive Plural (e.g., *widzę tych nowych panów*).",
       "This is the only case where the ending depends on the noun's animacy (animate vs. inanimate).",
     ],
   },
@@ -102,7 +104,7 @@ const ALL_CASE_DATA = [
     name: "Instrumental (Narzędnik)",
     question: "Z kim? Z czym? (With whom? With what?)",
     usage:
-      "Used to indicate the **instrument** or **means** of an action. Always used after prepositions like *z* (with), *przed* (in front of), *nad* (above).",
+      "Used to indicate the instrument or means of an action. Always used after prepositions like *z* (with), *przed* (in front of), *nad* (above).",
     singular: { masc: "-em", fem: "-ą", neut: "-em" },
     plural: { masc_pers: "-ami", non_masc_pers: "-ami" },
     example: {
@@ -112,7 +114,7 @@ const ALL_CASE_DATA = [
       case_pl: "z tymi nowymi domami",
     },
     special_rules: [
-      "This is one of the most regular cases. The adjectival ending is consistently **-ym** or **-im** in singular, and **-ymi** or **-imi** in plural.",
+      "This is one of the most regular cases. The adjectival ending is consistently -ym or -im in singular, and -ymi or -imi in plural.",
     ],
   },
   // LOCATIVE (Miejscownik)
@@ -121,7 +123,7 @@ const ALL_CASE_DATA = [
     name: "Locative (Miejscownik)",
     question: "O kim? O czym? (About whom? About what?)",
     usage:
-      "Used to specify **location** (in, on, at, by). **Crucially, it ALWAYS requires a preposition** (w, na, o, przy).",
+      "Used to specify location (in, on, at, by). Crucially, it ALWAYS requires a preposition (w, na, o, przy).",
     singular: { masc: "-e / -u", fem: "-e / -i", neut: "-e / -u" },
     plural: { masc_pers: "-ach", non_masc_pers: "-ach" },
     example: {
@@ -131,9 +133,9 @@ const ALL_CASE_DATA = [
       case_pl: "o tych nowych książkach",
     }, // Using 'książka' to show the -ce rule
     special_rules: [
-      "**Masc. & Fem. Singular Consonant Changes (Palatalization)**: Nouns ending in **-k, -g** change to **-ce, -dze** when taking the **-e** ending (e.g., *książka* → *książce*, *noga* → *nodze*).",
-      "**Masc. & Neut. Singular:** Nouns ending in soft consonants or **ch, cz, rz, ż, sz** take **-u** (e.g., *zamek* → *zamku*), avoiding palatalization and consonant change.",
-      "Feminine nouns ending in **-i** (like *pani*) take the simple **-i** ending (e.g., *o pani*).",
+      "Masc. & Fem. Singular Consonant Changes (Palatalization): Nouns ending in -k, -g change to -ce, -dze when taking the -e ending (e.g., *książka* → *książce*, *noga* → *nodze*).",
+      "Masc. & Neut. Singular: Nouns ending in soft consonants or ch, cz, rz, ż, sz take -u (e.g., *zamek* → *zamku*), avoiding palatalization and consonant change.",
+      "Feminine nouns ending in -i (like *pani*) take the simple -i ending (e.g., *o pani*).",
     ],
   },
   // VOCATIVE (Wołacz)
@@ -142,7 +144,7 @@ const ALL_CASE_DATA = [
     name: "Vocative (Wołacz)",
     question: "(Addressing)",
     usage:
-      "Used for **direct address** or calling out to someone. In modern Polish, the Plural form is always Nominative, and the Singular is often replaced by Nominative.",
+      "Used for direct address or calling out to someone. In modern Polish, the Plural form is always Nominative, and the Singular is often replaced by Nominative.",
     singular: { masc: "-ie / -u / -o", fem: "-o / -i", neut: "Nom." },
     plural: { masc_pers: "Nom.", non_masc_pers: "Nom." },
     example: {
@@ -152,9 +154,9 @@ const ALL_CASE_DATA = [
       case_pl: "o, nowi panowie!",
     }, // Using 'pan' to show 'panie'
     special_rules: [
-      "**Masculine Singular:** The ending **-ie** is common but causes palatalization (e.g., *brat* → *bracie*).",
-      "The ending **-u** is used after **-k, -g** (e.g., *kolega* → *kolego!*).",
-      "**Plural:** The plural Vocative is **always** identical to the Nominative form for all genders and is simple to use.",
+      "Masculine Singular: The ending -ie is common but causes palatalization (e.g., *brat* → *bracie*).",
+      "The ending -u is used after -k, -g (e.g., *kolega* → *kolego!*).",
+      "Plural: The plural Vocative is always identical to the Nominative form for all genders and is simple to use.",
     ],
   },
 ];
@@ -173,7 +175,6 @@ const EndingsCode: React.FC<{ children: string }> = ({ children }) => (
 
 const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
   const {
-    id,
     name,
     question,
     usage,
@@ -201,83 +202,74 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
   ];
 
   return (
-    <div className="mb-10 p-5 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
-      <h2 id={id}>{name}</h2>
+    <Card>
+      <CardHeader>
+        <CardTitle>{name}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 p-3 bg-red-50 dark:bg-gray-900 rounded-lg">
+          <p className="text-md text-red-700 dark:text-red-300 font-medium sm:pr-4">
+            Question: {question}
+          </p>
+        </div>
 
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 p-3 bg-red-50 dark:bg-gray-900 rounded-lg">
-        <p className="text-md text-red-700 dark:text-red-300 font-medium sm:pr-4">
-          **Question:** {question}
+        <p className="text-gray-700 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+          Usage: {usage}
         </p>
-      </div>
 
-      <p className="text-gray-700 dark:text-gray-300 mb-6 text-sm leading-relaxed">
-        **Usage:** {usage}
-      </p>
+        <Heading as="h4">Endings</Heading>
+        <Table
+          headers={['Number', 'Masculine', 'Feminine', 'Neuter']}
+          rows={[singularRow, pluralRow]}
+          className="my-8"
+        />
 
-      {/* BLOCK 1: ENDINGS SUFFIXES TABLE */}
-      <h4 className="font-semibold text-xl mb-3 text-red-700 dark:text-red-400">
-        1. Endings Suffixes Cheat Sheet
-      </h4>
-      <Table
-        headers={["Number", "Masculine", "Feminine", "Neuter"]}
-        rows={[singularRow, pluralRow]}
-        className="mb-8"
-      />
+        <Heading as="h4">Example (Adjective + Noun)</Heading>
 
-      {/* BLOCK 2: DECLENSION EXAMPLE TABLE */}
-      <h4 className="font-semibold text-xl mb-3 text-red-700 dark:text-red-400">
-        2. Declension Example (Adjective + Noun)
-      </h4>
-      <Table
-        headers={["Form", "Singular Example", "Plural Example"]}
-        rows={[
-          ["Nominative", example.nom_sg, example.nom_pl],
-          [name, example.case_sg, example.case_pl],
-        ]}
-        className="mb-8"
-      />
+        <Table
+          headers={['Form', 'Singular Example', 'Plural Example']}
+          rows={[
+            ['Nominative', example.nom_sg, example.nom_pl],
+            [name, example.case_sg, example.case_pl],
+          ]}
+          className="my-8"
+        />
 
-      {/* BLOCK 3: SPECIAL RULES LIST */}
-      {special_rules && special_rules.length > 0 && (
-        <>
-          <h4 className="font-semibold text-xl mb-3 text-red-700 dark:text-red-400">
-            3. Special Rules & Consonant Changes
-          </h4>
-          <ul className="list-disc ml-6 text-gray-700 dark:text-gray-300 text-sm space-y-2 p-4 bg-gray-100 dark:bg-gray-900 rounded-lg border border-gray-300 dark:border-gray-700">
-            {special_rules.map((rule, i) => (
-              <li key={i}>
-                {rule.split("**").map((part, index) =>
-                  index % 2 === 1 ? (
-                    <span
-                      key={index}
-                      className="font-bold text-red-600 dark:text-red-300"
-                    >
-                      {part}
-                    </span>
-                  ) : (
-                    part
-                  )
-                )}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-    </div>
+        {special_rules && special_rules.length > 0 && (
+          <>
+            <Heading as="h4">Special Rules & Consonant Changes</Heading>
+            <ul className="list-disc list-inside">
+              {special_rules.map((rule, i) => (
+                <li key={i}>
+                  {rule.split('').map((part, index) =>
+                    index % 2 === 1 ? (
+                      <span
+                        key={index}
+                      >
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    )
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </CardContent>
+    </Card>
   );
 };
 
 export function CheatSheetCases() {
   return (
     <>
-      {/* V. Noun Declension Section - NEW COMPREHENSIVE SECTION */}
-      <section>
-        <h2 id="noun-declension">V. Noun Declension (The 7 Cases)</h2>
-        <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p>
           Polish nouns, adjectives, and pronouns change their form (decline)
           based on their function in the sentence, categorized by the following
           seven cases. Study the tables below, paying close attention to the
-          **Special Rules** for consonant changes!
+          Special Rules for consonant changes!
         </p>
 
         <div className="mt-8 space-y-6">
@@ -285,7 +277,6 @@ export function CheatSheetCases() {
             <CaseSection key={caseData.id} data={caseData} />
           ))}
         </div>
-      </section>
     </>
   );
 }

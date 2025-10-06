@@ -24,7 +24,7 @@ function Content() {
         <CardHeader>
           <SectionTitle>Verbs</SectionTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="w-max max-w-full">
           <CheatSheetVerbs />
         </CardContent>
       </Card>
@@ -32,7 +32,7 @@ function Content() {
         <CardHeader>
           <SectionTitle>Cases</SectionTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="w-max max-w-full">
           <CheatSheetCases />
         </CardContent>
       </Card>
@@ -40,7 +40,7 @@ function Content() {
         <CardHeader>
           <SectionTitle>Verb List</SectionTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="w-max max-w-full">
           <CheatSheetCommonVerbs />
         </CardContent>
       </Card>
@@ -48,7 +48,7 @@ function Content() {
         <CardHeader>
           <SectionTitle>Colours</SectionTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="w-max max-w-full">
           <CheatSheetColours />
         </CardContent>
       </Card>

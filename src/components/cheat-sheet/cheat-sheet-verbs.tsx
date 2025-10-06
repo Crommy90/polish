@@ -121,7 +121,7 @@ export function CheatSheetVerbs() {
         <CardHeader>
           <CardTitle>Verb Aspect: Perfective vs. Imperfective</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="w-max max-w-full">
           <p>
             Polish verbs come in pairs (Imperfective and Perfective) to specify
             whether an action is ongoing or completed.
@@ -149,7 +149,7 @@ export function CheatSheetVerbs() {
         <CardHeader>
           <CardTitle>Present Tense Conjugations (IPF Verbs Only)</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="w-max max-w-full">
           <p>
             The Present Tense can **only** be formed using **Imperfective**
             verbs. Below are the consolidated conjugations for the three most
@@ -183,7 +183,7 @@ export function CheatSheetVerbs() {
         <CardHeader>
           <CardTitle>Past Tense Conjugations (IPF & PF)</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="w-max max-w-full">
           <Table
             headers={[
               "Person",
@@ -211,7 +211,7 @@ export function CheatSheetVerbs() {
         <CardHeader>
           <CardTitle>Future Tense Conjugations</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="w-max max-w-full">
           <h3>1. Simple Future Tense (Perfective Verbs)</h3>
           <p className="text-gray-700 dark:text-gray-300 mb-2">
             Used for a **completed** action in the future. Formed by conjugating

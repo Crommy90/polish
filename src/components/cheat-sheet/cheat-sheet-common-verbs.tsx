@@ -18,7 +18,7 @@ export function CheatSheetCommonVerbs() {
   const verbList: Verb[] = verbs;
 
   return (
-    <Card>
+    <Card className="w-max max-w-full">
       <CardHeader>
         <CardTitle>Common Verbs</CardTitle>
       </CardHeader>
