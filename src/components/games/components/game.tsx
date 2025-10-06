@@ -73,8 +73,6 @@ const generateOptions = <T extends Translation> (
   // Combine and shuffle the options
   const options = shuffleArray([...randomIncorrect, correctAnswer]);
 
-  // Then sort alphabetially
-  options.sort((a, b) =>  a.localeCompare(b));
 
   return options;
 };
