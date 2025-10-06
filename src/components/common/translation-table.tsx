@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Table } from "../app-ui/table";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 // Define the type for the verb structure
 export interface Translation {
@@ -7,14 +7,14 @@ export interface Translation {
   pl: string;
 }
 
-interface TranslationTableProps {
+interface TranslationTableProps extends React.ComponentProps<"div"> {
   title: string;
   translations: Translation[];
 }
 
 export function TranslationTable(props: TranslationTableProps) {
   return (
-    <Card>
+    <Card {...props}>
       <CardHeader>
         <CardTitle>{props.title}</CardTitle>
       </CardHeader>

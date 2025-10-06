@@ -8,5 +8,5 @@ export function CheatSheetColours() {
   // Type the imported data
   const translations: Translation[] = colours;
 
-  return <TranslationTable title="Colours" translations={translations} />;
+  return <TranslationTable title="Colours" translations={translations} className="w-full" />;
 }

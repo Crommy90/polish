@@ -221,7 +221,7 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
         <Table
           headers={['Number', 'Masculine', 'Feminine', 'Neuter']}
           rows={[singularRow, pluralRow]}
-          className="my-8"
+          className="my-8 w-max"
         />
 
         <Heading as="h4">Example (Adjective + Noun)</Heading>
@@ -232,7 +232,7 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
             ['Nominative', example.nom_sg, example.nom_pl],
             [name, example.case_sg, example.case_pl],
           ]}
-          className="my-8"
+          className="my-8 w-max"
         />
 
         {special_rules && special_rules.length > 0 && (
