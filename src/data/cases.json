@@ -1,155 +1,113 @@
 [
   {
-    "label": "Nominative Singular",
+    "label": "Nominative",
     "case": "nom",
     "plural": false,
-    "male": [
-      "Ten miły pan",
-      "Ten nowy dom"
-    ],
+    "male": ["Ten miły pan", "Ten nowy dom"],
     "female": "Ta duża butelka",
     "neuter": "To stare okno"
   },
   {
-    "label": "Genitive Singular",
+    "label": "Nominative (pl.)",
+    "case": "nom",
+    "plural": true,
+    "male": ["Ci mili panowie", "Te nowe domy"],
+    "female": "Te duże butelki",
+    "neuter": "Te stare okna"
+  },
+  {
+    "label": "Genitive",
     "case": "gen",
     "plural": false,
-    "male": [
-     "Tego miłego pana",
-      "Tego nowego domu"
-    ],
+    "male": ["Tego miłego pana", "Tego nowego domu"],
     "female": "Tej dużej butelki",
     "neuter": "Tego starego okna"
   },
   {
-    "label": "Dative Singular",
-    "case": "dat",
-    "plural": false,
-    "male": [
-     "Temu miłemu panu",
-      "Temu nowemu domowi"
-    ],
-    "female": "Tej dużej butelce",
-    "neuter": "Temu staremu oknu"
-  },
-  {
-    "label": "Accusative Singular",
-    "case": "acc",
-    "plural": false,
-    "male": [
-     "Tego miłego pana",
-      "Ten nowy dom"
-    ],
-    "female": "Tę dużą butelkę",
-    "neuter": "To stare okno"
-  },
-  {
-    "label": "Instrumental Singular",
-    "case": "ins",
-    "plural": false,
-    "male": [
-     "Tym miłym panem",
-      "Tym nowym domem"
-    ],
-    "female": "Tą dużą butelką",
-    "neuter": "Tym starym oknem"
-  },
-  {
-    "label": "Locative Singular",
-    "case": "loc",
-    "plural": false,
-    "male": [
-     "Tym miłym panu",
-      "Tym nowym domu"
-    ],
-    "female": "Tej dużej butelce",
-    "neuter": "Tym starym oknie"
-  },
-  {
-    "label": "Vocative Singular",
-    "case": "voc",
-    "plural": false,
-    "male": [
-     "Ten miły panie!",
-      "Ten nowy dom!"
-    ],
-    "female": "Ta duża butelko!",
-    "neuter": "To stare okno!"
-  },
-  {
-    "label": "Nominative Plura",
-    "case": "nom",
-    "plural": true,
-    "male": [
-     "Ci mili panowie",
-      "Te nowe domy"
-    ],
-    "female": "Te duże butelki",
-    "neuter": "Te stare okna"
-  },
-  {
-    "label": "Genitive Plural",
+    "label": "Genitive (pl.)",
     "case": "gen",
     "plural": true,
-    "male": [
-     "Tych miłych panów",
-      "Tych nowych domów"
-    ],
+    "male": ["Tych miłych panów", "Tych nowych domów"],
     "female": "Tych dużych butelek",
     "neuter": "Tych starych okien"
   },
   {
-    "label": "Dative Plural",
+    "label": "Dative (pl.)",
     "case": "dat",
     "plural": true,
-    "male": [
-     "Tym miłym panom",
-      "Tym nowym domom"
-    ],
+    "male": ["Tym miłym panom", "Tym nowym domom"],
     "female": "Tym dużym butelkom",
     "neuter": "Tym starym oknom"
   },
   {
-    "label": "Accusative Plural",
+    "label": "Dative",
+    "case": "dat",
+    "plural": false,
+    "male": ["Temu miłemu panu", "Temu nowemu domowi"],
+    "female": "Tej dużej butelce",
+    "neuter": "Temu staremu oknu"
+  },
+  {
+    "label": "Accusative",
+    "case": "acc",
+    "plural": false,
+    "male": ["Tego miłego pana", "Ten nowy dom"],
+    "female": "Tę dużą butelkę",
+    "neuter": "To stare okno"
+  },
+  {
+    "label": "Accusative (pl.)",
     "case": "acc",
     "plural": true,
-    "male": [
-     "Tych miłych panów",
-      "Te nowe domy"
-    ],
+    "male": ["Tych miłych panów", "Te nowe domy"],
     "female": "Te duże butelki",
     "neuter": "Te stare okna"
   },
   {
-    "label": "Instrumental Plural",
+    "label": "Instrumental",
+    "case": "ins",
+    "plural": false,
+    "male": ["Tym miłym panem", "Tym nowym domem"],
+    "female": "Tą dużą butelką",
+    "neuter": "Tym starym oknem"
+  },
+  {
+    "label": "Instrumental (pl.)",
     "case": "ins",
     "plural": true,
-    "male": [
-     "Tymi miłymi panami",
-      "Tymi nowymi domami"
-    ],
+    "male": ["Tymi miłymi panami", "Tymi nowymi domami"],
     "female": "Tymi dużymi butelkami",
     "neuter": "Tymi starymi oknami"
   },
   {
-    "label": "Locative Plural",
+    "label": "Locative",
+    "case": "loc",
+    "plural": false,
+    "male": ["Tym miłym panu", "Tym nowym domu"],
+    "female": "Tej dużej butelce",
+    "neuter": "Tym starym oknie"
+  },
+  {
+    "label": "Locative (pl.)",
     "case": "loc",
     "plural": true,
-    "male": [
-     "Tych miłych panach",
-      "Tych nowych domach"
-    ],
+    "male": ["Tych miłych panach", "Tych nowych domach"],
     "female": "Tych dużych butelkach",
     "neuter": "Tych starych oknach"
   },
   {
-    "label": "Vocative Plural",
+    "label": "Vocative",
+    "case": "voc",
+    "plural": false,
+    "male": ["Ten miły panie!", "Ten nowy dom!"],
+    "female": "Ta duża butelko!",
+    "neuter": "To stare okno!"
+  },
+  {
+    "label": "Vocative (pl.)",
     "case": "voc",
     "plural": true,
-    "male": [
-     "Panowie!",
-      "Nowe domy!"
-    ],
+    "male": ["Panowie!", "Nowe domy!"],
     "female": "Duże butelki!",
     "neuter": "Stare okna!"
   }
