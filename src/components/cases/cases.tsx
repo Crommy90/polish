@@ -268,11 +268,9 @@ export function Cases() {
     <>
       <CheatSheetCases />
 
-      <div className="space-y-6">
         {ALL_CASE_DATA.map((caseData) => (
           <CaseSection key={caseData.id} data={caseData} />
         ))}
-      </div>
     </>
   );
 }

@@ -1,0 +1,64 @@
+[
+  {
+    "case": "nom",
+    "name": "Nominative",
+    "uses": [
+      "Subject of the sentence (e.g., **Kot** pije mleko / **The cat** drinks milk).",
+      "Predicate nominative with the verb 'być' (to be) (e.g., To jest **dom** / This is a **house**)."
+    ]
+  },
+  {
+    "case": "gen",
+    "name": "Genitive",
+    "uses": [
+      "Expressing possession (e.g., samochód **ojca** / **father's** car).",
+      "Negation: Object of a negated verb (e.g., Nie mam **czasu** / I don't have **time**).",
+      "Expressing quantity, including numbers greater than 5 (e.g., dużo **pieniędzy** / lots of **money**).",
+      "After certain prepositions (e.g., bez, dla, od, u, do)."
+    ]
+  },
+  {
+    "case": "dat",
+    "name": "Dative",
+    "uses": [
+      "Indirect object (the recipient of an action) (e.g., Daję **bratu** książkę / I give a book **to my brother**).",
+      "Used with verbs that express giving, helping, or showing.",
+      "After certain prepositions (e.g., dzięki, przeciwko)."
+    ]
+  },
+  {
+    "case": "acc",
+    "name": "Accusative",
+    "uses": [
+      "Direct object of the verb (what or whom the action directly affects) (e.g., Widzę **samochód** / I see **a car**).",
+      "Expressing movement toward or duration of time (e.g., Idę **przez las** / I go **through the forest**).",
+      "After certain prepositions (e.g., przez, na, o, pod, nad, za, w, po, mimo) when indicating motion or time."
+    ]
+  },
+  {
+    "case": "ins",
+    "name": "Instrumental",
+    "uses": [
+      "Indicating the instrument or means by which an action is performed (e.g., Piszę **długopisem** / I write **with a pen**).",
+      "Expressing accompaniment (e.g., Idę **z psem** / I go **with a dog**).",
+      "Used with the verb 'być' (to be) when describing a permanent state or profession (e.g., Jestem **nauczycielem** / I am **a teacher**).",
+      "After certain prepositions (e.g., z, przed, nad, pod)."
+    ]
+  },
+  {
+    "case": "loc",
+    "name": "Locative",
+    "uses": [
+      "Indicating location (where something is) (e.g., Jestem **w domu** / I am **in the house**).",
+      "Always requires a preceding preposition (e.g., o, w, na, przy, po)."
+    ]
+  },
+  {
+    "case": "voc",
+    "name": "Vocative",
+    "uses": [
+      "Used for direct address or calling out to someone or something (e.g., **Kasiu**! Gdzie jesteś? / **Kasia**! Where are you?).",
+      "This case is grammatically optional and rarely used in modern colloquial Polish, except for certain fixed phrases and names."
+    ]
+  }
+]
