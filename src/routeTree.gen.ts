@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ListsVerbsRouteImport } from './routes/lists/verbs'
+import { Route as ListsCasesRouteImport } from './routes/lists/cases'
 import { Route as GamesNumbersRouteImport } from './routes/games/numbers'
 import { Route as GamesColoursRouteImport } from './routes/games/colours'
 import { Route as GamesAdjectivesRouteImport } from './routes/games/adjectives'
@@ -17,6 +19,16 @@ import { Route as GamesAdjectivesRouteImport } from './routes/games/adjectives'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ListsVerbsRoute = ListsVerbsRouteImport.update({
+  id: '/lists/verbs',
+  path: '/lists/verbs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ListsCasesRoute = ListsCasesRouteImport.update({
+  id: '/lists/cases',
+  path: '/lists/cases',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GamesNumbersRoute = GamesNumbersRouteImport.update({
@@ -40,12 +52,16 @@ export interface FileRoutesByFullPath {
   '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
+  '/lists/cases': typeof ListsCasesRoute
+  '/lists/verbs': typeof ListsVerbsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
+  '/lists/cases': typeof ListsCasesRoute
+  '/lists/verbs': typeof ListsVerbsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,18 +69,34 @@ export interface FileRoutesById {
   '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
+  '/lists/cases': typeof ListsCasesRoute
+  '/lists/verbs': typeof ListsVerbsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/games/adjectives' | '/games/colours' | '/games/numbers'
+  fullPaths:
+    | '/'
+    | '/games/adjectives'
+    | '/games/colours'
+    | '/games/numbers'
+    | '/lists/cases'
+    | '/lists/verbs'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/games/adjectives' | '/games/colours' | '/games/numbers'
+  to:
+    | '/'
+    | '/games/adjectives'
+    | '/games/colours'
+    | '/games/numbers'
+    | '/lists/cases'
+    | '/lists/verbs'
   id:
     | '__root__'
     | '/'
     | '/games/adjectives'
     | '/games/colours'
     | '/games/numbers'
+    | '/lists/cases'
+    | '/lists/verbs'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -72,6 +104,8 @@ export interface RootRouteChildren {
   GamesAdjectivesRoute: typeof GamesAdjectivesRoute
   GamesColoursRoute: typeof GamesColoursRoute
   GamesNumbersRoute: typeof GamesNumbersRoute
+  ListsCasesRoute: typeof ListsCasesRoute
+  ListsVerbsRoute: typeof ListsVerbsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -81,6 +115,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lists/verbs': {
+      id: '/lists/verbs'
+      path: '/lists/verbs'
+      fullPath: '/lists/verbs'
+      preLoaderRoute: typeof ListsVerbsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lists/cases': {
+      id: '/lists/cases'
+      path: '/lists/cases'
+      fullPath: '/lists/cases'
+      preLoaderRoute: typeof ListsCasesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/games/numbers': {
@@ -112,6 +160,8 @@ const rootRouteChildren: RootRouteChildren = {
   GamesAdjectivesRoute: GamesAdjectivesRoute,
   GamesColoursRoute: GamesColoursRoute,
   GamesNumbersRoute: GamesNumbersRoute,
+  ListsCasesRoute: ListsCasesRoute,
+  ListsVerbsRoute: ListsVerbsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

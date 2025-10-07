@@ -10,6 +10,8 @@ const SIDEBAR_LINKS = [
     href: "/"
 
    },
+  { name: "Cases", href: "/lists/cases" },
+  { name: "Verbs", href: "/lists/verbs" },
   { name: "Colour Game", href: "/games/colours" },
   { name: "Number Game", href: "/games/numbers" },
   { name: "Adjective Game", href: "/games/adjectives" },];

@@ -6,16 +6,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 // I. Aspect Data
 const ASPECT_DATA = [
   {
-    aspect: "Imperfective (IPF)",
+    aspect: "Imperfective",
     meaning: "Ongoing, repeated, habitual, or incomplete action (Process).",
-    usage: "Used to form the **Present** tense.",
+    usage: "Used to form the Present tense.",
     example: "robić (to do)",
   },
   {
-    aspect: "Perfective (PF)",
+    aspect: "Perfective",
     meaning:
       "A completed action, a single event, or the result of an action (Completion).",
-    usage: "Used to form the **Simple Future** tense.",
+    usage: "Used to form the Simple Future tense.",
     example: "zrobić (to have done)",
   },
 ];
@@ -150,10 +150,10 @@ export function CheatSheetVerbs() {
         </CardHeader>
         <CardContent className="w-max max-w-full">
           <p>
-            The Present Tense can **only** be formed using **Imperfective**
+            The Present Tense can only be formed using Imperfective
             verbs. Below are the consolidated conjugations for the three most
-            common stem endings: **-ować** (Pattern 1), **-ać** (Pattern 2), and
-            **-ić** (Pattern 3).
+            common stem endings: -ować (Pattern 1), -ać (Pattern 2), and
+            -ić (Pattern 3).
           </p>
 
           <Table
@@ -212,8 +212,8 @@ export function CheatSheetVerbs() {
         <CardContent className="w-max max-w-full">
           <h3>1. Simple Future Tense (Perfective Verbs)</h3>
           <p className="text-gray-700 dark:text-gray-300 mb-2">
-            Used for a **completed** action in the future. Formed by conjugating
-            the **Perfective (PF)** verb using the **Present Tense** endings.
+            Used for a completed action in the future. Formed by conjugating
+            the Perfective (PF) verb using the Present Tense endings.
           </p>
           <div className="p-3 bg-red-50 dark:bg-gray-900 rounded-md text-sm">
             <p>
@@ -226,8 +226,8 @@ export function CheatSheetVerbs() {
 
           <h3>2. Compound Future Tense (Imperfective Verbs)</h3>
           <p className="text-gray-700 dark:text-gray-300 mb-2">
-            Used for an **ongoing** or **unspecified** action in the future.
-            Formed using **być** (to be) + Imperfective verb.
+            Used for an ongoing or unspecified action in the future.
+            Formed using być (to be) + Imperfective verb.
           </p>
           <p className="mb-2 text-sm italic text-gray-600 dark:text-gray-400">
             <span className="font-bold">Formula:</span> Future of *Być* +
