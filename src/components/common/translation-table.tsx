@@ -1,12 +1,11 @@
-import type { ReactNode } from "react";
 import { type SubSectionProps } from "../app-ui/subsection";
 import { Table } from "../app-ui/table";
 
 // Define the type for the verb structure
 export interface Translation {
-  en: ReactNode;
-  pl: ReactNode;
-  notes?: ReactNode;
+  en: string;
+  pl: string;
+  notes?: string;
 }
 
 interface TranslationTableProps extends SubSectionProps {

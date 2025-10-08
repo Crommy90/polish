@@ -1,8 +1,11 @@
+import sportsJson from "../../data/sports.json";
 import { Section } from "../app-ui/section";
 import { SectionTitle } from "../app-ui/section-title";
-import { TranslationTable } from "../common/translation-table";
+import { TranslationTable, type Translation } from "../common/translation-table";
+
 
 export function Sports() {
+  const sportsList : Translation[] = sportsJson;
   return (
     <>
       <Section className="w-max max-w-full">
@@ -34,18 +37,7 @@ export function Sports() {
       <Section className="w-max max-w-full">
         <SectionTitle>Sports</SectionTitle>
         <TranslationTable
-            translations={[
-                { pl: 'Piłka nożna', en: 'Football' },
-                { pl: 'Koszykówka', en: 'Basketball' },
-                { pl: 'Siatkówka', en: 'Volleyball' },
-                { pl: 'Tenis', en: 'Tennis' },
-                { pl: 'Pływanie', en: 'Swimming' },
-                { pl: 'Biegi', en: 'Running' },
-                { pl: 'Kolarstwo', en: 'Cycling' },
-                { pl: 'Jazda konna', en: 'Horse riding' },
-                { pl: 'Gimnastyka', en: 'Gymnastics' },
-                { pl: 'Hokej', en: 'Hockey' },
-            ]}
+            translations={sportsList}
         />
       </Section>
     </>

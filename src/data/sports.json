@@ -1,0 +1,12 @@
+[
+  { "pl": "Piłka nożna", "en": "Football" },
+  { "pl": "Koszykówka", "en": "Basketball" },
+  { "pl": "Siatkówka", "en": "Volleyball" },
+  { "pl": "Tenis", "en": "Tennis" },
+  { "pl": "Pływanie", "en": "Swimming" },
+  { "pl": "Biegi", "en": "Running" },
+  { "pl": "Kolarstwo", "en": "Cycling" },
+  { "pl": "Jazda konna", "en": "Horse riding" },
+  { "pl": "Gimnastyka", "en": "Gymnastics" },
+  { "pl": "Hokej", "en": "Hockey" }
+]

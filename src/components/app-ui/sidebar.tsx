@@ -29,6 +29,7 @@ const SIDEBAR_LINKS: SidebarLink[] = [
   { name: 'Colour Game', href: '/games/colours' },
   { name: 'Number Game', href: '/games/numbers' },
   { name: 'Adjective Game', href: '/games/adjectives' },
+  { name: 'Sports Game', href: '/games/sports' },
 ];
 
 export function Sidebar() {
