@@ -12,7 +12,7 @@ const cn = (...classes: (string | boolean | undefined | null)[]): string => {
 export function Table({ headers, rows, className }: TableProps) {
   return (
     <div className={cn('rounded-lg shadow-md', className)}>
-      <div className="w-full max-w-full overflow-x-auto print:overflow-visible print:w-full">
+      <div className="w-full max-w-full overflow-x-auto print:overflow-visible print:w-full py-4">
         <table className="w-max min-w-full divide-y divide-gray-200 dark:divide-gray-700 print:w-full">
           <thead className="bg-red-600 text-white dark:bg-red-800">
             <tr>

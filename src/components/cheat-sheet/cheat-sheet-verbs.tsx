@@ -1,5 +1,6 @@
+import { SubSection } from "../app-ui/subsection";
+import { SubSectionTitle } from "../app-ui/subsection-title";
 import { Table } from "../app-ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 // --- DATA STRUCTURES ---
 
@@ -117,11 +118,11 @@ export function CheatSheetVerbs() {
   return (
     <>
       {/* I. Aspect Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Verb Aspect: Perfective vs. Imperfective</CardTitle>
-        </CardHeader>
-        <CardContent className="w-max max-w-full">
+      <SubSection className="w-max max-w-full">
+        
+          <SubSectionTitle>Verb Aspect: Perfective vs. Imperfective</SubSectionTitle>
+        
+        
           <p>
             Polish verbs come in pairs (Imperfective and Perfective) to specify
             whether an action is ongoing or completed.
@@ -140,15 +141,15 @@ export function CheatSheetVerbs() {
               </code>,
             ])}
           />
-        </CardContent>
-      </Card>
+        
+      </SubSection>
 
       {/* II. Present Tense Section (Consolidated) */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Present Tense Conjugations (IPF Verbs Only)</CardTitle>
-        </CardHeader>
-        <CardContent className="w-max max-w-full">
+      <SubSection className="w-max max-w-full">
+        
+          <SubSectionTitle>Present Tense Conjugations (IPF Verbs Only)</SubSectionTitle>
+        
+        
           <p>
             The Present Tense can only be formed using Imperfective
             verbs. Below are the consolidated conjugations for the three most
@@ -174,15 +175,15 @@ export function CheatSheetVerbs() {
               d.mówić,
             ])}
           />
-        </CardContent>
-      </Card>
+        
+      </SubSection>
 
       {/* III. Past Tense Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Past Tense Conjugations (IPF & PF)</CardTitle>
-        </CardHeader>
-        <CardContent className="w-max max-w-full">
+      <SubSection className="w-max max-w-full">
+        
+          <SubSectionTitle>Past Tense Conjugations (IPF & PF)</SubSectionTitle>
+        
+        
           <Table
             headers={[
               "Person",
@@ -201,15 +202,15 @@ export function CheatSheetVerbs() {
               d.robić.split(" / ")[0].replace("robi", "zrobi"), // Simple replacement for demonstration
             ])}
           />
-        </CardContent>
-      </Card>
+        
+      </SubSection>
 
       {/* IV. Future Tense Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Future Tense Conjugations</CardTitle>
-        </CardHeader>
-        <CardContent className="w-max max-w-full">
+      <SubSection className="w-max max-w-full">
+        
+          <SubSectionTitle>Future Tense Conjugations</SubSectionTitle>
+        
+        
           <h3>1. Simple Future Tense (Perfective Verbs)</h3>
           <p className="text-gray-700 dark:text-gray-300 mb-2">
             Used for a completed action in the future. Formed by conjugating
@@ -243,8 +244,8 @@ export function CheatSheetVerbs() {
               be doing - past tense form, M/F)
             </p>
           </div>
-        </CardContent>
-      </Card>
+        
+      </SubSection>
     </>
   );
 }

@@ -140,13 +140,13 @@ body {
   }
 
   h1 {
-    @apply text-4xl font-extrabold tracking-tight text-balance;
+    @apply pb-2 text-4xl font-extrabold tracking-tight text-balance;
   }
   h2 {
-    @apply border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+    @apply pb-2 text-3xl font-semibold tracking-tight first:mt-0;
   }
   h3 {
-    @apply font-semibold tracking-tight;
+    @apply pb-2 font-semibold tracking-tight;
   }
 }
 
@@ -154,6 +154,12 @@ body {
   /* Hide elements like the header, navigation, and footer */
   .no-print {
     display: none !important;
+  }
+
+  p, h1, h2, h3, h4, span, div {
+    /* Set a specific print unit (pt is traditional for print) */
+    font-size: 10pt !important; 
+    line-height: 1.2 !important; /* Adjust line height for denser print */
   }
 
   /* Optional: Reset margins and padding for content */

@@ -1,7 +1,8 @@
 // Import the JSON data
 import adjectives from "../../data/adjectives.json";
+import { SubSection } from "../app-ui/subsection";
+import { SubSectionTitle } from "../app-ui/subsection-title";
 import { Table } from "../app-ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 // Define the type for the verb structure
 interface Adjective {
@@ -18,27 +19,13 @@ export function CheatSheetCommonAdjectives() {
 
 
   return (
-    <Card className="w-max max-w-full">
-      <CardHeader>
-        <CardTitle>Common Adjectives</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Table
-          headers={[
-            'English',
-            'Polish',
-            'English',
-            'Polish',
-          ]}
-          rows={adjectiveList.map((d) => [
-            d.en,
-            d.pl,
-            d.en_a,
-            d.pl_a,
-          ])}
-          className="mt-6"
-        />
-      </CardContent>
-    </Card>
+    <SubSection className="w-max max-w-full">
+      <SubSectionTitle>Common Adjectives</SubSectionTitle>
+      <Table
+        headers={['English', 'Polish', 'English', 'Polish']}
+        rows={adjectiveList.map((d) => [d.en, d.pl, d.en_a, d.pl_a])}
+        className="mt-6"
+      />
+    </SubSection>
   );
 }

@@ -1,3 +1,5 @@
-export function PageTitle({ children }: { children?: React.ReactNode }) {
-  return <h1>{children}</h1>;
+import React from "react";
+
+export function PageTitle(props: React.ComponentProps<"h1">) {
+  return <h1 {...props} />;
 }

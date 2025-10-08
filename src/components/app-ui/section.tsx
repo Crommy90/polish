@@ -1,12 +1,8 @@
-export function Section({
-  children,
-  ...props
-}: {
-  props?: React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLElement>,
-    HTMLElement
-  >;
-  children?: React.ReactNode;
-}) {
-  return <section {...props}>{children}</section>;
+type SectionProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+>;
+
+export function Section(props?: SectionProps) {
+  return <section {...props} />;
 }

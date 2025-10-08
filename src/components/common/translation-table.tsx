@@ -1,5 +1,6 @@
+import { SubSection, type SubSectionProps } from "../app-ui/subsection";
+import { SubSectionTitle } from "../app-ui/subsection-title";
 import { Table } from "../app-ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 // Define the type for the verb structure
 export interface Translation {
@@ -7,23 +8,19 @@ export interface Translation {
   pl: string;
 }
 
-interface TranslationTableProps extends React.ComponentProps<"div"> {
+interface TranslationTableProps extends SubSectionProps {
   title: string;
   translations: Translation[];
 }
 
 export function TranslationTable(props: TranslationTableProps) {
   return (
-    <Card {...props}>
-      <CardHeader>
-        <CardTitle>{props.title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Table
-          headers={["Polish", "English"]}
-          rows={props.translations.map((d) => [d.pl, d.en])}
-        />
-      </CardContent>
-    </Card>
+    <SubSection {...props}>
+      <SubSectionTitle>{props.title}</SubSectionTitle>
+      <Table
+        headers={['Polish', 'English']}
+        rows={props.translations.map((d) => [d.pl, d.en])}
+      />
+    </SubSection>
   );
 }
