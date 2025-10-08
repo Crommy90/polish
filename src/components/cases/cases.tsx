@@ -1,7 +1,8 @@
-import { Card, Heading } from "@radix-ui/themes";
+import { Heading, Separator } from "@radix-ui/themes";
+import { SubSection } from "../app-ui/subsection";
+import { SubSectionTitle } from "../app-ui/subsection-title";
 import { Table } from "../app-ui/table";
 import { CheatSheetCases } from "../cheat-sheet/cheat-sheet-cases";
-import { CardContent, CardHeader, CardTitle } from "../ui/card";
 // V. Noun Declension Data (Individual Case Sections)
 const ALL_CASE_DATA = [
   // NOMINATIVE (Mianownik)
@@ -202,63 +203,49 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
   ];
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{name}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div>
-          <p className="text-red-700 dark:text-red-300">
-            Question: {question}
-          </p>
-        </div>
+    <SubSection className="w-max max-w-full">
+      <SubSectionTitle>{name}</SubSectionTitle>
+      <div>
+        <p className="text-red-700 dark:text-red-300">Question: {question}</p>
+      </div>
 
-        <p>
-          Usage: {usage}
-        </p>
+      <p>Usage: {usage}</p>
 
-        <Heading as="h4">Endings</Heading>
-        <Table
-          headers={['Number', 'Masculine', 'Feminine', 'Neuter']}
-          rows={[singularRow, pluralRow]}
-          className="w-max"
-        />
+      <Heading as="h4">Endings</Heading>
+      <Table
+        headers={['Number', 'Masculine', 'Feminine', 'Neuter']}
+        rows={[singularRow, pluralRow]}
+        className="w-max"
+      />
 
-        <Heading as="h4">Example (Adjective + Noun)</Heading>
+      <Heading as="h4">Example (Adjective + Noun)</Heading>
 
-        <Table
-          headers={['Form', 'Singular Example', 'Plural Example']}
-          rows={[
-            ['Nominative', example.nom_sg, example.nom_pl],
-            [name, example.case_sg, example.case_pl],
-          ]}
-          className="w-max"
-        />
+      <Table
+        headers={['Form', 'Singular Example', 'Plural Example']}
+        rows={[
+          ['Nominative', example.nom_sg, example.nom_pl],
+          [name, example.case_sg, example.case_pl],
+        ]}
+        className="w-max"
+      />
 
-        {special_rules && special_rules.length > 0 && (
-          <>
-            <Heading as="h4">Special Rules & Consonant Changes</Heading>
-            <ul className="list-disc list-inside">
-              {special_rules.map((rule, i) => (
-                <li key={i}>
-                  {rule.split('').map((part, index) =>
-                    index % 2 === 1 ? (
-                      <span
-                        key={index}
-                      >
-                        {part}
-                      </span>
-                    ) : (
-                      part
-                    )
+      {special_rules && special_rules.length > 0 && (
+        <>
+          <Heading as="h4">Special Rules & Consonant Changes</Heading>
+          <ul className="list-disc list-inside">
+            {special_rules.map((rule, i) => (
+              <li key={i}>
+                {rule
+                  .split('')
+                  .map((part, index) =>
+                    index % 2 === 1 ? <span key={index}>{part}</span> : part
                   )}
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </CardContent>
-    </Card>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </SubSection>
   );
 };
 
@@ -269,7 +256,7 @@ export function Cases() {
       <CheatSheetCases />
 
         {ALL_CASE_DATA.map((caseData) => (
-          <CaseSection key={caseData.id} data={caseData} />
+          <><CaseSection key={caseData.id} data={caseData} /><Separator size={"4"} /> </>
         ))}
     </>
   );

@@ -1,9 +1,8 @@
 import { PageTitle } from '@/components/app-ui/page-title';
+import { Section } from '@/components/app-ui/section';
 import { SectionTitle } from '@/components/app-ui/section-title';
 import { CheatSheetCommonVerbs } from '@/components/cheat-sheet/cheat-sheet-common-verbs';
 import { CheatSheetVerbs } from '@/components/cheat-sheet/cheat-sheet-verbs';
-import { CardContent, CardHeader } from '@/components/ui/card';
-import { Card } from '@radix-ui/themes';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/lists/verbs')({
@@ -15,22 +14,14 @@ function RouteComponent() {
     <>
       <PageTitle>Verbs</PageTitle>
 
-      <Card>
-        <CardHeader>
+      <Section>
           <SectionTitle>Overview</SectionTitle>
-        </CardHeader>
-        <CardContent className="w-max max-w-full">
           <CheatSheetVerbs />
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
+      </Section>
+      <Section>
           <SectionTitle>Verb List</SectionTitle>
-        </CardHeader>
-        <CardContent className="w-max max-w-full">
           <CheatSheetCommonVerbs />
-        </CardContent>
-      </Card>
+      </Section>
     </>
   );
 }
