@@ -1,20 +1,33 @@
+import { Separator } from "@radix-ui/themes";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import PolishFlag from "../../assets/polish_flag.svg";
 
 
+interface SidebarLink {
+  name: string;
+  href: string;
+  isHeading: boolean;
+}
+
 // --- SIDEBAR DATA AND COMPONENT ---
 const SIDEBAR_LINKS = [
-  { 
-    name: "Cheat Sheet",
-    href: "/"
+  {
+    name: 'Cheat Sheet',
+    href: '/',
+  },
+  { name: 'Grammar', href: '', isHeading: true },
+  { name: 'Cases', href: '/lists/cases' },
+  { name: 'Verbs', href: '/lists/verbs' },
+  { name: 'Topics', href: '', isHeading: true },
 
-   },
-  { name: "Cases", href: "/lists/cases" },
-  { name: "Verbs", href: "/lists/verbs" },
-  { name: "Colour Game", href: "/games/colours" },
-  { name: "Number Game", href: "/games/numbers" },
-  { name: "Adjective Game", href: "/games/adjectives" },];
+  { name: 'Sports', href: '/topics/sports' },
+  { name: 'Games', href: '', isHeading: true },
+
+  { name: 'Colour Game', href: '/games/colours' },
+  { name: 'Number Game', href: '/games/numbers' },
+  { name: 'Adjective Game', href: '/games/adjectives' },
+];
 
 export function Sidebar() {
   // State to manage the open/closed status of the sidebar
@@ -106,6 +119,10 @@ export function Sidebar() {
         </h3>
         <nav className="space-y-2">
           {SIDEBAR_LINKS.map((link) => (
+            
+              link.isHeading ? (
+                <><Separator size={"4"} /><b>{link.name}</b></> ):
+            
             <Link
               key={link.href}
               to={link.href}
@@ -114,6 +131,7 @@ export function Sidebar() {
             >
               {link.name}
             </Link>
+              
           ))}
         </nav>
       </div>
