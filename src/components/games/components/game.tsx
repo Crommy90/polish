@@ -74,7 +74,7 @@ const generateOptions = <T extends Translation> (
   const options = shuffleArray([...randomIncorrect, correctAnswer]);
 
 
-  return options;
+  return options.filter((o): o is string => o !== undefined);
 };
 
 export interface AnswerResult {
@@ -107,8 +107,8 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
   const { sourceKey, targetKey } = useMemo(() => getKeys(gameMode), [gameMode]);
 
   const isE2P = gameMode === GameMode.EnToPl;
-  const sourceText = currentQuestion ? currentQuestion.question[sourceKey] : '';
-  const correctOption = currentQuestion ? currentQuestion.question[targetKey] : '';
+  const sourceText = currentQuestion ? (currentQuestion.question[sourceKey] ?? ''): '';
+  const correctOption = currentQuestion ? (currentQuestion.question[targetKey] ?? '') : '';
 
 
 
