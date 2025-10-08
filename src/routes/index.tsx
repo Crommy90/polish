@@ -22,7 +22,7 @@ function Content() {
         <SectionTitle>Verbs</SectionTitle>
         <CheatSheetVerbs />
       </Section>
-      <Separator size={"4"} />
+      <Separator size={'4'} />
       <Section>
         <SectionTitle>Cases</SectionTitle>
         <CheatSheetCases />
@@ -35,7 +35,7 @@ function Content() {
         <SectionTitle>Adjective List</SectionTitle>
         <CheatSheetCommonAdjectives />
       </Section>
-      <Section>
+      <Section className="w-max max-w-full">
         <SectionTitle>Colours</SectionTitle>
         <CheatSheetColours />
       </Section>

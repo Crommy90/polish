@@ -19,9 +19,11 @@ const SIDEBAR_LINKS: SidebarLink[] = [
   { name: 'Grammar', href: '', isHeading: true },
   { name: 'Cases', href: '/lists/cases' },
   { name: 'Verbs', href: '/lists/verbs' },
-  { name: 'Topics', href: '', isHeading: true },
 
+  { name: 'Topics', href: '', isHeading: true },
   { name: 'Sports', href: '/topics/sports' },
+  { name: 'Colours', href: '/topics/colours' },
+
   { name: 'Games', href: '', isHeading: true },
 
   { name: 'Colour Game', href: '/games/colours' },

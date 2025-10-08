@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TopicsSportsRouteImport } from './routes/topics/sports'
+import { Route as TopicsColoursRouteImport } from './routes/topics/colours'
 import { Route as ListsVerbsRouteImport } from './routes/lists/verbs'
 import { Route as ListsCasesRouteImport } from './routes/lists/cases'
 import { Route as GamesNumbersRouteImport } from './routes/games/numbers'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const TopicsSportsRoute = TopicsSportsRouteImport.update({
   id: '/topics/sports',
   path: '/topics/sports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TopicsColoursRoute = TopicsColoursRouteImport.update({
+  id: '/topics/colours',
+  path: '/topics/colours',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ListsVerbsRoute = ListsVerbsRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/games/numbers': typeof GamesNumbersRoute
   '/lists/cases': typeof ListsCasesRoute
   '/lists/verbs': typeof ListsVerbsRoute
+  '/topics/colours': typeof TopicsColoursRoute
   '/topics/sports': typeof TopicsSportsRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/games/numbers': typeof GamesNumbersRoute
   '/lists/cases': typeof ListsCasesRoute
   '/lists/verbs': typeof ListsVerbsRoute
+  '/topics/colours': typeof TopicsColoursRoute
   '/topics/sports': typeof TopicsSportsRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/games/numbers': typeof GamesNumbersRoute
   '/lists/cases': typeof ListsCasesRoute
   '/lists/verbs': typeof ListsVerbsRoute
+  '/topics/colours': typeof TopicsColoursRoute
   '/topics/sports': typeof TopicsSportsRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/games/numbers'
     | '/lists/cases'
     | '/lists/verbs'
+    | '/topics/colours'
     | '/topics/sports'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/games/numbers'
     | '/lists/cases'
     | '/lists/verbs'
+    | '/topics/colours'
     | '/topics/sports'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/games/numbers'
     | '/lists/cases'
     | '/lists/verbs'
+    | '/topics/colours'
     | '/topics/sports'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   GamesNumbersRoute: typeof GamesNumbersRoute
   ListsCasesRoute: typeof ListsCasesRoute
   ListsVerbsRoute: typeof ListsVerbsRoute
+  TopicsColoursRoute: typeof TopicsColoursRoute
   TopicsSportsRoute: typeof TopicsSportsRoute
 }
 
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/topics/sports'
       fullPath: '/topics/sports'
       preLoaderRoute: typeof TopicsSportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/topics/colours': {
+      id: '/topics/colours'
+      path: '/topics/colours'
+      fullPath: '/topics/colours'
+      preLoaderRoute: typeof TopicsColoursRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lists/verbs': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   GamesNumbersRoute: GamesNumbersRoute,
   ListsCasesRoute: ListsCasesRoute,
   ListsVerbsRoute: ListsVerbsRoute,
+  TopicsColoursRoute: TopicsColoursRoute,
   TopicsSportsRoute: TopicsSportsRoute,
 }
 export const routeTree = rootRouteImport

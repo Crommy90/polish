@@ -1,12 +1,13 @@
-import colours from "../../data/colours.json";
-import {
-  TranslationTable,
-  type Translation,
-} from "../common/translation-table";
+import { SubSection } from "../app-ui/subsection";
+import { Colours } from "../topics/colours";
 
 export function CheatSheetColours() {
-  // Type the imported data
-  const translations: Translation[] = colours;
 
-  return <TranslationTable title="Colours" translations={translations} className="w-full" />;
+  return (
+    <>
+      <SubSection className="w-max max-w-full">
+        <Colours />
+      </SubSection>
+    </>
+  );
 }

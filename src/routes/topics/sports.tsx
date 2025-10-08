@@ -1,3 +1,5 @@
+import { PageTitle } from '@/components/app-ui/page-title'
+import { Sports } from '@/components/topics/sports'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/topics/sports')({
@@ -5,5 +7,8 @@ export const Route = createFileRoute('/topics/sports')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/topics/sports"!</div>
+  return <>
+    <PageTitle>Sports</PageTitle>
+    <Sports />
+  </>
 }
