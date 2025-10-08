@@ -16,6 +16,18 @@ export function Sports() {
             },
             { pl: 'Jeździć na + LOCATIVE', en: 'To ride (a bike, horse, etc.)' },
             { pl: "Skakać (przez)", en: "To jump (over)" },
+            {
+              pl: 'Wygrywać / wygrać',
+              en: 'To win',
+            },
+            { pl: 'Przegrywać / przegrać', en: 'To lose' },
+            {pl: 'Gracz/zwodnik', en: 'Player/athlete'},
+            {pl: 'Drużyna', en: 'Team'},
+            {pl: 'Mecz', en: 'Match/game'},
+            {pl: 'Mistrz świata', en: 'World champion'},
+            {pl: 'Wynik gry, meczu', en: 'Score'},
+            {pl: 'Kibic', en: 'Fan/supporter'},
+            
           ]}
         />
       </Section>
