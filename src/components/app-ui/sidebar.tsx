@@ -7,11 +7,11 @@ import PolishFlag from "../../assets/polish_flag.svg";
 interface SidebarLink {
   name: string;
   href: string;
-  isHeading: boolean;
+  isHeading?: boolean;
 }
 
 // --- SIDEBAR DATA AND COMPONENT ---
-const SIDEBAR_LINKS = [
+const SIDEBAR_LINKS: SidebarLink[] = [
   {
     name: 'Cheat Sheet',
     href: '/',
@@ -120,7 +120,7 @@ export function Sidebar() {
         <nav className="space-y-2">
           {SIDEBAR_LINKS.map((link) => (
             
-              link.isHeading ? (
+              link.isHeading === true ? (
                 <><Separator size={"4"} /><b>{link.name}</b></> ):
             
             <Link
