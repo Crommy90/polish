@@ -61,11 +61,10 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
       <Card className="w-full max-w-lg mb-8">
         <CardContent>
           <GameHeader
-           score={score} 
-           isE2P={settings.mode == GameMode.EnToPl}
-            toggleMode={()=> {
-            setGameSettings({...settings, mode: settings.mode == GameMode.EnToPl ? GameMode.PlToEn : GameMode.EnToPl
-          })}} />
+            score={score}
+            settings={settings}
+            setSettings={setGameSettings}
+          />
         </CardContent>
       </Card>
 
@@ -93,11 +92,16 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
                 />
               ),
               [GameType.Link]: (
-                <GameLink
+                <GameLink<T>
                   allOptions={allOptions}
                   questionColour={questionColour}
                   maxOptions={maxOptions}
-                  questionText={questionText}
+                  answerResult={(isCorrect) => {
+                    if (isCorrect) {
+                      setScore(score + 1);
+                    }
+                  }}
+                  settings={settings}
                 />
               ),
             }[settings.gameType]
