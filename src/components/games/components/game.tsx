@@ -110,8 +110,6 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
   const sourceText = currentQuestion ? (currentQuestion.question[sourceKey] ?? ''): '';
   const correctOption = currentQuestion ? (currentQuestion.question[targetKey] ?? '') : '';
 
-
-
   // Function to set up the next question
   const generateQuestion = useCallback(() => {
     // Add the last question to recents, limit to last 5
@@ -170,6 +168,7 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
     const newMode: GameMode = isE2P ? GameMode.PlToEn : GameMode.EnToPl;
     setGameMode(newMode);
     setScore(0);
+    setCurrentQuestion(null); // Reset current question to trigger new question generation
     // generateQuestion runs automatically due to the change in 'gameMode' dependency
   };
 
