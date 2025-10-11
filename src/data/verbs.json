@@ -518,5 +518,44 @@
       "wy": "piszecie",
       "oni/one": "piszą"
     }
+  },
+  {
+    "en": "to want",
+    "per": "—",
+    "imp": "chcieć",
+    "pt": {
+      "ja": "chcę",
+      "ty": "chcesz",
+      "on/ona/ono": "chce",
+      "my": "chcemy",
+      "wy": "chcecie",
+      "oni/one": "chcą"
+    }
+  },
+  {
+    "en": "to love",
+    "per": "—",
+    "imp": "kochać",
+    "pt": {
+      "ja": "kocham",
+      "ty": "kochasz",
+      "on/ona/ono": "kocha",
+      "my": "kochamy",
+      "wy": "kochacie",
+      "oni/one": "kochają"
+    }
+  },
+  {
+    "en": "can",
+    "per": "—",
+    "imp": "móc",
+    "pt": {
+      "ja": "mogę",
+      "ty": "możesz",
+      "on/ona/ono": "może",
+      "my": "możemy",
+      "wy": "możecie",
+      "oni/one": "mogą"
+    }
   }
 ]
