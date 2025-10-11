@@ -1,7 +1,7 @@
 import React from 'react';
 import colours from "../../data/colours.json";
 import type { Translation } from '../common/translation-table';
-import Game from './components/game';
+import Game, { GameMode } from './components/game';
 
 interface Colour extends Translation {
   hex: string;
@@ -11,7 +11,9 @@ interface Colour extends Translation {
 const ColourGame: React.FC = () => {
   const allColours : Colour[] = colours;
   return (
-    <Game allOptions={allColours} questionColour={(option) => option.hex} questionText='Translate this colour' />
+    <Game allOptions={allColours} questionColour={(option, mode) => {
+      return mode == GameMode.PlToEn ? 'white' : option.hex
+    }} questionText='Translate this colour' />
 
   );
 };

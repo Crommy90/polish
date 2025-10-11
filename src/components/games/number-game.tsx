@@ -9,7 +9,7 @@ type Number = Translation
 const NumberGame: React.FC = () => {
   const allNumbers : Number[] = numbers;
   return (
-    <Game allOptions={allNumbers} questionColour={() => "yellow"} questionText='Translate this number' maxOptions={6} />
+    <Game allOptions={allNumbers} questionText='Translate this number' maxOptions={6} />
 
   );
 };

@@ -6,12 +6,12 @@ import Game from './components/game';
 type Adjective = Translation
 
 
-const NumberGame: React.FC = () => {
+const AdjectiveGame: React.FC = () => {
   const allAdjectives: Adjective[] = adjectives;
   return (
-    <Game allOptions={allAdjectives} questionColour={() => "yellow"} questionText='Translate this adjective' maxOptions={6} />
+    <Game allOptions={allAdjectives} questionText='Translate this adjective' maxOptions={6} />
 
   );
 };
 
-export default NumberGame;
+export default AdjectiveGame;

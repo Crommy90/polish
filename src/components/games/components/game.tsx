@@ -14,11 +14,11 @@ import { QuestionBox } from './question-box';
 // --- 1. TYPES AND DATA ---
 
 
-const GameMode = {
+export const GameMode = {
   EnToPl: 'EnToPl',
   PlToEn: 'PlToEn',
 } as const;
-type GameMode = typeof GameMode[keyof typeof GameMode];
+export type GameMode = typeof GameMode[keyof typeof GameMode];
 
 
 
@@ -90,7 +90,7 @@ interface Question<T extends Translation> {
 
 interface GameProps<T extends Translation> {
   allOptions: T[];
-  questionColour: (option: T) => string; // Function to get hex colour from option
+  questionColour?: (option: T, mode: GameMode) => string; // Function to get hex colour from option
   maxOptions?: number
   questionText: string
 }
@@ -160,7 +160,7 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
     // Move to the next question after a brief delay
     setTimeout(() => {
       generateQuestion();
-    }, isCorrect ? 1200 : 3000);
+    }, isCorrect ? 1200 : 1500);
   };
 
   // Toggle the game mode
@@ -173,10 +173,32 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
   };
 
 
-  if (!currentQuestion)
+  if (!currentQuestion) {
     return <div className="p-4 text-center">Loading game...</div>;
+  }
 
-  const bgColour = gameMode != GameMode.PlToEn ? questionColour(currentQuestion.question) : undefined;
+  const backgroundColours = [
+    '#f5f7fa', // light gray
+    '#e0f7fa', // cyan
+    '#ffe0b2', // orange
+    '#c8e6c9', // green
+    '#d1c4e9', // purple
+    '#fff9c4', // yellow
+    '#ffccbc', // peach
+    '#b3e5fc', // blue
+    '#f8bbd0', // pink
+    '#dcedc8', // lime
+  ];
+
+  // Pick a colour deterministically based on score
+  // Pick a colour deterministically based on the current question's English text
+  const questionKey = currentQuestion.question.en;
+  let hash = 0;
+  for (let i = 0; i < questionKey.length; i++) {
+    hash = (hash * 31 + questionKey.charCodeAt(i)) >>> 0;
+  }
+  const randomBgColour = backgroundColours[hash % backgroundColours.length];
+  const bgColour = questionColour?.(currentQuestion.question, gameMode) ?? randomBgColour;
   const useWhite = bgColour === '#000000' || bgColour === 'black';
 
   return (
@@ -197,7 +219,7 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
           </Heading>
         </CardHeader>
         <CardContent>
-          <QuestionBox sourceText={sourceText} bgColour={gameMode != GameMode.PlToEn ? questionColour(currentQuestion.question) : undefined  } useWhite={useWhite} />
+          <QuestionBox sourceText={sourceText} bgColour={bgColour} useWhite={useWhite} />
           <Answer result={result} correctOption={correctOption} />
 
           {/* OPTIONS GRID */}

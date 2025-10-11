@@ -11,7 +11,6 @@ const SportsGame: React.FC = () => {
   return (
     <Game
       allOptions={allSports}
-      questionColour={() => 'yellow'}
       questionText="Translate this sport"
       maxOptions={6}
     />
