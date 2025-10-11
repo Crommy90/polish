@@ -1,4 +1,4 @@
-import type { AnswerResult } from "./game";
+import type { AnswerResult } from "./game-multi-choice";
 
 interface AnswerGridButtonProps {
   option: string;

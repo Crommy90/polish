@@ -1,6 +1,6 @@
 import { Grid } from "@radix-ui/themes";
 import { AnswerGridButton } from "./answer-grid-button";
-import type { AnswerResult } from "./game";
+import type { AnswerResult } from "./game-multi-choice";
 
 
 interface AnswerGridProps {

@@ -1,4 +1,4 @@
-import { FeedbackStatus, type AnswerResult } from "./game";
+import { FeedbackStatus, type AnswerResult } from "./game-multi-choice";
 
 interface AnswerProps {
   result?: AnswerResult
