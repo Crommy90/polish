@@ -1,8 +1,10 @@
 import type { Translation } from '@/components/common/translation-table';
-import { Button, Grid } from '@radix-ui/themes';
+import { Button, Flex, Grid } from '@radix-ui/themes';
 import { useMemo, useState } from 'react';
+import Tick from '../../../../assets/tick.svg';
 import { GameMode, type GameSettings } from '../game';
 import { GameLinksButton } from './game-links-button';
+
 
 // The import of './colours.json' has been removed to fix the compilation error.
 // The data is now defined directly below.
@@ -146,37 +148,60 @@ const GameLinks = <T extends Translation>({
 
   return (
     <>
-      <span> LINKS!</span>
       <Grid columns="3" gap={'4'} className="w-full">
         {gameState.entries.map((entry, entryIndex) => {
           const leftIndex =  gameState.userAnswers.findIndex(e => e.left === entry.left && e.right != "")
           const leftColour = gameState.selectedLeft == entry.left ? "green" : leftIndex != -1 ? backgroundColours[leftIndex] : undefined;
           const rightIndex =  gameState.userAnswers.findIndex(e => e.right === entry.right )
           const rightColour = rightIndex != -1 ? backgroundColours[rightIndex] : undefined;
+          const borderColour =
+            gameState.showAnswers ? gameState.result[entryIndex] ? 'green-500' : 'red-500' : undefined;
           return (
             <>
               <GameLinksButton
                 key={entry.left}
                 option={entry.left}
                 bgColour={leftColour ?? '#FFFFFF'}
-                onClick={() => !gameState.showAnswers ? onSelected(entry, true) : {}}
+                onClick={() =>
+                  !gameState.showAnswers ? onSelected(entry, true) : {}
+                }
+                borderColour={borderColour}
               />
-              <div>
-                
-                {gameState.showAnswers && gameState.result[entryIndex] ? "RIGHT" : undefined}
-                {gameState.showAnswers && !gameState.result[entryIndex] ? <>
-                {`Wrong, you chose ${gameState.userAnswers[leftIndex].right}`}</> : undefined}
-              </div>
+              <Flex
+                align={'center'}
+                direction={'column'}
+                justify={'center'}
+                className="w-full text-center"
+              >
+                {gameState.showAnswers && gameState.result[entryIndex] ? (
+                  <img
+                    src={Tick}
+                    alt="Correct"
+                    className="inline-block w-6 h-4 ml-2 -mt-1"
+                  />
+                ) : undefined}
+                {gameState.showAnswers && !gameState.result[entryIndex] ? (
+                  <>
+                    <span>X</span>
+                    <span>
+                      {`You chose ${gameState.userAnswers[leftIndex].right}`}
+                    </span>
+                  </>
+                ) : undefined}
+              </Flex>
               <GameLinksButton
                 key={entry.right}
                 option={entry.right}
                 bgColour={rightColour ?? '#FFFFFF'}
-                onClick={() => !gameState.showAnswers ? onSelected(entry, false) : {}}
+                onClick={() =>
+                  !gameState.showAnswers ? onSelected(entry, false) : {}
+                }
+                borderColour={borderColour}
               />
             </>
           );})}
       </Grid>
-      { (gameState.userAnswers.filter(x=>x.right != "").length == gameState.answers.length) && <Button onClick={submitAnswers}>Submit</Button>}
+      { (gameState.userAnswers.filter(x=>x.right != "").length == gameState.answers.length && !gameState.showAnswers) && <Button onClick={submitAnswers}>Submit</Button>}
       <Button onClick={startGame}>Play Again</Button>
     </>
   );

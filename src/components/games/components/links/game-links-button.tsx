@@ -4,14 +4,15 @@ interface AnswerGridButtonProps {
   bgColour: string
   onClick: () => void;
   disabled?: boolean;
+  borderColour?: string
 }
 
 export const GameLinksButton = (props: AnswerGridButtonProps) => {
         return (
           <button
             key={props.option}
-            onClick={()=> {
-              props.onClick()
+            onClick={() => {
+              props.onClick();
             }}
             disabled={props.disabled === true}
             className={`
@@ -21,6 +22,7 @@ export const GameLinksButton = (props: AnswerGridButtonProps) => {
                   ? 'cursor-not-allowed'
                   : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-600 active:bg-gray-200 dark:active:bg-gray-500 shadow-md ring-indigo-500'
               }
+              ${props.borderColour ?  `border-2 border-${props.borderColour}` : ''}
             `}
             style={{
               backgroundColor: props.bgColour,
