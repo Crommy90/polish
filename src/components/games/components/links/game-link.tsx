@@ -176,7 +176,7 @@ const GameLinks = <T extends Translation>({
             </>
           );})}
       </Grid>
-      <Button onClick={submitAnswers}>Submit</Button>
+      { (gameState.userAnswers.filter(x=>x.right != "").length == gameState.answers.length) && <Button onClick={submitAnswers}>Submit</Button>}
       <Button onClick={startGame}>Play Again</Button>
     </>
   );
