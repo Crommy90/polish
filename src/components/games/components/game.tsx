@@ -3,8 +3,8 @@ import { Card, Heading } from '@radix-ui/themes';
 import { useState } from 'react';
 import { CardContent, CardHeader } from '../../ui/card';
 import { GameHeader } from './game-header';
-import GameLink from './game-link';
-import GameMultiChoice from './game-multi-choice';
+import GameLink from './links/game-link';
+import GameMultiChoice from './multi-choice/game-multi-choice';
 
 
 // The import of './colours.json' has been removed to fix the compilation error.
@@ -93,9 +93,7 @@ const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, q
               ),
               [GameType.Link]: (
                 <GameLink<T>
-                  allOptions={allOptions}
-                  questionColour={questionColour}
-                  maxOptions={maxOptions}
+                  translations={allOptions}
                   answerResult={(isCorrect) => {
                     if (isCorrect) {
                       setScore(score + 1);
