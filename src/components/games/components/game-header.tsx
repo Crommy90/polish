@@ -22,8 +22,8 @@ export const GameHeader = (props: GameHeaderProps) => {
       <div>
         <DropdownMenu.Root>
           <DropdownMenu.Trigger>
-            <Button variant="soft">{props.settings.gameType}</Button>
-            <DropdownMenu.TriggerIcon />
+            <Button variant="soft">{props.settings.gameType}
+            <DropdownMenu.TriggerIcon /></Button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Content>
             {Object.values(GameType ?? {}).map((type) => (
