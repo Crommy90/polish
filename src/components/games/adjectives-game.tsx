@@ -1,6 +1,6 @@
 import adjectives from '../../data/adjectives.json';
 import type { Translation } from '../common/translation-table';
-import Game, { GameType, type GameParams } from './components/game';
+import Game, { type GameParams } from './components/game';
 
 type Adjective = Translation;
 
