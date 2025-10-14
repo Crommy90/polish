@@ -1,10 +1,9 @@
 import type { Translation } from '@/components/common/translation-table';
 import { useEffect, useMemo, useState } from 'react';
-import { GameMode, type GameSettings } from '../game';
+import { GameMode, type GameParams } from '../game';
 import { QuestionBox } from '../question-box';
 import { Answer } from './answer';
 import { AnswerGrid } from './answer-grid';
-
 
 // The import of './colours.json' has been removed to fix the compilation error.
 // The data is now defined directly below.
@@ -16,7 +15,8 @@ export const FeedbackStatus = {
   Correct: 'Correct',
   Incorrect: 'Incorrect',
 } as const;
-export type FeedbackStatus = (typeof FeedbackStatus)[keyof typeof FeedbackStatus];
+export type FeedbackStatus =
+  (typeof FeedbackStatus)[keyof typeof FeedbackStatus];
 
 // Utility to get the correct keys based on the current mode
 const getKeys = (mode: GameMode) => {
@@ -37,7 +37,7 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 };
 
 // Utility to generate options for the quiz
-const generateOptions = <T extends Translation> (
+const generateOptions = <T extends Translation>(
   allOptions: T[],
   answer: T,
   mode: GameMode,
@@ -47,21 +47,18 @@ const generateOptions = <T extends Translation> (
   const correctAnswer = answer[targetKey];
 
   // Filter out the correct answer from the list using the unique English key ('en')
-  const incorrectCandidates = allOptions.filter(
-    (c) => c.en !== answer.en
-  );
+  const incorrectCandidates = allOptions.filter((c) => c.en !== answer.en);
 
   const randomIncorrect = shuffleArray(incorrectCandidates as T[]).map(
     (c) => c[targetKey]
   );
   // Limit to maxOptions - 1 incorrect answers
-  if( maxOptions ) {
+  if (maxOptions) {
     randomIncorrect.splice(maxOptions - 1);
   }
 
   // Combine and shuffle the options
   const options = shuffleArray([...randomIncorrect, correctAnswer]);
-
 
   return options.filter((o): o is string => o !== undefined);
 };
@@ -80,9 +77,9 @@ interface Question<T extends Translation> {
 interface GameMultiChoiceProps<T extends Translation> {
   allOptions: T[];
   questionColour?: (option: T, mode: GameMode) => string; // Function to get hex colour from option
-  maxOptions?: number
-  settings: GameSettings
-  answerResult: (correct : boolean) => void
+  maxOptions?: number;
+  settings: GameParams;
+  answerResult: (correct: boolean) => void;
 }
 
 const GameMultiChoice = <T extends Translation>({

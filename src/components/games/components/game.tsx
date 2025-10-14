@@ -35,10 +35,6 @@ export const FeedbackStatus = {
 export type FeedbackStatus =
   (typeof FeedbackStatus)[keyof typeof FeedbackStatus];
 
-export interface GameSettings {
-  gameType: GameType;
-}
-
 interface GameProps<T extends Translation> {
   allOptions: T[];
   questionColour?: (option: T, mode: GameMode) => string; // Function to get hex colour from option

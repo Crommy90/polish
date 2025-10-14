@@ -1,8 +1,8 @@
 import { Button, DropdownMenu, Switch } from '@radix-ui/themes';
+import { useNavigate } from '@tanstack/react-router';
 import PolishFlag from '../../../assets/polish_flag.svg';
 import UKFlag from '../../../assets/uk_flag.svg';
-import { GameMode, GameType, type GameParams, type GameSettings } from './game';
-import { useNavigate, useRouter, useSearch } from '@tanstack/react-router';
+import { GameMode, GameType, type GameParams } from './game';
 
 interface GameHeaderProps {
   score: number;
