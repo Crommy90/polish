@@ -1,8 +1,7 @@
-import { Separator } from "@radix-ui/themes";
-import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-import PolishFlag from "../../assets/polish_flag.svg";
-
+import { Separator } from '@radix-ui/themes';
+import { Link } from '@tanstack/react-router';
+import { useState } from 'react';
+import PolishFlag from '../../assets/polish_flag.svg';
 
 interface SidebarLink {
   name: string;
@@ -121,20 +120,24 @@ export function Sidebar() {
           />
         </h3>
         <nav className="space-y-2">
-          {SIDEBAR_LINKS.map((link) => (
-            
-              link.isHeading === true ? (
-                <><Separator size={"4"} /><b>{link.name}</b></> ):
-            
-            <Link
-              key={link.href}
-              to={link.href}
-              onClick={() => setIsSidebarOpen(false)}
-              className="flex items-center p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/50 hover:text-red-700 dark:hover:text-red-300 transition-colors duration-150 font-medium"
-            >
-              {link.name}
-            </Link>
-              
+          {SIDEBAR_LINKS.map((link, linkIndex) => (
+            <div key={linkIndex}>
+              {link.isHeading === true ? (
+                <>
+                  <Separator size={'4'} />
+                  <b>{link.name}</b>
+                </>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsSidebarOpen(false)}
+                  className="flex items-center p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/50 hover:text-red-700 dark:hover:text-red-300 transition-colors duration-150 font-medium"
+                >
+                  {link.name}
+                </Link>
+              )}
+            </div>
           ))}
         </nav>
       </div>
