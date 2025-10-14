@@ -6,19 +6,20 @@ import { GameHeader } from './game-header';
 import GameLink from './links/game-link';
 import GameMultiChoice from './multi-choice/game-multi-choice';
 
-
 // The import of './colours.json' has been removed to fix the compilation error.
 // The data is now defined directly below.
 
 // --- 1. TYPES AND DATA ---
-
+export type GameParams = {
+  gameType: GameType;
+  mode: GameMode;
+};
 
 export const GameMode = {
   EnToPl: 'EnToPl',
   PlToEn: 'PlToEn',
 } as const;
-export type GameMode = typeof GameMode[keyof typeof GameMode];
-
+export type GameMode = (typeof GameMode)[keyof typeof GameMode];
 
 export const GameType = {
   MultiChoice: 'MultiChoice',
@@ -26,45 +27,40 @@ export const GameType = {
 } as const;
 export type GameType = (typeof GameType)[keyof typeof GameType];
 
-
-
 // Define feedback status
 export const FeedbackStatus = {
   Correct: 'Correct',
   Incorrect: 'Incorrect',
 } as const;
-export type FeedbackStatus = (typeof FeedbackStatus)[keyof typeof FeedbackStatus];
-
+export type FeedbackStatus =
+  (typeof FeedbackStatus)[keyof typeof FeedbackStatus];
 
 export interface GameSettings {
-  mode: GameMode
-  gameType: GameType
+  gameType: GameType;
 }
 
 interface GameProps<T extends Translation> {
   allOptions: T[];
   questionColour?: (option: T, mode: GameMode) => string; // Function to get hex colour from option
-  maxOptions?: number
-  questionText: string
+  maxOptions?: number;
+  questionText: string;
+  settings: GameParams;
 }
 
-const Game= <T extends Translation> ( {allOptions, questionColour, maxOptions, questionText} : GameProps<T> ) => {
-  
-  const [settings, setGameSettings] = useState<GameSettings>({
-    mode: GameMode.EnToPl,
-    gameType: GameType.MultiChoice,
-  });
+const Game = <T extends Translation>({
+  allOptions,
+  questionColour,
+  maxOptions,
+  questionText,
+  settings,
+}: GameProps<T>) => {
   const [score, setScore] = useState(0);
 
   return (
     <div className="flex flex-col items-center">
       <Card className="w-full max-w-lg mb-8">
         <CardContent>
-          <GameHeader
-            score={score}
-            settings={settings}
-            setSettings={setGameSettings}
-          />
+          <GameHeader score={score} settings={settings} />
         </CardContent>
       </Card>
 

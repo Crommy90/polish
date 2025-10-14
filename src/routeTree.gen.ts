@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as GamesRouteRouteImport } from './routes/games/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TopicsSportsRouteImport } from './routes/topics/sports'
 import { Route as TopicsColoursRouteImport } from './routes/topics/colours'
@@ -19,6 +20,11 @@ import { Route as GamesNumbersRouteImport } from './routes/games/numbers'
 import { Route as GamesColoursRouteImport } from './routes/games/colours'
 import { Route as GamesAdjectivesRouteImport } from './routes/games/adjectives'
 
+const GamesRouteRoute = GamesRouteRouteImport.update({
+  id: '/games',
+  path: '/games',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -45,28 +51,29 @@ const ListsCasesRoute = ListsCasesRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const GamesSportsRoute = GamesSportsRouteImport.update({
-  id: '/games/sports',
-  path: '/games/sports',
-  getParentRoute: () => rootRouteImport,
+  id: '/sports',
+  path: '/sports',
+  getParentRoute: () => GamesRouteRoute,
 } as any)
 const GamesNumbersRoute = GamesNumbersRouteImport.update({
-  id: '/games/numbers',
-  path: '/games/numbers',
-  getParentRoute: () => rootRouteImport,
+  id: '/numbers',
+  path: '/numbers',
+  getParentRoute: () => GamesRouteRoute,
 } as any)
 const GamesColoursRoute = GamesColoursRouteImport.update({
-  id: '/games/colours',
-  path: '/games/colours',
-  getParentRoute: () => rootRouteImport,
+  id: '/colours',
+  path: '/colours',
+  getParentRoute: () => GamesRouteRoute,
 } as any)
 const GamesAdjectivesRoute = GamesAdjectivesRouteImport.update({
-  id: '/games/adjectives',
-  path: '/games/adjectives',
-  getParentRoute: () => rootRouteImport,
+  id: '/adjectives',
+  path: '/adjectives',
+  getParentRoute: () => GamesRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/games': typeof GamesRouteRouteWithChildren
   '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/games': typeof GamesRouteRouteWithChildren
   '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
@@ -90,6 +98,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/games': typeof GamesRouteRouteWithChildren
   '/games/adjectives': typeof GamesAdjectivesRoute
   '/games/colours': typeof GamesColoursRoute
   '/games/numbers': typeof GamesNumbersRoute
@@ -103,6 +112,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/games'
     | '/games/adjectives'
     | '/games/colours'
     | '/games/numbers'
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/games'
     | '/games/adjectives'
     | '/games/colours'
     | '/games/numbers'
@@ -125,6 +136,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/games'
     | '/games/adjectives'
     | '/games/colours'
     | '/games/numbers'
@@ -137,10 +149,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  GamesAdjectivesRoute: typeof GamesAdjectivesRoute
-  GamesColoursRoute: typeof GamesColoursRoute
-  GamesNumbersRoute: typeof GamesNumbersRoute
-  GamesSportsRoute: typeof GamesSportsRoute
+  GamesRouteRoute: typeof GamesRouteRouteWithChildren
   ListsCasesRoute: typeof ListsCasesRoute
   ListsVerbsRoute: typeof ListsVerbsRoute
   TopicsColoursRoute: typeof TopicsColoursRoute
@@ -149,6 +158,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/games': {
+      id: '/games'
+      path: '/games'
+      fullPath: '/games'
+      preLoaderRoute: typeof GamesRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -186,41 +202,56 @@ declare module '@tanstack/react-router' {
     }
     '/games/sports': {
       id: '/games/sports'
-      path: '/games/sports'
+      path: '/sports'
       fullPath: '/games/sports'
       preLoaderRoute: typeof GamesSportsRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof GamesRouteRoute
     }
     '/games/numbers': {
       id: '/games/numbers'
-      path: '/games/numbers'
+      path: '/numbers'
       fullPath: '/games/numbers'
       preLoaderRoute: typeof GamesNumbersRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof GamesRouteRoute
     }
     '/games/colours': {
       id: '/games/colours'
-      path: '/games/colours'
+      path: '/colours'
       fullPath: '/games/colours'
       preLoaderRoute: typeof GamesColoursRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof GamesRouteRoute
     }
     '/games/adjectives': {
       id: '/games/adjectives'
-      path: '/games/adjectives'
+      path: '/adjectives'
       fullPath: '/games/adjectives'
       preLoaderRoute: typeof GamesAdjectivesRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof GamesRouteRoute
     }
   }
 }
 
-const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+interface GamesRouteRouteChildren {
+  GamesAdjectivesRoute: typeof GamesAdjectivesRoute
+  GamesColoursRoute: typeof GamesColoursRoute
+  GamesNumbersRoute: typeof GamesNumbersRoute
+  GamesSportsRoute: typeof GamesSportsRoute
+}
+
+const GamesRouteRouteChildren: GamesRouteRouteChildren = {
   GamesAdjectivesRoute: GamesAdjectivesRoute,
   GamesColoursRoute: GamesColoursRoute,
   GamesNumbersRoute: GamesNumbersRoute,
   GamesSportsRoute: GamesSportsRoute,
+}
+
+const GamesRouteRouteWithChildren = GamesRouteRoute._addFileChildren(
+  GamesRouteRouteChildren,
+)
+
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  GamesRouteRoute: GamesRouteRouteWithChildren,
   ListsCasesRoute: ListsCasesRoute,
   ListsVerbsRoute: ListsVerbsRoute,
   TopicsColoursRoute: TopicsColoursRoute,

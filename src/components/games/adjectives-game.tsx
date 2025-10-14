@@ -1,17 +1,21 @@
-import React from 'react';
-import adjectives from "../../data/adjectives.json";
+import adjectives from '../../data/adjectives.json';
 import type { Translation } from '../common/translation-table';
-import Game from './components/game';
+import Game, { GameType, type GameParams } from './components/game';
 
-type Adjective = Translation
+type Adjective = Translation;
 
+interface AdjectiveGameProps {
+  settings: GameParams;
+}
 
-const AdjectiveGame: React.FC = () => {
+export function AdjectiveGame(props: AdjectiveGameProps) {
   const allAdjectives: Adjective[] = adjectives;
   return (
-    <Game allOptions={allAdjectives} questionText='Translate this adjective' maxOptions={6} />
-
+    <Game
+      settings={props.settings}
+      allOptions={allAdjectives}
+      questionText="Translate this adjective"
+      maxOptions={6}
+    />
   );
-};
-
-export default AdjectiveGame;
+}

@@ -1,19 +1,19 @@
 import { Button, DropdownMenu, Switch } from '@radix-ui/themes';
 import PolishFlag from '../../../assets/polish_flag.svg';
 import UKFlag from '../../../assets/uk_flag.svg';
-import { GameMode, GameType, type GameSettings } from './game';
-
+import { GameMode, GameType, type GameParams, type GameSettings } from './game';
+import { useNavigate, useRouter, useSearch } from '@tanstack/react-router';
 
 interface GameHeaderProps {
   score: number;
-  settings: GameSettings;
-  setSettings: (settings: GameSettings) => void;
+  settings: GameParams;
 }
 
 export const GameHeader = (props: GameHeaderProps) => {
   const isE2P = props.settings.mode == GameMode.EnToPl;
   const flagOne = isE2P ? UKFlag : PolishFlag;
   const flagTwo = isE2P ? PolishFlag : UKFlag;
+  const navigate = useNavigate();
   return (
     <div className="flex justify-between items-center">
       <p className="text-lg font-semibold">
@@ -22,17 +22,19 @@ export const GameHeader = (props: GameHeaderProps) => {
       <div>
         <DropdownMenu.Root>
           <DropdownMenu.Trigger>
-            <Button variant="soft">{props.settings.gameType}
-            <DropdownMenu.TriggerIcon /></Button>
+            <Button variant="soft">
+              {props.settings.gameType}
+              <DropdownMenu.TriggerIcon />
+            </Button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Content>
             {Object.values(GameType ?? {}).map((type) => (
               <DropdownMenu.Item
                 key={type}
                 onSelect={() =>
-                  props.setSettings({
-                    ...props.settings,
-                    gameType: type,
+                  navigate({
+                    to: '.',
+                    search: (prev) => ({ ...prev, gameType: type }),
                   })
                 }
                 disabled={props.settings.gameType === type}
@@ -55,9 +57,12 @@ export const GameHeader = (props: GameHeaderProps) => {
         <Switch
           checked={isE2P}
           onCheckedChange={() =>
-            props.setSettings({
-              ...props.settings,
-              mode: isE2P ? GameMode.PlToEn : GameMode.EnToPl,
+            navigate({
+              to: '.',
+              search: (prev) => ({
+                ...prev,
+                mode: isE2P ? GameMode.PlToEn : GameMode.EnToPl,
+              }),
             })
           }
         />
