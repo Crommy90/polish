@@ -507,19 +507,6 @@
     }
   },
   {
-    "en": "to write",
-    "per": "napisać",
-    "imp": "pisać",
-    "pt": {
-      "ja": "piszę",
-      "ty": "piszesz",
-      "on/ona/ono": "pisze",
-      "my": "piszemy",
-      "wy": "piszecie",
-      "oni/one": "piszą"
-    }
-  },
-  {
     "en": "to want",
     "per": "—",
     "imp": "chcieć",
@@ -556,6 +543,71 @@
       "my": "możemy",
       "wy": "możecie",
       "oni/one": "mogą"
+    }
+  },
+  {
+    "en": "to get up",
+    "per": "wstać",
+    "imp": "wstawać",
+    "pt": {
+      "ja": "wstaję",
+      "ty": "wstajesz",
+      "on/ona/ono": "wstaje",
+      "my": "wstajemy",
+      "wy": "wstajecie",
+      "oni/one": "wstają"
+    }
+  },
+  {
+    "en": "to dress",
+    "per": "ubrać się",
+    "imp": "ubierać się",
+    "pt": {
+      "ja": "ubieram się",
+      "ty": "ubierasz się",
+      "on/ona/ono": "ubiera się",
+      "my": "ubieramy się",
+      "wy": "ubieracie się",
+      "oni/one": "ubierają się"
+    }
+  },
+  {
+    "en": "to understand",
+    "per": "zrozumieć",
+    "imp": "rozumieć",
+    "pt": {
+      "ja": "rozumiem",
+      "ty": "rozumiesz",
+      "on/ona/ono": "rozumie",
+      "my": "rozumiemy",
+      "wy": "rozumiecie",
+      "oni/one": "rozumieją"
+    }
+  },
+  {
+    "en": "to know (a fact)",
+    "per": "wiedzieć",
+    "imp": "wiedzieć",
+    "pt": {
+      "ja": "wiem",
+      "ty": "wiesz",
+      "on/ona/ono": "wie",
+      "my": "wiemy",
+      "wy": "wiecie",
+      "oni/one": "wiedzą"
+    }
+  },
+  {
+    "en": "to know (a person, place, etc.)",
+    "per": "poznać",
+    "imp": "znać",
+    "pt": {
+      "ja": "znam",
+      "ty": "znasz",
+      "on/ona/ono": "zna",
+      "my": "znamy",
+      "wy": "znacie",
+      "oni/one": "znają"
     }
   }
 ]
