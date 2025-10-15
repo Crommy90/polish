@@ -1,8 +1,10 @@
 // Import the JSON data
-import { Flex, Grid } from "@radix-ui/themes";
+import { Flex, Grid, type SectionProps } from "@radix-ui/themes";
 import verbs from "../../data/verbs.json";
-import { SubSection } from "../app-ui/subsection";
-import { SubSectionTitle } from "../app-ui/subsection-title";
+
+
+import { Section } from "../app-ui/section";
+import { SectionTitle } from "../app-ui/section-title";
 import { Table } from "../app-ui/table";
 
 // Define the type for the verb structure
@@ -15,14 +17,19 @@ interface Verb {
   };
 }
 
-export function CommonVerbs() {
+interface VerbsCommonProps extends SectionProps {
+  level?: number
+}
+
+export function VerbsCommon(props: VerbsCommonProps) {
   // Type the imported data
   const verbList: Verb[] = verbs;
   verbList.sort((a, b) => a.en.localeCompare(b.en));
+  const {className, level, ...rest} = {...props}
 
   return (
-    <SubSection className="w-max max-w-full">
-      <SubSectionTitle>Common Verbs</SubSectionTitle>
+    <Section level={level} className={`w-max max-w-full${className ? ` ${className}` : ""}`} {...rest}>
+      <SectionTitle level={level}>Common Verbs</SectionTitle>
       <Table
         headers={['English', 'Polish', 'Forms']}
         rows={verbList.map((d) => [
@@ -46,6 +53,6 @@ export function CommonVerbs() {
         ])}
         className="mt-6"
       />
-    </SubSection>
+    </Section>
   );
 }

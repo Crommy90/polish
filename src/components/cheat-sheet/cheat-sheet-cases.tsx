@@ -1,9 +1,11 @@
-import { Flex, Heading } from "@radix-ui/themes";
+import { Flex } from "@radix-ui/themes";
 import ReactMarkdown from "react-markdown";
 import usageJson from "../../data/case_usage.json";
 import overviewJson from "../../data/cases.json";
-import { SubSection } from "../app-ui/subsection";
-import { SubSectionTitle } from "../app-ui/subsection-title";
+
+
+import { Section } from "../app-ui/section";
+import { SectionTitle } from "../app-ui/section-title";
 import { Table } from "../app-ui/table";
 
 
@@ -34,21 +36,23 @@ interface CaseUsage {
   uses: string[];
 }
 
-export function CheatSheetCases() {
+interface CheatSheetCases {
+  level?: number
+}
+
+export function CheatSheetCases(props: CheatSheetCases) {
   const overview : CaseEntry[] = overviewJson as CaseEntry[];
   const usage : CaseUsage[] = usageJson as CaseUsage[];
+  const childLevel = (props.level ?? 0) + 1
+  const grandChildLevel = childLevel + 1
   return (
     <>
-      <SubSection className="w-max max-w-full">
-        <SubSectionTitle>Overview</SubSectionTitle>
-        <Heading size="4" className="mb-2">
-          Usage
-        </Heading>
+      <Section level={props.level} className="w-max max-w-full">
+        <SectionTitle>Overview</SectionTitle>
+        <SectionTitle level={childLevel}>Usage</SectionTitle>
         {usage.map((u) => (
           <div key={u.case} className="mb-4">
-            <Heading size="5" className="mb-1">
-              {u.name}
-            </Heading>
+            <SectionTitle level={grandChildLevel}>{u.name}</SectionTitle>
             <ul className="list-disc list-inside">
               {u.uses.map((use, i) => (
                 <li key={i}>
@@ -63,9 +67,7 @@ export function CheatSheetCases() {
             </ul>
           </div>
         ))}
-        <Heading size="4" className="mb-2">
-          Case Endings Overview
-        </Heading>
+        <SectionTitle level={childLevel}>Case Endings Overview</SectionTitle>
         <Table
           headers={['Case', 'Male', 'Female', 'Neuter']}
           rows={overview.map((d) => {
@@ -82,7 +84,7 @@ export function CheatSheetCases() {
           })}
           className="w-max"
         />
-      </SubSection>
+      </Section>
     </>
   );
 }

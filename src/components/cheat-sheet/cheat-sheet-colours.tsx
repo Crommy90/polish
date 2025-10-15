@@ -1,13 +1,18 @@
-import { SubSection } from "../app-ui/subsection";
+
+import { Section } from "../app-ui/section";
 import { Colours } from "../topics/colours";
 
-export function CheatSheetColours() {
+interface CheatSheetColoursProps {
+  level?: number
+}
+
+export function CheatSheetColours(props:CheatSheetColoursProps) {
 
   return (
     <>
-      <SubSection className="w-max max-w-full">
+      <Section level={props.level} className="w-max max-w-full">
         <Colours />
-      </SubSection>
+      </Section>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { type SubSectionProps } from "../app-ui/subsection";
+import type { SectionProps } from "../app-ui/section";
 import { Table } from "../app-ui/table";
 
 // Define the type for the verb structure
@@ -8,7 +8,7 @@ export interface Translation {
   notes?: string;
 }
 
-interface TranslationTableProps extends SubSectionProps {
+interface TranslationTableProps extends SectionProps {
   translations: Translation[];
 }
 

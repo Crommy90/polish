@@ -1,7 +1,9 @@
 // Import the JSON data
 import adjectives from "../../data/adjectives.json";
-import { SubSection } from "../app-ui/subsection";
-import { SubSectionTitle } from "../app-ui/subsection-title";
+import { Section } from "../app-ui/section";
+import { SectionTitle } from "../app-ui/section-title";
+
+
 import { Table } from "../app-ui/table";
 
 // Define the type for the verb structure
@@ -12,20 +14,24 @@ interface Adjective {
   en_a: string;
 }
 
-export function CheatSheetCommonAdjectives() {
+interface CheatSheetCommonAdjectivesProps {
+  level?: number
+}
+
+export function CheatSheetCommonAdjectives(props:CheatSheetCommonAdjectivesProps) {
   // Type the imported data
   const adjectiveList: Adjective[] = adjectives;
   adjectiveList.sort((a, b) => a.en.localeCompare(b.en));
 
 
   return (
-    <SubSection className="w-max max-w-full">
-      <SubSectionTitle>Common Adjectives</SubSectionTitle>
+    <Section level={props.level} className="w-max max-w-full">
+      <SectionTitle level={props.level}>Common Adjectives</SectionTitle>
       <Table
         headers={['English', 'Polish', 'English', 'Polish']}
         rows={adjectiveList.map((d) => [d.en, d.pl, d.en_a, d.pl_a])}
         className="mt-6"
       />
-    </SubSection>
+    </Section>
   );
 }

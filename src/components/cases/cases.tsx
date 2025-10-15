@@ -1,6 +1,8 @@
 import { Heading, Separator } from "@radix-ui/themes";
-import { SubSection } from "../app-ui/subsection";
-import { SubSectionTitle } from "../app-ui/subsection-title";
+
+
+import { Section } from "../app-ui/section";
+import { SectionTitle } from "../app-ui/section-title";
 import { Table } from "../app-ui/table";
 import { CheatSheetCases } from "../cheat-sheet/cheat-sheet-cases";
 // V. Noun Declension Data (Individual Case Sections)
@@ -166,6 +168,7 @@ const ALL_CASE_DATA = [
 
 interface CaseSectionProps {
   data: (typeof ALL_CASE_DATA)[0];
+  level?: number
 }
 
 const EndingsCode: React.FC<{ children: string }> = ({ children }) => (
@@ -174,7 +177,7 @@ const EndingsCode: React.FC<{ children: string }> = ({ children }) => (
   </code>
 );
 
-const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
+const CaseSection: React.FC<CaseSectionProps> = ({ data, level }) => {
   const {
     name,
     question,
@@ -203,8 +206,8 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
   ];
 
   return (
-    <SubSection className="w-max max-w-full">
-      <SubSectionTitle>{name}</SubSectionTitle>
+    <Section level={level} className="w-max max-w-full">
+      <SectionTitle level={level}>{name}</SectionTitle>
       <div>
         <p className="text-red-700 dark:text-red-300">Question: {question}</p>
       </div>
@@ -245,7 +248,7 @@ const CaseSection: React.FC<CaseSectionProps> = ({ data }) => {
           </ul>
         </>
       )}
-    </SubSection>
+    </Section>
   );
 };
 

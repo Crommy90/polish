@@ -146,6 +146,12 @@ body {
     @apply pb-2 text-3xl font-semibold tracking-tight first:mt-0;
   }
   h3 {
+    @apply pb-2 text-2xl font-semibold tracking-tight;
+  }
+  h4 {
+    @apply pb-2 text-xl font-semibold tracking-tight;
+  }
+  h5 {
     @apply pb-2 font-semibold tracking-tight;
   }
 }

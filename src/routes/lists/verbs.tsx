@@ -2,7 +2,7 @@ import { PageTitle } from '@/components/app-ui/page-title';
 import { Section } from '@/components/app-ui/section';
 import { SectionTitle } from '@/components/app-ui/section-title';
 import { CheatSheetVerbs } from '@/components/cheat-sheet/cheat-sheet-verbs';
-import { CommonVerbs } from '@/components/verbs/common-verbs';
+import { VerbsCommon } from '@/components/verbs/verbs-common';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/lists/verbs')({
@@ -20,7 +20,7 @@ function RouteComponent() {
       </Section>
       <Section>
           <SectionTitle>Verb List</SectionTitle>
-          <CommonVerbs />
+          <VerbsCommon />
       </Section>
     </>
   );
