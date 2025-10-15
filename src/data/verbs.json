@@ -286,19 +286,6 @@
     }
   },
   {
-    "en": "to understand",
-    "per": "zrozumieć",
-    "imp": "rozumieć",
-    "pt": {
-      "ja": "rozumiem",
-      "ty": "rozumiesz",
-      "on/ona/ono": "rozumie",
-      "my": "rozumiemy",
-      "wy": "rozumiecie",
-      "oni/one": "rozumieją"
-    }
-  },
-  {
     "en": "to play",
     "per": "zagrać",
     "imp": "grać",
@@ -335,32 +322,6 @@
       "my": "przychodzimy",
       "wy": "przychodzicie",
       "oni/one": "przychodzą"
-    }
-  },
-  {
-    "en": "to think",
-    "per": "pomyśleć",
-    "imp": "myśleć",
-    "pt": {
-      "ja": "myślę",
-      "ty": "myślisz",
-      "on/ona/ono": "myśli",
-      "my": "myślimy",
-      "wy": "myślicie",
-      "oni/one": "myślą"
-    }
-  },
-  {
-    "en": "to walk",
-    "per": "pójść",
-    "imp": "chodzić",
-    "pt": {
-      "ja": "chodzę",
-      "ty": "chodzisz",
-      "on/ona/ono": "chodzi",
-      "my": "chodzimy",
-      "wy": "chodzicie",
-      "oni/one": "chodzą"
     }
   },
   {
@@ -455,19 +416,6 @@
     }
   },
   {
-    "en": "to work",
-    "per": "—",
-    "imp": "pracować",
-    "pt": {
-      "ja": "pracuję",
-      "ty": "pracujesz",
-      "on/ona/ono": "pracuje",
-      "my": "pracujemy",
-      "wy": "pracujecie",
-      "oni/one": "pracują"
-    }
-  },
-  {
     "en": "to sing",
     "per": "zaśpiewać",
     "imp": "śpiewać",
@@ -491,19 +439,6 @@
       "my": "tańczymy",
       "wy": "tańczycie",
       "oni/one": "tańczą"
-    }
-  },
-  {
-    "en": "to sleep",
-    "per": "—",
-    "imp": "spać",
-    "pt": {
-      "ja": "śpię",
-      "ty": "śpisz",
-      "on/ona/ono": "śpi",
-      "my": "śpimy",
-      "wy": "śpicie",
-      "oni/one": "śpią"
     }
   },
   {
@@ -572,32 +507,6 @@
     }
   },
   {
-    "en": "to understand",
-    "per": "zrozumieć",
-    "imp": "rozumieć",
-    "pt": {
-      "ja": "rozumiem",
-      "ty": "rozumiesz",
-      "on/ona/ono": "rozumie",
-      "my": "rozumiemy",
-      "wy": "rozumiecie",
-      "oni/one": "rozumieją"
-    }
-  },
-  {
-    "en": "to know (a fact)",
-    "per": "wiedzieć",
-    "imp": "wiedzieć",
-    "pt": {
-      "ja": "wiem",
-      "ty": "wiesz",
-      "on/ona/ono": "wie",
-      "my": "wiemy",
-      "wy": "wiecie",
-      "oni/one": "wiedzą"
-    }
-  },
-  {
     "en": "to know (a person, place, etc.)",
     "per": "poznać",
     "imp": "znać",
@@ -608,6 +517,19 @@
       "my": "znamy",
       "wy": "znacie",
       "oni/one": "znają"
+    }
+  },
+  {
+    "en": "to listen",
+    "per": "posłuchać",
+    "imp": "słuchać",
+    "pt": {
+      "ja": "słucham",
+      "ty": "słuchasz",
+      "on/ona/ono": "słucha",
+      "my": "słuchamy",
+      "wy": "słuchacie",
+      "oni/one": "słuchają"
     }
   }
 ]
