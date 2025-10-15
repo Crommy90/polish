@@ -9,7 +9,7 @@ import { SectionTitle } from "../app-ui/section-title";
 import { Table } from "../app-ui/table";
 
 
-const Case = {
+export const Case = {
   Nominative: 'nom',
   Genitive: 'gen',
   Dative: 'dat',
@@ -18,7 +18,7 @@ const Case = {
   Locative: 'loc',
   Vocative: 'voc',
 } as const;
-type Case = (typeof Case)[keyof typeof Case];
+export type Case = (typeof Case)[keyof typeof Case];
 
 
 interface CaseEntry {

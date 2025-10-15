@@ -4,7 +4,6 @@ import verbs from "../../data/verbs.json";
 
 
 import { Section } from "../app-ui/section";
-import { SectionTitle } from "../app-ui/section-title";
 import { Table } from "../app-ui/table";
 
 // Define the type for the verb structure
@@ -29,7 +28,6 @@ export function VerbsCommon(props: VerbsCommonProps) {
 
   return (
     <Section level={level} className={`w-max max-w-full${className ? ` ${className}` : ""}`} {...rest}>
-      <SectionTitle level={level}>Common Verbs</SectionTitle>
       <Table
         headers={['English', 'Polish', 'Forms']}
         rows={verbList.map((d) => [

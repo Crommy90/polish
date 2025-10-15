@@ -1,0 +1,67 @@
+[
+  {
+    "en": "to read",
+    "pl": "czytać (ać)",
+    "case": {
+      "nom": "czytanie",
+      "gen": "czytania",
+      "dat": "czytaniu",
+      "acc": "czytanie",
+      "ins": "czytaniem",
+      "loc": "czytaniu",
+      "voc": "czytanie"
+    }
+  },
+  {
+    "en": "to like",
+    "pl": "lubić (ić)",
+    "case": {
+      "nom": "lubienie",
+      "gen": "lubienia",
+      "dat": "lubieniu",
+      "acc": "lubienie",
+      "ins": "lubieniem",
+      "loc": "lubieniu",
+      "voc": "lubienie"
+    }
+  },
+  {
+    "en": "to wash",
+    "pl": "myć",
+    "case": {
+      "nom": "mycie",
+      "gen": "mycia",
+      "dat": "myciu",
+      "acc": "mycie",
+      "ins": "myciem",
+      "loc": "myciu",
+      "voc": "mycie"
+    }
+  },
+  {
+    "en": "to drink",
+    "pl": "pić",
+    "case": {
+      "nom": "picie",
+      "gen": "picia",
+      "dat": "piciu",
+      "acc": "picie",
+      "ins": "piciem",
+      "loc": "piciu",
+      "voc": "picie"
+    }
+  },
+  {
+    "en": "to eat",
+    "pl": "jeść",
+    "case": {
+      "nom": "jedzenie",
+      "gen": "jedzenia",
+      "dat": "jedzeniu",
+      "acc": "jedzenie",
+      "ins": "jedzeniem",
+      "loc": "jedzeniu",
+      "voc": "jedzenie"
+    }
+  }
+]
