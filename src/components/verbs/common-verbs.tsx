@@ -15,7 +15,7 @@ interface Verb {
   };
 }
 
-export function CheatSheetCommonVerbs() {
+export function CommonVerbs() {
   // Type the imported data
   const verbList: Verb[] = verbs;
   verbList.sort((a, b) => a.en.localeCompare(b.en));

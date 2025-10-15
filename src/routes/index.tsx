@@ -4,8 +4,8 @@ import { SectionTitle } from "@/components/app-ui/section-title";
 import { CheatSheetCases } from "@/components/cheat-sheet/cheat-sheet-cases";
 import { CheatSheetColours } from "@/components/cheat-sheet/cheat-sheet-colours";
 import { CheatSheetCommonAdjectives } from "@/components/cheat-sheet/cheat-sheet-common-adjectives";
-import { CheatSheetCommonVerbs } from "@/components/cheat-sheet/cheat-sheet-common-verbs";
 import { CheatSheetVerbs } from "@/components/cheat-sheet/cheat-sheet-verbs";
+import { CommonVerbs } from "@/components/verbs/common-verbs";
 import { Separator } from "@radix-ui/themes";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -29,7 +29,7 @@ function Content() {
       </Section>
       <Section>
         <SectionTitle>Verb List</SectionTitle>
-        <CheatSheetCommonVerbs />
+        <CommonVerbs />
       </Section>
       <Section>
         <SectionTitle>Adjective List</SectionTitle>
