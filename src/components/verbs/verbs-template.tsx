@@ -1,5 +1,5 @@
 // Import the JSON data
-import { Flex, Grid, type SectionProps } from '@radix-ui/themes';
+import { type SectionProps } from '@radix-ui/themes';
 
 import { Section } from '../app-ui/section';
 import { SectionTitle } from '../app-ui/section-title';
@@ -34,12 +34,12 @@ function findDuplicateVerbs(verbs: Verb[]): Verb[] {
       seenEn.set(en, verb);
     }
 
-      if (seenImp.has(imp.inf)) {
-        duplicates.add(verb);
-        duplicates.add(seenImp.get(imp.inf)!);
-      } else {
-        seenImp.set(imp.inf, verb);
-      }
+    if (seenImp.has(imp.inf)) {
+      duplicates.add(verb);
+      duplicates.add(seenImp.get(imp.inf)!);
+    } else {
+      seenImp.set(imp.inf, verb);
+    }
   }
 
   return Array.from(duplicates);
@@ -72,7 +72,7 @@ export function VerbsTemplate(props: VerbsCommonProps) {
           </span>
         ))}
       <Table
-        headers={['English', 'Imperfective', 'Ja', 'Ty', 'Perfective','Ja', 'Ty',]}
+        headers={['English', 'Imperfective', 'Ja', 'Ty', 'Perfective', 'Ja', 'Ty',]}
         rows={verbList.map((d) => [
           d.en,
           <b>{d.imp.inf}</b>,

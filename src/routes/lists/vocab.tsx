@@ -1,6 +1,5 @@
 import { PageTitle } from '@/components/app-ui/page-title';
 import { Section } from '@/components/app-ui/section';
-import { CheatSheetVerbs } from '@/components/cheat-sheet/cheat-sheet-verbs';
 import { VerbsCommon } from '@/components/verbs/verbs-common';
 import { VerbsGerunds } from '@/components/verbs/verbs-gerunds';
 import { VerbsGo } from '@/components/verbs/verbs-go';
@@ -16,13 +15,13 @@ function RouteComponent() {
       <PageTitle>Vocab</PageTitle>
 
       <Section>
-          <VerbsCommon />
+        <VerbsCommon />
       </Section>
       <Section>
-          <VerbsGo />
+        <VerbsGo />
       </Section>
       <Section>
-          <VerbsGerunds />
+        <VerbsGerunds />
       </Section>
     </>
   );
