@@ -27,20 +27,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Sets up the Node.js environment
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      # Sets up the Bun environment
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
 
       # Installs dependencies
       - name: Install dependencies
-        run: npm ci
+        run: bun install
 
       # Builds the application using the correct base path
       # IMPORTANT: Pass the repository name to Vite using an environment variable
       - name: Build project
-        run: npm run build
+        run: bun run build
 
       # Uploads the build artifact (the 'dist' folder)
       - name: Upload artifact
