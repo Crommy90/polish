@@ -18,6 +18,7 @@ const SIDEBAR_LINKS: SidebarLink[] = [
   { name: 'Grammar', href: '', isHeading: true },
   { name: 'Cases', href: '/lists/cases' },
   { name: 'Verbs', href: '/lists/verbs' },
+  { name: 'Vocab', href: '/lists/vocab' },
 
   { name: 'Topics', href: '', isHeading: true },
   { name: 'Sports', href: '/topics/sports' },

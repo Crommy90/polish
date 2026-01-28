@@ -1,0 +1,77 @@
+[
+  {
+    "en": "To go (on foot, determinate)",
+    "per": { "inf": "Pójść", "ja": "Pójdę", "ty": "Pójdziesz" },
+    "imp": { "inf": "Iść", "ja": "Idę", "ty": "Idziesz" }
+  },
+  {
+    "en": "To go (on foot, indeterminate)",
+    "per": { "inf": "Pochodzić", "ja": "Pochodzę", "ty": "Pochodzisz" },
+    "imp": { "inf": "Chodzić", "ja": "Chodzę", "ty": "Chodzisz" }
+  },
+  {
+    "en": "To go (by vehicle, determinate)",
+    "per": { "inf": "Pojechać", "ja": "Pojadę", "ty": "Pojedziesz" },
+    "imp": { "inf": "Jechać", "ja": "Jadę", "ty": "Jedziesz" }
+  },
+  {
+    "en": "To go (by vehicle, indeterminate)",
+    "per": { "inf": "Pojeździć", "ja": "Pojeżdżę", "ty": "Pojeździsz" },
+    "imp": { "inf": "Jeździć", "ja": "Jeżdżę", "ty": "Jeździsz" }
+  },
+  {
+    "en": "To arrive (on foot)",
+    "per": { "inf": "Przyjść", "ja": "Przyjdę", "ty": "Przyjdziesz" },
+    "imp": { "inf": "Przychodzić", "ja": "Przychodzę", "ty": "Przychodzisz" }
+  },
+  {
+    "en": "To arrive (by vehicle)",
+    "per": { "inf": "Przyjechać", "ja": "Przyjadę", "ty": "Przyjedziesz" },
+    "imp": { "inf": "Przyjeżdżać", "ja": "Przyjeżdżam", "ty": "Przyjeżdżasz" }
+  },
+  {
+    "en": "To leave (on foot)",
+    "per": { "inf": "Wyjść", "ja": "Wyjdę", "ty": "Wyjdziesz" },
+    "imp": { "inf": "Wychodzić", "ja": "Wychodzę", "ty": "Wychodzisz" }
+  },
+  {
+    "en": "To leave (by vehicle)",
+    "per": { "inf": "Wyjechać", "ja": "Wyjadę", "ty": "Wyjedziesz" },
+    "imp": { "inf": "Wyjeżdżać", "ja": "Wyjeżdżam", "ty": "Wyjeżdżasz" }
+  },
+  {
+    "en": "To enter (on foot)",
+    "per": { "inf": "Wejść", "ja": "Wejdę", "ty": "Wejdziesz" },
+    "imp": { "inf": "Wchodzić", "ja": "Wchodzę", "ty": "Wchodzisz" }
+  },
+  {
+    "en": "To enter (by vehicle)",
+    "per": { "inf": "Wjechać", "ja": "Wjadę", "ty": "Wjedziesz" },
+    "imp": { "inf": "Wjeżdżać", "ja": "Wjeżdżam", "ty": "Wjeżdżasz" }
+  },
+  {
+    "en": "To reach / get to (on foot)",
+    "per": { "inf": "Dojść", "ja": "Dojdę", "ty": "Dojdziesz" },
+    "imp": { "inf": "Dochodzić", "ja": "Dochodzę", "ty": "Dochodzisz" }
+  },
+  {
+    "en": "To reach / get to (by vehicle)",
+    "per": { "inf": "Dojechać", "ja": "Dojadę", "ty": "Dojedziesz" },
+    "imp": { "inf": "Dojeżdżać", "ja": "Dojeżdżam", "ty": "Dojeżdżasz" }
+  },
+  {
+    "en": "To go through (on foot)",
+    "per": { "inf": "Przejść", "ja": "Przejdę", "ty": "Przejdziesz" },
+    "imp": { "inf": "Przechodzić", "ja": "Przechodzę", "ty": "Przechodzisz" }
+  },
+  {
+    "en": "To go through (by vehicle)",
+    "per": { "inf": "Przejechać", "ja": "Przejadę", "ty": "Przejedziesz" },
+    "imp": { "inf": "Przejeżdżać", "ja": "Przejeżdżam", "ty": "Przejeżdżasz" }
+  },
+  {
+    "en": "To approach / come closer",
+    "per": { "inf": "Podejść", "ja": "Podejdę", "ty": "Podejdziesz" },
+    "imp": { "inf": "Podchodzić", "ja": "Podchodzę", "ty": "Podchodzisz" }
+  }
+]

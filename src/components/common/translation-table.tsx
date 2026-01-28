@@ -8,7 +8,7 @@ export interface Translation {
   notes?: string;
 }
 
-interface TranslationTableProps extends SectionProps {
+export interface TranslationTableProps extends SectionProps {
   translations: Translation[];
 }
 

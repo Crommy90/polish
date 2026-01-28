@@ -162,7 +162,7 @@ export function VerbsOverview(props: VerbsOverviewProps) {
         {...rest}
       >
         {' '}
-        <SectionTitle level={level}>Present Tense Conjugations (IPF Verbs Only)</SectionTitle>
+        <SectionTitle level={level}>Present Tense Conjugations (Imperfective Verbs Only)</SectionTitle>
         <p>
           The Present Tense can only be formed using Imperfective verbs. Below
           are the consolidated conjugations for the three most common stem

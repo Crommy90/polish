@@ -6,18 +6,15 @@ import { VerbsGerunds } from '@/components/verbs/verbs-gerunds';
 import { VerbsGo } from '@/components/verbs/verbs-go';
 import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute('/lists/verbs')({
+export const Route = createFileRoute('/lists/vocab')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
   return (
     <>
-      <PageTitle>Verbs</PageTitle>
+      <PageTitle>Vocab</PageTitle>
 
-      <Section>
-          <CheatSheetVerbs />
-      </Section>
       <Section>
           <VerbsCommon />
       </Section>

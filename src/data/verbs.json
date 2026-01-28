@@ -1,535 +1,297 @@
 [
   {
-    "en": "to be",
-    "per": "—",
-    "imp": "być",
-    "pt": {
-      "ja": "jestem",
-      "ty": "jesteś",
-      "on/ona/ono": "jest",
-      "my": "jesteśmy",
-      "wy": "jesteście",
-      "oni/one": "są"
+    "en": "To be",
+    "imp": {
+      "inf": "Być",
+      "ja": "Jestem",
+      "ty": "Jesteś"
     }
   },
   {
-    "en": "to have",
-    "per": "—",
-    "imp": "mieć",
-    "pt": {
-      "ja": "mam",
-      "ty": "masz",
-      "on/ona/ono": "ma",
-      "my": "mamy",
-      "wy": "macie",
-      "oni/one": "mają"
+    "en": "To have",
+    "imp": {
+      "inf": "Mieć",
+      "ja": "Mam",
+      "ty": "Masz"
     }
   },
   {
-    "en": "to go (on foot, repeatedly)",
-    "per": "pójść",
-    "imp": "chodzić",
-    "pt": {
-      "ja": "chodzę",
-      "ty": "chodzisz",
-      "on/ona/ono": "chodzi",
-      "my": "chodzimy",
-      "wy": "chodzicie",
-      "oni/one": "chodzą"
+    "en": "To go (on foot, repeatedly)",
+    "per": {
+      "inf": "Pójść",
+      "ja": "Pójdę",
+      "ty": "Pójdziesz"
+    },
+    "imp": {
+      "inf": "Chodzić",
+      "ja": "Chodzę",
+      "ty": "Chodzisz"
     }
   },
   {
-    "en": "to go (by vehicle, repeatedly)",
-    "per": "pojechać",
-    "imp": "jeździć",
-    "pt": {
-      "ja": "jeżdżę",
-      "ty": "jeździsz",
-      "on/ona/ono": "jeździ",
-      "my": "jeździmy",
-      "wy": "jeździcie",
-      "oni/one": "jeżdżą"
+    "en": "To go (by vehicle, repeatedly)",
+    "per": {
+      "inf": "Pojechać",
+      "ja": "Pojadę",
+      "ty": "Pojedziesz"
+    },
+    "imp": {
+      "inf": "Jeździć",
+      "ja": "Jeżdżę",
+      "ty": "Jeździsz"
     }
   },
   {
-    "en": "to go (on foot, now)",
-    "per": "pójść",
-    "imp": "iść",
-    "pt": {
-      "ja": "idę",
-      "ty": "idziesz",
-      "on/ona/ono": "idzie",
-      "my": "idziemy",
-      "wy": "idziecie",
-      "oni/one": "idą"
+    "en": "To go (on foot, now)",
+    "per": {
+      "inf": "Pójść",
+      "ja": "Pójdę",
+      "ty": "Pójdziesz"
+    },
+    "imp": {
+      "inf": "Iść",
+      "ja": "Idę",
+      "ty": "Idziesz"
     }
   },
   {
-    "en": "to do",
-    "per": "zrobić",
-    "imp": "robić",
-    "pt": {
-      "ja": "robię",
-      "ty": "robisz",
-      "on/ona/ono": "robi",
-      "my": "robimy",
-      "wy": "robicie",
-      "oni/one": "robią"
+    "en": "To do",
+    "per": {
+      "inf": "Zrobić",
+      "ja": "Zrobię",
+      "ty": "Zrobisz"
+    },
+    "imp": {
+      "inf": "Robić",
+      "ja": "Robię",
+      "ty": "Robisz"
     }
   },
   {
-    "en": "to speak",
-    "per": "powiedzieć",
-    "imp": "mówić",
-    "pt": {
-      "ja": "mówię",
-      "ty": "mówisz",
-      "on/ona/ono": "mówi",
-      "my": "mówimy",
-      "wy": "mówicie",
-      "oni/one": "mówią"
+    "en": "To speak",
+    "per": {
+      "inf": "Powiedzieć",
+      "ja": "Powiem",
+      "ty": "Powiesz"
+    },
+    "imp": {
+      "inf": "Mówić",
+      "ja": "Mówię",
+      "ty": "Mówisz"
     }
   },
   {
-    "en": "to know (a fact)",
-    "per": "—",
-    "imp": "wiedzieć",
-    "pt": {
-      "ja": "wiem",
-      "ty": "wiesz",
-      "on/ona/ono": "wie",
-      "my": "wiemy",
-      "wy": "wiecie",
-      "oni/one": "wiedzą"
+    "en": "To know (a fact)",
+    "imp": {
+      "inf": "Wiedzieć",
+      "ja": "Wiem",
+      "ty": "Wiesz"
     }
   },
   {
-    "en": "to eat",
-    "per": "zjeść",
-    "imp": "jeść",
-    "pt": {
-      "ja": "jem",
-      "ty": "jesz",
-      "on/ona/ono": "je",
-      "my": "jemy",
-      "wy": "jecie",
-      "oni/one": "jedzą"
+    "en": "To eat",
+    "per": {
+      "inf": "Zjeść",
+      "ja": "Zjem",
+      "ty": "Zjesz"
+    },
+    "imp": {
+      "inf": "Jeść",
+      "ja": "Jem",
+      "ty": "Jesz"
     }
   },
   {
-    "en": "to drink",
-    "per": "wypić",
-    "imp": "pić",
-    "pt": {
-      "ja": "piję",
-      "ty": "pijesz",
-      "on/ona/ono": "pije",
-      "my": "pijemy",
-      "wy": "pijecie",
-      "oni/one": "piją"
+    "en": "To drink",
+    "per": {
+      "inf": "Wypić",
+      "ja": "Wypiję",
+      "ty": "Wypijesz"
+    },
+    "imp": {
+      "inf": "Pić",
+      "ja": "Piję",
+      "ty": "Pijesz"
     }
   },
   {
-    "en": "to write",
-    "per": "napisać",
-    "imp": "pisać",
-    "pt": {
-      "ja": "piszę",
-      "ty": "piszesz",
-      "on/ona/ono": "pisze",
-      "my": "piszemy",
-      "wy": "piszecie",
-      "oni/one": "piszą"
+    "en": "To write",
+    "per": {
+      "inf": "Napisać",
+      "ja": "Napiszę",
+      "ty": "Napiszesz"
+    },
+    "imp": {
+      "inf": "Pisać",
+      "ja": "Piszę",
+      "ty": "Piszesz"
     }
   },
   {
-    "en": "to read",
-    "per": "przeczytać",
-    "imp": "czytać",
-    "pt": {
-      "ja": "czytam",
-      "ty": "czytasz",
-      "on/ona/ono": "czyta",
-      "my": "czytamy",
-      "wy": "czytacie",
-      "oni/one": "czytają"
+    "en": "To read",
+    "per": {
+      "inf": "Przeczytać",
+      "ja": "Przeczytam",
+      "ty": "Przeczytasz"
+    },
+    "imp": {
+      "inf": "Czytać",
+      "ja": "Czytam",
+      "ty": "Czytasz"
     }
   },
   {
-    "en": "to see",
-    "per": "zobaczyć",
-    "imp": "widzieć",
-    "pt": {
-      "ja": "widzę",
-      "ty": "widzisz",
-      "on/ona/ono": "widzi",
-      "my": "widzimy",
-      "wy": "widzicie",
-      "oni/one": "widzą"
+    "en": "To see",
+    "per": {
+      "inf": "Zobaczyć",
+      "ja": "Zobaczę",
+      "ty": "Zobaczysz"
+    },
+    "imp": {
+      "inf": "Widzieć",
+      "ja": "Widzę",
+      "ty": "Widzisz"
     }
   },
   {
-    "en": "to hear",
-    "per": "usłyszeć",
-    "imp": "słyszeć",
-    "pt": {
-      "ja": "słyszę",
-      "ty": "słyszysz",
-      "on/ona/ono": "słyszy",
-      "my": "słyszymy",
-      "wy": "słyszycie",
-      "oni/one": "słyszą"
+    "en": "To hear",
+    "per": {
+      "inf": "Usłyszeć",
+      "ja": "Usłyszę",
+      "ty": "Usłyszysz"
+    },
+    "imp": {
+      "inf": "Słyszeć",
+      "ja": "Słyszę",
+      "ty": "Słyszysz"
     }
   },
   {
-    "en": "to give",
-    "per": "dać",
-    "imp": "dawać",
-    "pt": {
-      "ja": "daję",
-      "ty": "dajesz",
-      "on/ona/ono": "daje",
-      "my": "dajemy",
-      "wy": "dajecie",
-      "oni/one": "dają"
+    "en": "To give",
+    "per": {
+      "inf": "Dać",
+      "ja": "Dam",
+      "ty": "Dasz"
+    },
+    "imp": {
+      "inf": "Dawać",
+      "ja": "Daję",
+      "ty": "Dajesz"
     }
   },
   {
-    "en": "to take",
-    "per": "wziąć",
-    "imp": "brać",
-    "pt": {
-      "ja": "biorę",
-      "ty": "bierzesz",
-      "on/ona/ono": "bierze",
-      "my": "bierzemy",
-      "wy": "bierzecie",
-      "oni/one": "biorą"
+    "en": "To take",
+    "per": {
+      "inf": "Wziąć",
+      "ja": "Wezmę",
+      "ty": "Weźmiesz"
+    },
+    "imp": {
+      "inf": "Brać",
+      "ja": "Biorę",
+      "ty": "Bierzesz"
     }
   },
   {
-    "en": "to think",
-    "per": "pomyśleć",
-    "imp": "myśleć",
-    "pt": {
-      "ja": "myślę",
-      "ty": "myślisz",
-      "on/ona/ono": "myśli",
-      "my": "myślimy",
-      "wy": "myślicie",
-      "oni/one": "myślą"
+    "en": "To think",
+    "per": {
+      "inf": "Pomyśleć",
+      "ja": "Pomyślę",
+      "ty": "Pomyślisz"
+    },
+    "imp": {
+      "inf": "Myśleć",
+      "ja": "Myślę",
+      "ty": "Myślisz"
     }
   },
   {
-    "en": "to understand",
-    "per": "zrozumieć",
-    "imp": "rozumieć",
-    "pt": {
-      "ja": "rozumiem",
-      "ty": "rozumiesz",
-      "on/ona/ono": "rozumie",
-      "my": "rozumiemy",
-      "wy": "rozumiecie",
-      "oni/one": "rozumieją"
+    "en": "To understand",
+    "per": {
+      "inf": "Zrozumieć",
+      "ja": "Zrozumiem",
+      "ty": "Zrozumiesz"
+    },
+    "imp": {
+      "inf": "Rozumieć",
+      "ja": "Rozumiem",
+      "ty": "Rozumiesz"
     }
   },
   {
-    "en": "to sleep",
-    "per": "—",
-    "imp": "spać",
-    "pt": {
-      "ja": "śpię",
-      "ty": "śpisz",
-      "on/ona/ono": "śpi",
-      "my": "śpimy",
-      "wy": "śpicie",
-      "oni/one": "śpią"
+    "en": "To sleep",
+    "imp": {
+      "inf": "Spać",
+      "ja": "Śpię",
+      "ty": "Śpisz"
     }
   },
   {
-    "en": "to work",
-    "per": "—",
-    "imp": "pracować",
-    "pt": {
-      "ja": "pracuję",
-      "ty": "pracujesz",
-      "on/ona/ono": "pracuje",
-      "my": "pracujemy",
-      "wy": "pracujecie",
-      "oni/one": "pracują"
+    "en": "To work",
+    "imp": {
+      "inf": "Pracować",
+      "ja": "Pracuję",
+      "ty": "Pracujesz"
     }
   },
   {
-    "en": "to help",
-    "per": "pomóc",
-    "imp": "pomagać",
-    "pt": {
-      "ja": "pomagam",
-      "ty": "pomagasz",
-      "on/ona/ono": "pomaga",
-      "my": "pomagamy",
-      "wy": "pomagacie",
-      "oni/one": "pomagają"
+    "en": "To help",
+    "per": {
+      "inf": "Pomóc",
+      "ja": "Pomogę",
+      "ty": "Pomożesz"
+    },
+    "imp": {
+      "inf": "Pomagać",
+      "ja": "Pomagam",
+      "ty": "Pomagasz"
     }
   },
   {
-    "en": "to call",
-    "per": "zadzwonić",
-    "imp": "dzwonić",
-    "pt": {
-      "ja": "dzwonię",
-      "ty": "dzwonisz",
-      "on/ona/ono": "dzwoni",
-      "my": "dzwonimy",
-      "wy": "dzwonicie",
-      "oni/one": "dzwonią"
+    "en": "To call",
+    "per": {
+      "inf": "Zadzwonić",
+      "ja": "Zadzwonię",
+      "ty": "Zadzwonisz"
+    },
+    "imp": {
+      "inf": "Dzwonić",
+      "ja": "Dzwonię",
+      "ty": "Dzwonisz"
     }
   },
   {
-    "en": "to play",
-    "per": "zagrać",
-    "imp": "grać",
-    "pt": {
-      "ja": "gram",
-      "ty": "grasz",
-      "on/ona/ono": "gra",
-      "my": "gramy",
-      "wy": "gracie",
-      "oni/one": "grają"
+    "en": "To play",
+    "per": {
+      "inf": "Zagrać",
+      "ja": "Zagram",
+      "ty": "Zagrasz"
+    },
+    "imp": {
+      "inf": "Grać",
+      "ja": "Gram",
+      "ty": "Grasz"
     }
   },
   {
-    "en": "to live",
-    "per": "—",
-    "imp": "żyć",
-    "pt": {
-      "ja": "żyję",
-      "ty": "żyjesz",
-      "on/ona/ono": "żyje",
-      "my": "żyjemy",
-      "wy": "żyjecie",
-      "oni/one": "żyją"
+    "en": "To live",
+    "imp": {
+      "inf": "Żyć",
+      "ja": "Żyję",
+      "ty": "Żyjesz"
     }
   },
   {
-    "en": "to come",
-    "per": "przyjść",
-    "imp": "przyjść",
-    "pt": {
-      "ja": "przychodzę",
-      "ty": "przychodzisz",
-      "on/ona/ono": "przychodzi",
-      "my": "przychodzimy",
-      "wy": "przychodzicie",
-      "oni/one": "przychodzą"
-    }
-  },
-  {
-    "en": "to ask",
-    "per": "zapytać",
-    "imp": "pytać",
-    "pt": {
-      "ja": "pytam",
-      "ty": "pytasz",
-      "on/ona/ono": "pyta",
-      "my": "pytamy",
-      "wy": "pytacie",
-      "oni/one": "pytają"
-    }
-  },
-  {
-    "en": "to send",
-    "per": "wysłać",
-    "imp": "wysyłać",
-    "pt": {
-      "ja": "wysyłam",
-      "ty": "wysyłasz",
-      "on/ona/ono": "wysyła",
-      "my": "wysyłamy",
-      "wy": "wysyłacie",
-      "oni/one": "wysyłają"
-    }
-  },
-  {
-    "en": "to open",
-    "per": "otworzyć",
-    "imp": "otwierać",
-    "pt": {
-      "ja": "otwieram",
-      "ty": "otwierasz",
-      "on/ona/ono": "otwiera",
-      "my": "otwieramy",
-      "wy": "otwieracie",
-      "oni/one": "otwierają"
-    }
-  },
-  {
-    "en": "to close",
-    "per": "zamknąć",
-    "imp": "zamykać",
-    "pt": {
-      "ja": "zamykam",
-      "ty": "zamykasz",
-      "on/ona/ono": "zamyka",
-      "my": "zamykamy",
-      "wy": "zamykacie",
-      "oni/one": "zamykają"
-    }
-  },
-  {
-    "en": "to cook",
-    "per": "ugotować",
-    "imp": "gotować",
-    "pt": {
-      "ja": "gotuję",
-      "ty": "gotujesz",
-      "on/ona/ono": "gotuje",
-      "my": "gotujemy",
-      "wy": "gotujecie",
-      "oni/one": "gotują"
-    }
-  },
-  {
-    "en": "to buy",
-    "per": "kupić",
-    "imp": "kupować",
-    "pt": {
-      "ja": "kupuję",
-      "ty": "kupujesz",
-      "on/ona/ono": "kupuje",
-      "my": "kupujemy",
-      "wy": "kupujecie",
-      "oni/one": "kupują"
-    }
-  },
-  {
-    "en": "to sell",
-    "per": "sprzedać",
-    "imp": "sprzedawać",
-    "pt": {
-      "ja": "sprzedaję",
-      "ty": "sprzedajesz",
-      "on/ona/ono": "sprzedaje",
-      "my": "sprzedajemy",
-      "wy": "sprzedajecie",
-      "oni/one": "sprzedają"
-    }
-  },
-  {
-    "en": "to sing",
-    "per": "zaśpiewać",
-    "imp": "śpiewać",
-    "pt": {
-      "ja": "śpiewam",
-      "ty": "śpiewasz",
-      "on/ona/ono": "śpiewa",
-      "my": "śpiewamy",
-      "wy": "śpiewacie",
-      "oni/one": "śpiewają"
-    }
-  },
-  {
-    "en": "to dance",
-    "per": "—",
-    "imp": "tańczyć",
-    "pt": {
-      "ja": "tańczę",
-      "ty": "tańczysz",
-      "on/ona/ono": "tańczy",
-      "my": "tańczymy",
-      "wy": "tańczycie",
-      "oni/one": "tańczą"
-    }
-  },
-  {
-    "en": "to want",
-    "per": "—",
-    "imp": "chcieć",
-    "pt": {
-      "ja": "chcę",
-      "ty": "chcesz",
-      "on/ona/ono": "chce",
-      "my": "chcemy",
-      "wy": "chcecie",
-      "oni/one": "chcą"
-    }
-  },
-  {
-    "en": "to love",
-    "per": "—",
-    "imp": "kochać",
-    "pt": {
-      "ja": "kocham",
-      "ty": "kochasz",
-      "on/ona/ono": "kocha",
-      "my": "kochamy",
-      "wy": "kochacie",
-      "oni/one": "kochają"
-    }
-  },
-  {
-    "en": "can",
-    "per": "—",
-    "imp": "móc",
-    "pt": {
-      "ja": "mogę",
-      "ty": "możesz",
-      "on/ona/ono": "może",
-      "my": "możemy",
-      "wy": "możecie",
-      "oni/one": "mogą"
-    }
-  },
-  {
-    "en": "to get up",
-    "per": "wstać",
-    "imp": "wstawać",
-    "pt": {
-      "ja": "wstaję",
-      "ty": "wstajesz",
-      "on/ona/ono": "wstaje",
-      "my": "wstajemy",
-      "wy": "wstajecie",
-      "oni/one": "wstają"
-    }
-  },
-  {
-    "en": "to dress",
-    "per": "ubrać się",
-    "imp": "ubierać się",
-    "pt": {
-      "ja": "ubieram się",
-      "ty": "ubierasz się",
-      "on/ona/ono": "ubiera się",
-      "my": "ubieramy się",
-      "wy": "ubieracie się",
-      "oni/one": "ubierają się"
-    }
-  },
-  {
-    "en": "to know (a person, place, etc.)",
-    "per": "poznać",
-    "imp": "znać",
-    "pt": {
-      "ja": "znam",
-      "ty": "znasz",
-      "on/ona/ono": "zna",
-      "my": "znamy",
-      "wy": "znacie",
-      "oni/one": "znają"
-    }
-  },
-  {
-    "en": "to listen",
-    "per": "posłuchać",
-    "imp": "słuchać",
-    "pt": {
-      "ja": "słucham",
-      "ty": "słuchasz",
-      "on/ona/ono": "słucha",
-      "my": "słuchamy",
-      "wy": "słuchacie",
-      "oni/one": "słuchają"
+    "en": "To come",
+    "per": {
+      "inf": "Przyjść",
+      "ja": "Przyjdę",
+      "ty": "Przyjdziesz"
+    },
+    "imp": {
+      "inf": "Przychodzić",
+      "ja": "Przychodzę",
+      "ty": "Przychodzisz"
     }
   }
 ]
