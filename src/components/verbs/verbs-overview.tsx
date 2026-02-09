@@ -116,6 +116,47 @@ const PAST_TENSE_DATA = [
     robić: "robiły",
   },
 ];
+const FUTURE_TENSE_BYC_DATA =
+  [
+    {
+      person: "ja",
+      byc: "będę",
+      m: 'czytał',
+      f: 'czytała',
+    },
+    {
+      person: "ty",
+      byc: "będziesz",
+      m: 'czytał',
+      f: 'czytała',
+    },
+    {
+      person: "on/ona/ono",
+      byc: "będzie",
+      m: 'czytał',
+      f: 'czytała',
+      n: 'czytało',
+    },
+    {
+      person: "my",
+      byc: "będziemy",
+      m: 'czytali',
+      f: 'czytały',
+    },
+    {
+      person: "wy",
+      byc: "będziecie",
+      m: 'czytali',
+      f: 'czytały',
+    },
+    {
+      person: "oni/one",
+      byc: "będą",
+      m: 'czytali',
+      f: 'czytały',
+      n: 'czytały',
+    },
+  ];
 
 interface VerbsOverviewProps extends SectionProps {
   level?: number;
@@ -223,7 +264,7 @@ export function VerbsOverview(props: VerbsOverviewProps) {
         {...rest}
       >
         <SectionTitle level={level}>Future Tense Conjugations</SectionTitle>
-        <h3>1. Simple Future Tense (Perfective Verbs)</h3>
+        <b>1. Simple Future Tense (Perfective Verbs)</b>
         <p className="text-gray-700 dark:text-gray-300 mb-2">
           Used for a completed action in the future. Formed by conjugating the
           Perfective (PF) verb using the Present Tense endings.
@@ -236,7 +277,7 @@ export function VerbsOverview(props: VerbsOverviewProps) {
             <code className="font-mono">My zrobimy</code> (We will do/finish)
           </p>
         </div>
-        <h3>2. Compound Future Tense (Imperfective Verbs)</h3>
+        <b>2. Compound Future Tense (Imperfective Verbs)</b>
         <p className="text-gray-700 dark:text-gray-300 mb-2">
           Used for an ongoing or unspecified action in the future. Formed using
           być (to be) + Imperfective verb.
@@ -255,6 +296,23 @@ export function VerbsOverview(props: VerbsOverviewProps) {
             doing - past tense form, M/F)
           </p>
         </div>
+
+        <Table
+          headers={[
+            'Person',
+            '',
+            'M',
+            'F',
+            'N',
+          ]}
+          rows={FUTURE_TENSE_BYC_DATA.map((d) => [
+            d.person,
+            d.byc,
+            d.m,
+            d.f,
+            d.n,
+          ])}
+        />
       </Section>
     </>
   );
