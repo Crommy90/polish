@@ -7,7 +7,7 @@ import { SectionTitle } from "../app-ui/section-title";
 import { Table } from "../app-ui/table";
 
 // Define the type for the verb structure
-interface Adjective {
+export interface Adjective {
   en: string;
   pl: string;
   pl_a: string;
@@ -18,7 +18,7 @@ interface CheatSheetCommonAdjectivesProps {
   level?: number
 }
 
-export function CheatSheetCommonAdjectives(props:CheatSheetCommonAdjectivesProps) {
+export function CheatSheetCommonAdjectives(props: CheatSheetCommonAdjectivesProps) {
   // Type the imported data
   const adjectiveList: Adjective[] = adjectives;
   adjectiveList.sort((a, b) => a.en.localeCompare(b.en));
