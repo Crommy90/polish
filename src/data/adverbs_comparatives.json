@@ -1,0 +1,296 @@
+[
+  {
+    "en": "good",
+    "en_a": "bad",
+    "pl": "lepiej",
+    "pl_a": "gorzej"
+  },
+  {
+    "en": "big",
+    "en_a": "small",
+    "pl": "więcej",
+    "pl_a": "mniej"
+  },
+  {
+    "en": "new",
+    "en_a": "old",
+    "pl": "nowiej",
+    "pl_a": "starzej"
+  },
+  {
+    "en": "young",
+    "en_a": "old",
+    "pl": "młodziej",
+    "pl_a": "starzej"
+  },
+  {
+    "en": "long",
+    "en_a": "short",
+    "pl": "dłużej",
+    "pl_a": "krócej"
+  },
+  {
+    "en": "tall",
+    "en_a": "short",
+    "pl": "wyżej",
+    "pl_a": "niżej"
+  },
+  {
+    "en": "wide",
+    "en_a": "narrow",
+    "pl": "szerzej",
+    "pl_a": "węziej"
+  },
+  {
+    "en": "fat",
+    "en_a": "thin",
+    "pl": "grubiej",
+    "pl_a": "chudziej"
+  },
+  {
+    "en": "heavy",
+    "en_a": "light",
+    "pl": "ciężej",
+    "pl_a": "lżej"
+  },
+  {
+    "en": "warm",
+    "en_a": "cold",
+    "pl": "cieplej",
+    "pl_a": "zimniej"
+  },
+  {
+    "en": "hot",
+    "en_a": "cold",
+    "pl": "goręcej",
+    "pl_a": "zimniej"
+  },
+  {
+    "en": "easy",
+    "en_a": "difficult",
+    "pl": "łatwiej",
+    "pl_a": "trudniej"
+  },
+  {
+    "en": "fast",
+    "en_a": "slow",
+    "pl": "szybciej",
+    "pl_a": "wolniej"
+  },
+  {
+    "en": "strong",
+    "en_a": "weak",
+    "pl": "silniej",
+    "pl_a": "słabiej"
+  },
+  {
+    "en": "clean",
+    "en_a": "dirty",
+    "pl": "czyściej",
+    "pl_a": "brudniej"
+  },
+  {
+    "en": "beautiful",
+    "en_a": "ugly",
+    "pl": "piękniej",
+    "pl_a": "brzydziej"
+  },
+  {
+    "en": "happy",
+    "en_a": "sad",
+    "pl": "szczęśliwiej",
+    "pl_a": "smutniej"
+  },
+  {
+    "en": "rich",
+    "en_a": "poor",
+    "pl": "bogaciej",
+    "pl_a": "biedniej"
+  },
+  {
+    "en": "healthy",
+    "en_a": "sick",
+    "pl": "zdrowiej",
+    "pl_a": "chorzej"
+  },
+  {
+    "en": "bright",
+    "en_a": "dark",
+    "pl": "jaśniej",
+    "pl_a": "ciemniej"
+  },
+  {
+    "en": "quiet",
+    "en_a": "loud",
+    "pl": "ciszej",
+    "pl_a": "głośniej"
+  },
+  {
+    "en": "cheap",
+    "en_a": "expensive",
+    "pl": "taniej",
+    "pl_a": "drożej"
+  },
+  {
+    "en": "full",
+    "en_a": "empty",
+    "pl": "pełniej",
+    "pl_a": "puściej"
+  },
+  {
+    "en": "near",
+    "en_a": "far",
+    "pl": "bliżej",
+    "pl_a": "dalej"
+  },
+  {
+    "en": "true",
+    "en_a": "false",
+    "pl": "prawdziwiej",
+    "pl_a": "fałszywiej"
+  },
+  {
+    "en": "open",
+    "en_a": "closed",
+    "pl": "bardziej otwarcie",
+    "pl_a": "bardziej zamknięcie"
+  },
+  {
+    "en": "ready",
+    "en_a": "unready",
+    "pl": "bardziej gotowo",
+    "pl_a": "mniej gotowo"
+  },
+  {
+    "en": "tasty",
+    "en_a": "tasteless",
+    "pl": "smaczniej",
+    "pl_a": "mniej smacznie"
+  },
+  {
+    "en": "safe",
+    "en_a": "dangerous",
+    "pl": "bezpieczniej",
+    "pl_a": "niebezpieczniej"
+  },
+  {
+    "en": "simple",
+    "en_a": "complicated",
+    "pl": "prościej",
+    "pl_a": "bardziej skomplikowanie"
+  },
+  {
+    "en": "hard",
+    "en_a": "soft",
+    "pl": "twardziej",
+    "pl_a": "miękcej"
+  },
+  {
+    "en": "left",
+    "en_a": "right",
+    "pl": "bardziej na lewo",
+    "pl_a": "bardziej na prawo"
+  },
+  {
+    "en": "upper",
+    "en_a": "lower",
+    "pl": "wyżej",
+    "pl_a": "niżej"
+  },
+  {
+    "en": "dry",
+    "en_a": "wet",
+    "pl": "suszej",
+    "pl_a": "mokrej"
+  },
+  {
+    "en": "late",
+    "en_a": "early",
+    "pl": "później",
+    "pl_a": "wcześniej"
+  },
+  {
+    "en": "important",
+    "en_a": "unimportant",
+    "pl": "ważniej",
+    "pl_a": "mniej ważnie"
+  },
+  {
+    "en": "suitable",
+    "en_a": "unsuitable",
+    "pl": "odpowiedniej",
+    "pl_a": "mniej właściwie"
+  },
+  {
+    "en": "pure",
+    "en_a": "polluted",
+    "pl": "czyściej",
+    "pl_a": "bardziej zanieczyszczono"
+  },
+  {
+    "en": "deep",
+    "en_a": "shallow",
+    "pl": "głębiej",
+    "pl_a": "płycej"
+  },
+  {
+    "en": "satisfied",
+    "en_a": "unsatisfied",
+    "pl": "bardziej zadowolony",
+    "pl_a": "mniej zadowolony"
+  },
+  {
+    "en": "possible",
+    "en_a": "impossible",
+    "pl": "bardziej możliwie",
+    "pl_a": "mniej możliwie"
+  },
+  {
+    "en": "careful",
+    "en_a": "careless",
+    "pl": "ostrożniej",
+    "pl_a": "mniej ostrożnie"
+  },
+  {
+    "en": "fresh",
+    "en_a": "stale",
+    "pl": "świeżej",
+    "pl_a": "czerstwiej"
+  },
+  {
+    "en": "clever",
+    "en_a": "stupid",
+    "pl": "bystrzej",
+    "pl_a": "głupiej"
+  },
+  {
+    "en": "honest",
+    "en_a": "dishonest",
+    "pl": "uczciwiej",
+    "pl_a": "mniej uczciwie"
+  },
+  {
+    "en": "brave",
+    "en_a": "cowardly",
+    "pl": "dzielniej",
+    "pl_a": "bardziej tchórzliwie"
+  },
+  {
+    "en": "polite",
+    "en_a": "rude",
+    "pl": "uprzejmiej",
+    "pl_a": "mniej uprzejmie"
+  },
+  {
+    "en": "calm",
+    "en_a": "nervous",
+    "pl": "spokojniej",
+    "pl_a": "bardziej nerwowo"
+  },
+  {
+    "en": "busy",
+    "en_a": "free",
+    "pl": "bardziej zajęcie",
+    "pl_a": "swobodniej"
+  }
+]

@@ -142,30 +142,49 @@ body {
   h1 {
     @apply pb-2 text-4xl font-extrabold tracking-tight text-balance;
   }
+
   h2 {
     @apply pb-2 text-3xl font-semibold tracking-tight first:mt-0;
   }
+
   h3 {
     @apply pb-2 text-2xl font-semibold tracking-tight;
   }
+
   h4 {
     @apply pb-2 text-xl font-semibold tracking-tight;
   }
+
   h5 {
     @apply pb-2 font-semibold tracking-tight;
   }
 }
 
 @media print {
+
   /* Hide elements like the header, navigation, and footer */
   .no-print {
     display: none !important;
   }
 
-  p, h1, h2, h3, h4, span, div {
+  body,
+  p,
+  span,
+  div {
     /* Set a specific print unit (pt is traditional for print) */
-    font-size: 10pt !important; 
-    line-height: 1.2 !important; /* Adjust line height for denser print */
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+    /* Adjust line height for denser print */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    /* Set a specific print unit (pt is traditional for print) */
+    font-size: 16pt !important;
+    line-height: 1.2 !important;
+    /* Adjust line height for denser print */
   }
 
   /* Optional: Reset margins and padding for content */
@@ -175,6 +194,23 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     min-height: auto !important;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    /* optional: tighter borders */
+    /* KEY */
+  }
+
+  th,
+  td {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    padding: 4px 8px;
+    /* less vertical space, keeps table compact */
   }
 
   /* Optional: Force black text for better printing */
