@@ -17,7 +17,7 @@ export function Comparatives(props: ComparativesProps) {
   return (
     <>
       <Section level={props.level} className="w-max max-w-full">
-        <SectionTitle>Comparative Adjectives</SectionTitle>
+        <SectionTitle level={props.level}>Comparative Adjectives</SectionTitle>
         <Table
           headers={['English', 'Polish', 'English', 'Polish']}
           rows={translationsAdj.map((d) => [d.en, d.pl, d.en_a, d.pl_a])}
@@ -25,7 +25,7 @@ export function Comparatives(props: ComparativesProps) {
         />
       </Section>
       <Section level={props.level} className="w-max max-w-full">
-        <SectionTitle>Comparative Adverbs</SectionTitle>
+        <SectionTitle level={props.level} >Comparative Adverbs</SectionTitle>
         <Table
           headers={['English', 'Polish', 'English', 'Polish']}
           rows={translationsAdv.map((d) => [d.en, d.pl, d.en_a, d.pl_a])}
