@@ -13,6 +13,7 @@ niewnawidzic
 uwielbiac
 kochac
 grac
+ktore
 
 Things:
 prepositions (with cases?)
@@ -22,7 +23,6 @@ Cases but better
 Pronouns
 To know
 questions
-powinien
 Conditional (2nd) - past where something did not happen
 Gdyby byc (if)
 Swoj

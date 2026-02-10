@@ -1,0 +1,32 @@
+{
+  "en": "Should",
+  "imp": {
+    "inf": "Powinien",
+    "ja": {
+      "m": "Powinienem",
+      "f": "Powinnam"
+    },
+    "ty": {
+      "m": "Powinieneś",
+      "f": "Powinnaś"
+    },
+    "on/ona/ono": {
+      "m": "Powinien",
+      "f": "Powinna",
+      "n": "Powinno"
+    },
+    "my": {
+      "m": "Powinniśmy",
+      "f": "Powinnyśmy"
+    },
+    "wy": {
+      "m": "Powinniście",
+      "f": "Powinnyście"
+    },
+    "oni/one": {
+      "m": "Powinni",
+      "f": "Powinny",
+      "n": "Powinny"
+    }
+  }
+}

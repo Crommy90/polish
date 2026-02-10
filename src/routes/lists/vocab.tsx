@@ -3,6 +3,7 @@ import { Section } from '@/components/app-ui/section';
 import { VerbsCommon } from '@/components/verbs/verbs-common';
 import { VerbsGerunds } from '@/components/verbs/verbs-gerunds';
 import { VerbsGo } from '@/components/verbs/verbs-go';
+import { VerbsShould } from '@/components/verbs/verbs-should';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/lists/vocab')({
@@ -22,6 +23,9 @@ function RouteComponent() {
       </Section>
       <Section>
         <VerbsGerunds />
+      </Section>
+      <Section>
+        <VerbsShould />
       </Section>
     </>
   );

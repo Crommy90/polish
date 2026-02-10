@@ -4,6 +4,7 @@ import { CheatSheetVerbs } from '@/components/cheat-sheet/cheat-sheet-verbs';
 import { VerbsCommon } from '@/components/verbs/verbs-common';
 import { VerbsGerunds } from '@/components/verbs/verbs-gerunds';
 import { VerbsGo } from '@/components/verbs/verbs-go';
+import { VerbsShould } from '@/components/verbs/verbs-should';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/lists/verbs')({
@@ -16,16 +17,19 @@ function RouteComponent() {
       <PageTitle>Verbs</PageTitle>
 
       <Section>
-          <CheatSheetVerbs />
+        <CheatSheetVerbs />
       </Section>
       <Section>
-          <VerbsCommon />
+        <VerbsCommon />
       </Section>
       <Section>
-          <VerbsGo />
+        <VerbsGo />
       </Section>
       <Section>
-          <VerbsGerunds />
+        <VerbsGerunds />
+      </Section>
+      <Section>
+        <VerbsShould />
       </Section>
     </>
   );
